@@ -1,0 +1,381 @@
+\documentclass[report]{article}
+\usepackage{longtable}
+\usepackage{tabularx}
+\usepackage{graphicx}
+\usepackage
+[
+        left=2.7cm,
+        right=2.7cm,
+]
+{geometry}
+
+\newcommand{\comment}[1]{{\tt #1}}
+
+\begin{document}
+
+\title{\textsc{Test Plan}
+  \\ Freedom in the Galaxy, Python Team
+  \vspace{10 mm}
+  \\ Version 1.0
+  \vspace{10 mm}}
+  
+\date{\today}
+
+\author{Prepared for:
+  \\ CS 383 Course Project
+  \vspace{10 mm}
+  \\Prepared by:
+  \\ CS 383 Python Team
+  \\ University of Idaho
+  \\ Moscow, ID 83844-1010
+  \vspace{10 mm}}
+
+
+\maketitle
+\newpage 
+
+\begin{center}
+\noindent Freedom In The Galaxy Test Plan, Python Group
+
+\vspace{10 mm}
+
+\noindent \textsc{Record of Changes}   
+
+\vspace{10 mm}
+
+
+\begin{tabularx}{\textwidth}{| X | X | X | X | X | X | X |}
+  \hline
+  \textbf{Change Number} &
+    \textbf{Date Completed} &
+    \textbf{Location of Change (e.g. page \# or figure \#)} &
+    \textbf{Brief Description of Change} &
+    \textbf{Approved by (initials)} &
+    \textbf{Date Approved} 
+    \\ \hline 1 & Nov 9 & ALL  & INITIAL PREP & - & -
+    \\ \hline N/A & -& -& -& -&  
+%    \\ \hline & & & & &  
+%    \\ \hline & & & & &  
+%    \\ \hline & & & & &  
+    \\ \hline
+\end{tabularx}
+\end{center}
+\newpage 
+\tableofcontents
+\newpage
+
+\section[IDENTIFIER]{TEST PLAN IDENTIFIER}
+FREEDOM IN THE GALAXY MASTER TEST PLAN VERSION 1.0, PYTHON GROUP
+\section[REFERENCES]{REFERENCES}
+Use Cases and State diagrams are available at {\tt https://github.com/Freedom-Galaxy}.
+
+
+\section[INTRODUCTION]{INTRODUCTION}
+The purpose of this master test plan is to state the processes used by the Python Team in testing the Freedom in the Galaxy software project. This master plan covers the entire testing plan for the project. The Python Team is divided into three sub teams. Each sub team each has different testing requirements and should prepare documents accordingly.
+
+\section[TEST ITEMS]{TEST ITEMS}
+\begin{itemize}
+\item Class Interfaces
+\item Class Interactions
+\item User Interface Functions
+\item Network Layer Functions
+\item API Level Functions
+\item Requirements stated in System Software Requirement Specification
+\item Requirements stated in System Software Design Documentation
+\end{itemize}
+
+\section[SOFTWARE RISK ISSUES]{SOFTWARE RISK ISSUES}
+\label{risk}
+Each piece of code has different levels of risk to the party. Standard library modules are usually designed to be backwards compatible, do not change for each version of Python, are heavily tested before incorporation into the standard library, and have a high level of use. Therefore, the standard library modules have a very low level of risk to the project. The tests will therefore be focused on the correct use of those modules.
+
+Third party software has a higher level of risk than standard library and a much larger variance of quality. Some of the software has been heavily tested and some is only in a prerelease state. The level of quality of each third party module will have to be determined and testing scaled according. The level of risk can be reduced if sufficient tests are included with the library.
+
+Testing will mainly focus on code written by Python Group members. This plan largely focuses on providing a testing plan that adequately covers both rules and implementation.
+
+As the code base is not yet complete, the complexity of the code cannot be yet determined. Also, since the documentation is often incomplete, risk also arises because of poor documentation. Complete and improved documentation of all areas of code with reduce this risk.
+
+Finally, because the length of this project is short and is not dependent on any third party schedules, there is no to little risk from new versions of software or failure of any third party.
+
+\subsection{Critical Risk Areas}
+\begin{enumerate}
+\item Whatever the networking interface module is called
+\item PyGame
+\item SQLAcademy
+\end{enumerate} 
+
+\section[FEATURES TO BE TESTED]{FEATURES TO BE TESTED}
+\begin{center}
+\begin{tabularx}{\textwidth}{| X | c |}
+  \hline
+  \textbf{Feature Description} &
+    \textbf{Risk Level} 
+\\ \hline
+Start a game & High
+\\ \hline
+Smart AI & Medium
+\\ \hline
+Network communication & High
+\\ \hline
+Play game with graphical interface & High
+\\ \hline
+Play game with text interface? & Low
+\\ \hline
+Other features that people want to be able to do? & -
+\\ \hline
+From a users point of view. & -
+\\ \hline
+\end{tabularx}
+\end{center}
+
+\section[FEATURES NOT TO BE TESTED]{FEATURES NOT TO BE TESTED}
+\begin{center}
+\begin{tabularx}{\textwidth}{| X | X |}
+  \hline
+  \textbf{Feature Description} &
+    \textbf{Details} 
+\\ \hline
+ Python Standard Library
+ \\ \hline
+ Probably we can put third party modules here.
+ \\ \hline
+ Speed of software?
+\\ \hline
+
+
+
+\end{tabularx}
+\end{center}
+
+
+\section[APPROACH]{APPROACH}
+\subsection{Testing Tools}
+The testing tools for use in this project include the standard library modules doctests, unittest, and the third party tool Nose. Each tool has different levels of complexity and strengths, so each test will be written in one of these tools depending on the tester and condition.
+
+Training will be available from other members of the team for any questions. Tutorials are also available on the Python website for doctest and unittest. Training for Nose is unknown.
+
+\subsection{Metric}
+The number of game rules implemented will be the metric.
+
+\subsection{Configurations}
+The AI and UI will be tested using both the Rebel and Imperial player, and all User type tests for both player types will be executed.
+
+\subsection{Software}
+The software will be developed with Python 2.7.5 with doctest and unittest of the same version. The current version of Nose is 1.3.0, the current version of Pygame is ?
+\subsection{Hardware}
+\begin{itemize}
+\item Microsoft Windows XP Professional SP3/Vista SP1/Windows 7 Professional
+\begin{itemize}
+	\item Processor: 800MHz Intel Pentium III or equivalent
+	\item Memory: 512 MB
+	\item Disk space: 750 MB of free disk space
+\end{itemize}
+\item Ubuntu 9.10
+\begin{itemize}
+	\item Processor: 800MHz Intel Pentium III or equivalent
+	\item Memory: 512 MB
+	\item Disk space: 650 MB of free disk space
+\end{itemize}
+\item Macintosh OS X 10.6 Intel
+\begin{itemize}
+	\item Processor: Dual-Core Intel (32 or 64-bit)
+	\item Memory: 1 GB
+	\item Disk space: 650 MB of free disk space
+\end{itemize}
+\end{itemize}
+
+\subsection{Automated Testing}
+The automated test process will be divided into three phases, Unit testing, Integration testing and System testing.
+
+\subsubsection{Unit Testing}
+Unit testing will be used to validate individual classes objects. Some objects will not be required to be validated by unit testing, such as the user interface and the supporting classes and any classes or code that is exempted according to section \ref{risk}.
+
+Each team should develop TCSs as needed for their code. Each TCS should include tests for all classes as required and for each test, validate as many inputs as needed to test that the class operates as required by the rules covered in the SSRS, and also according to an requirements and design documents applicable to that class.
+
+\subsubsection{Required Class Unit Tests}
+\begin{itemize}
+\item What classes do we have? Each class should have tests?
+\end{itemize}
+Unit testing for each of these classes will consist of validating the class public interface. Public variables and methods are required to pass the following tests:
+\begin{itemize}
+\item validation using expected data input
+\item validation using erroneous data input, including None or empty values
+\item class instantiation
+\end{itemize}
+
+\subsubsection{Integration Testing}
+Integration testing will validate the defined associations between classes. This will be an incremental process performed as new classes are created and after classes have successfully passed their unit testing phase. 
+\paragraph{Integration Tests to be Performed}
+\begin{itemize}
+\item Class sets under test exhibit the relationships as defined in the class diagram
+\item Methods and functions are called using the correct parameters
+\item Methods and functions return the expected data types or structures.
+\end{itemize}
+
+Integration should be done at the group level. This should include mock objects or mock data to simulate any objects outside of the team as required. Integration testing should cover all reasonable combinations of objects in the game. These tests should be documented in TCSs.
+
+\subsubsection{System Testing}
+System testing will exercise the overall software product to verify conformance to defined game rules. System testing will use predefined scenarios of initial states representing possible game states that a user will encounter. Each scenario will be tested for acceptable results for each possible user action that may occur. Acceptability will be defined by the game rules. 
+
+\subsection{Manual Testing}
+Manual testing will be required for the portions of the program that can not undergo automated testing. This section applies to the testing of the user interface to simulate user orientated testing to verify conformance to the documented use cases.
+
+
+\section[ITEM PASS/FAIL CRITERIA]{ITEM PASS/FAIL CRITERIA}
+
+\subsection{Reporting a failure}
+
+If a failure happens during the execution of any test, a failure report should be submitted to provide information of the failure. Failure should be reported in the issue page of the repository. 
+
+The name of the issue should be the name of the name of the code file and the name of the test if applicable.
+
+\subsubsection{What Constitutes a "failure"?}
+Any deviation from a specification, e.g. SRS, UML diagrams.
+
+\subsubsection{What Does Not Constitute a "failure"?}
+Any unit or action that does not have any requirements documentation, cannot cause a 'failure'.
+
+\subsubsection{What to do when a "failure" is discovered"?}
+Produce a SCR to document each "failure" that needs to be corrected.
+
+\subsubsection{What if a specification document is incorrect (e.g. outdated, misstated)?}
+This also constitutes a "failure" and an SCR should be created.
+
+\subsubsection{What sections to include in an SCR}
+
+Problem \\
+What did you expect to happen \\
+What happened \\
+Steps to reproduce \\
+
+Each section should be brief and to the point, but yet convey enough information for the coder.
+
+\subsection{Unit Testing Pass/Fail Criteria}
+Each of these tables might need to be expanded to cover priority and type of test (i.e. unittest, integration, system). Also, additions of conditionals might also be good.
+
+\input{character_unit_tests}
+
+\newpage
+
+\subsection{Integration Testing Pass/Fail Criteria}
+
+\input{gameturn_integration}
+\newpage
+\input{capture_integration}
+\newpage
+\input{combat_integration}
+\newpage
+\input{game_start_integration}
+\newpage
+\input{missions_integration}
+\newpage
+\input{movement_integration}
+\newpage
+\input{pdb_detection_integration}
+\newpage
+\input{planet_integration}
+\newpage
+\input{searching_integration}
+\newpage
+\input{stacking_integration}
+\newpage
+\input{turn_integration}
+
+\newpage
+
+\subsection{System Testing Pass/Fail Criteria}
+TBD
+%\input{}
+
+\subsection{User Interface Manual Testing Pass/Fail Criteria}
+This is up to the client team?
+%\input{}
+
+\section[SUSPENSION CRITERIA]{SUSPENSION CRITERIA}
+The automated testing procedure shall be completed in the following order:
+\begin{enumerate}
+\item Unit Testing
+\item Integration Testing
+\item System Testing
+\end{enumerate}
+Each item to be tested is required to pass each unittest of a classification of 1 with 100\% success before it can be included in a higher level of testing. This complete success can be waived for the following reasons:
+\begin{itemize}
+\item Feature under test will not be included in the upcoming deliverable.
+\item Feature under test will not be included in the final product.
+\item Feature under test is complex and meeting the test requirements will delay the deliverable.
+\end{itemize}
+Decision to allow a feature to proceed to a higher level of testing shall be determined by team leader.
+
+\section[TEST DELIVERABLES]{TEST DELIVERABLES}
+\begin{itemize}
+\item Test Cases
+\item Test Logs
+\item Incident Reports
+\item Outputs
+\item Corrective Actions
+\end{itemize}
+
+\subsection{Test Cases}
+
+All unittests, integration tests, and system tests should be documented in TCSs. The name of a TCS should match the module name (e.g. Character Class TCS) or functions (e.g. Main Menu TCS). TCS should be developed from any requirements document and should tests every requirement of those documents.
+
+\section[REMAINING TEST TASKS]{REMAINING TEST TASKS}
+None
+
+\section[EVIRONMENTAL NEEDS]{ENVIRONMENTAL NEEDS}
+None
+
+\section[STAFFING AND TRAINING NEEDS]{STAFFING AND TRAINING NEEDS}
+Training on portions of the project shall be carried out by the authors of the code and the documented design and the responsibility of said authors. Help is available from other members of the team.
+
+
+\section[RESPONSIBILITIES]{RESPONSIBILITIES}
+The responsibility of this document is not yet determined?
+
+
+\section[SCHEDULE]{SCHEDULE}
+\begin{center}
+\begin{tabularx}{\textwidth}{| X | X | X |}
+  \hline
+  \textbf{Deliverable} &
+  \textbf{Description} &
+  \textbf{Due Date} 
+\\ \hline
+Test Plan version 1.0 & 
+Completion of first draft of the complete Test Plan documentation. &
+11/12/2013
+\\ \hline
+
+Test Assigment &
+Assign tests to team members &
+11/14/2013
+\\ \hline
+
+Delivery of Unit Tests &
+Completion of assigned Unit Tests &
+11/25/2013
+\\ \hline
+
+Delivery of Integration Tests &
+Completion of assigned Integration Tests &
+12/5/2013
+\\ \hline
+
+Delivery of System Tests and Manual Tests &
+Completion of assigned System Tests &
+12/10/2013
+\\ \hline
+
+\end{tabularx}
+\end{center}
+
+\section[PLANNING RISKS AND CONTINGENCIES]{PLANNING RISKS AND CONTINENCIES}
+Because the end of the semester is fixed, there are no contingencies if the product does not meet requirements by that date. Public beatings will be carried out as needed.
+
+\section[APPROVALS]{APPROVALS}
+Approve is up to team leaders.
+
+\section[GLOSSARY]{GLOSSARY}
+SCR - Software Change Request
+TCS - Test Specifications Document
+
+\end{document}
