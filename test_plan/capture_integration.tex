@@ -1,0 +1,60 @@
+\subsection{Capture}
+
+\setcounter{rc}{0}
+
+\begin{center}
+
+  \begin{longtable}{| p{.5cm} | p{4.5cm} | p{4.5cm} | p{4.5cm} |}
+    \hline
+    \textbf{\#}&
+    \textbf{Rule Description}&
+    \textbf{Test Description}&
+    \textbf{Expected Result}
+    \\ \hline
+    
+    \rn &
+
+    A unit must be assigned to "guard" a captured opponent [12.81]. &
+
+    Succeed in capure combat. &
+    
+    Captured character is assgned a guard, either automatically or by
+    prompthing user.
+
+    \\ \hline 
+    \rn &
+
+    Captured character must be moved with the character assigned to
+    "guard" them [12.81]. &
+
+    Move character "guarding" a captured character. &
+
+    Captured character moves to location guard moves to.
+    
+    \\ \hline
+
+    \rn &
+
+    Guarding character cannot perform missions [12.81]. &
+
+    Attempt to assign guard to mission group. &
+
+    Guard does not occupy mission group.
+
+    \\ \hline 
+
+    \rn &
+    
+    If a character is captured and combat is still being resolved, the
+    captured character contributes nothing to either side [12.84]. &
+
+    Successfully capture during capture combat. &
+
+    Combat differential is refactored to remove captured character's
+    benefits to forces.
+
+    \\ \hline
+
+  \end{longtable}
+
+\end{center}

@@ -1,0 +1,108 @@
+\subsubsection{Game Start}
+\begin{center}
+
+  \begin{longtable}{| p{.5cm} | p{4.5cm} | p{4.5cm} | p{4.5cm} |}
+    \hline
+    \textbf{\#}&
+    \textbf{Rule Description}&
+    \textbf{Test Description}&
+    \textbf{Expected Result}
+    \\ \hline
+    
+    1 &
+
+    At game start, if player controls a planet, they may distribute
+    characters and military forces on environs of those planest
+    [16.12] &
+
+    Player attempts to place a unit on the environ of a planet the
+    player does not control &
+
+    Unit does not occupy specified environ.  ??? Fail silently or
+    notify player ???
+
+    \\ \hline
+
+    2 &
+
+    At game start, if player does not control a planet, characters
+    will "arrive from space" at the beginning of their operations
+    phase. [16.12] &
+
+    Player attempts to place units on environ of a planet they do not
+    control &
+
+    Unit does not occupy specified environ.  ??? Fail silently or
+    notify player ???
+
+    \\ \hline 
+
+    3 &
+
+    At game start, Imperial player places units first [16.14] &
+
+    Rebel player attempts to place units \textit{before} Imperial
+    player &
+
+    Rebel player is unable to place forces.
+
+    \\ \hline
+
+    4 &
+
+    At game start, Imperial player places units first [16.14] &
+
+    Rebel player attempts to place units \textit{while} Imperial
+    player \ is distributing their forces &
+
+    Rebel player is unable to place forces.
+    
+    \\ \hline
+
+    5 &
+    Rebel game turn is first [16.14] &
+
+    At start of game Imperial player attempts to begin turn
+    \textit{before} Rebel player had begun turn &
+    
+    Imperial player is unable to begin turn.
+
+    \\ \hline 
+
+    6 &
+    Rebel game turn is first [16.14] &
+
+    At start of game Imperial player attempts to begin turn
+    \textit{while} Rebel player is in thier turn &
+
+    Imperial player is unable to begin turn.
+
+    \\ \hline 
+
+    7 &
+
+    At start of game, all friendly units on the same environ are
+    placed in the same stack [16.13]. &
+
+    Try and create a second stack in an environ at the beginning of
+    play &
+
+    Second stack is not constructed.
+
+    \\ \hline
+
+    8 &
+
+    At start of game, if rebel player has units to distribute, units
+    placed must match environ type [16.13]. &
+
+    Attempt to place rebel units in environ that does not match thier
+    type. &
+
+    User unable to place forces.
+
+    \\ \hline 
+
+  \end{longtable}
+
+\end{center}

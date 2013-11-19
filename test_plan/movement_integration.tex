@@ -1,0 +1,123 @@
+\subsubsection{Movement}
+
+\setcounter{rc}{0}
+
+\begin{center}
+
+  \begin{longtable}{| p{.5cm} | p{4.5cm} | p{4.5cm} | p{4.5cm} |}
+    \hline
+    \textbf{\#}&
+    \textbf{Rule Description}&
+    \textbf{Test Description}&
+    \textbf{Expected Result}
+    \\ \hline
+    
+    \rn &
+
+    Characters can only move from planet to planet using a spaceship
+    [9.0]. &
+
+    Attempt to move characters without a spaceship stacked with mobile
+    military units. &
+
+    Characters are left on the environ.
+
+    \\ \hline 
+    \rn &
+
+    Every unit/character can be moved at most once during operations
+    phase [9.0]. &
+
+    Attempt to move a unit/character after moving it once. &
+
+    Unit/character does not move.
+    
+    \\ \hline
+
+    \rn &
+
+    Non-phasing player may make a reactin move only once the phasing
+    player is finished with their operations phase [9.0]. &
+
+    Attempt to move NPP units before PP is done with operations
+    phase. &
+
+    NPP units do not move. 
+
+    \\ \hline 
+
+    \rn &
+
+    Non-phasing player may make a reactin move only once the phasing
+    player is finished with their operations phase [9.0]. &
+
+    Attempt to move NPP units during PP's operations phase. &
+
+    NPP units do not move.     
+    
+    \\ \hline
+
+    \rn &
+    
+    Military units cannnot move to an environ that is populated by a
+    number of military units equal to it's size [9.5]. &
+
+    Attempt to move a stack of one militart unit to an environ
+    populated by a max number of military units.&
+
+    Military unit does not occupy environ.
+
+    \\ \hline 
+
+    \rn &
+    
+    A spaceship cannot carry more characters than it's capacity stat
+    dictates [9.56]. &
+
+    Construct a character stack with a spaceship that contains more
+    characters than the capacity of the spaceship dictates. Attempt to
+    move stack to another environ. &
+
+    Only the number of characters equaling the capacity of the
+    spaceship move.
+    
+    \\ \hline
+
+    \rn &
+    
+    The non-phasing player may make a move for each evviron containing
+    PP military and detected forces [9.6]. &
+
+    Enter reaction move phase when there are \textit{n} environs
+    containing military units and detected forces. &
+
+    Non-phasing player is allowed \textit{n} moves. 
+
+    \\ \hline
+
+    \rn &
+    
+    A reaction move cannot be made from one planet to another
+    [9.61]. &
+
+    Attempt to move a stack from planet to planet for a reaction
+    move. &
+    
+    Stack does not occupy new environ.
+    
+    \\ \hline
+    
+    \rn &
+
+    &
+
+    &
+
+    
+
+
+    \\ \hline
+
+  \end{longtable}
+
+\end{center}

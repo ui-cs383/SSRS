@@ -1,0 +1,235 @@
+\subsubsection{PDBs and Detection}
+
+\setcounter{rc}{0}
+
+\begin{center}
+
+  \begin{longtable}{| p{.5cm} | p{4.5cm} | p{4.5cm} | p{4.5cm} |}
+    \hline
+    \textbf{\#}&
+    \textbf{Rule Description}&
+    \textbf{Test Description}&
+    \textbf{Expected Result}
+    \\ \hline
+    
+    \rn &
+
+    Every planet has a PDB [8.0]. &
+
+    Initialize galaxy. &
+    
+    Every planet has a PDB. 
+
+    \\ \hline 
+    \rn &
+
+    The level of a PDB is  0, 1 or 2 [8.0]. &
+
+    Initialize galaxy. &
+
+    PDB levels conform to states 0, 1 or 2
+    
+    \\ \hline
+
+    \rn &
+
+    PDBs are either up or down [8.0]. &
+
+    Initialize Galaxy. &
+
+    PDBs conform to states up or down.
+
+    \\ \hline 
+
+    \rn &
+    
+    In Star System Games, the level of a PDB cannot be improved
+    [8.13]. &
+
+    ( ???? ) Succeed in a mission ( ???? ) that would improve PDB
+    level. &
+    
+    PDB level does not improve.
+    
+
+    \\ \hline
+
+    \rn &
+    
+    PDB can only be used if its status is "up" [8.2]. &
+
+    Move characters from an environ on a planet where the PDB is down
+    in a spaceship. &
+
+    Characters do not undergo detection routine. 
+
+    \\ \hline 
+
+    \rn &
+    
+    If characters move across a planet without a spaceship they do not
+    undergo the detection routine [9.0]. &
+
+    Move character stack from one environ to another on the same
+    planet. &
+    
+    Characters do not undergo detection routine. 
+ 
+    \\ \hline
+
+    \rn &
+
+    If characters move across a planet with a spaceship may undergo a
+    detection routine [9.0]. &
+
+    Move character stack from one environ to another on a planet with
+    a PDB up and at level 1 or higher .&
+
+    Character stack undergoes detection routine. 
+
+    \\ \hline 
+
+    \rn &
+    
+    If a PDB incurs a loss of 2 when attacking it is placed in the
+    "down" state [9.25]. &
+
+    Incur a loss of 2 with an attacking PDB. &
+
+    PDB state is "down."
+ 
+    \\ \hline
+
+    \rn &
+
+    If a PDB incurs a loss of 3 when attacking it is placed in the
+    "down" state \textit{and} it is reduced a level [9.25]. &
+
+    Incur a loss of 3 with an attacking PDB. &
+
+    PDB state is "down" \textit{and} level is decremented by 1.
+
+    \\ \hline 
+
+    \rn &
+    
+    A loss of 1 incurred by a PDB does nothing [9.25]. &
+
+    Incur a loss of 1 with an attacking PDB. &
+    
+    PDB does not change state. 
+ 
+    \\ \hline
+
+    \rn &
+
+    If a spacehip leaves a planet unable to conduct a detection
+    routine, it and its characters are no longer detected [9.45]. &
+
+    Move detected character stack in a spaceship from one environ to
+    another on a planet unable to conduct a detection routine. &
+
+    Characters are no longer detected. 
+
+    \\ \hline 
+
+    \rn &
+
+    Stacks with military units are detected. &
+
+    Move military units into a stack of undetected characters in an
+    environ. &
+
+    Characters are detected. 
+
+    \\ \hline 
+
+    \rn &
+
+    If a detected character stack leaves an environ "undetected" by
+    the enemy PDB they are no longer detected [9.31]. &
+    
+    Move detected character stack in a spaceship from an envrion on a
+    planet with an active PDB where the detection routine results in
+    "undetected". &
+
+    Characters are no longer detected. 
+    Character stack is no longer detected. 
+
+    \\ \hline 
+
+    \rn &
+
+    A PDB with a level 0 only detects regardless of the outcome of the
+    detection routine [9.32]. &
+
+    Undergo detection routine with a PDB at level 0 resulting in
+    "eliminated." &
+
+    Character stack is detected.
+
+    \\ \hline 
+
+    \rn & 
+
+    Detected characters moving from one environ to another
+    containing no detected characters or military units on the same
+    planet without a spaceship are no longer detected [9.35]. & 
+
+    Move detected characters to another environ on the same planet
+    that contains no detected characters and no military units. &
+    
+    Characters are no longer detected. 
+
+    \\ \hline 
+
+    \rn &
+
+    Military units are always detected but can be attacked by a PDB. &
+
+    Move military units from space into a planet's environ. &
+
+    Military units undergo detection routine and are subject to attack
+    accoring to the military combat results table.
+    
+    \\ \hline 
+
+    \rn &
+
+    If a spaceship is "detected and damaged" twice in the same turn,
+    the second "detected and damaged" outcome is equivalent to
+    "eliminated" outcome [9.35]. &
+
+    Move from one environ to another on a planet with an active PDB at
+    level 1 or more and incur "detected and damaged" outcome twice. &
+
+    Characters and spaceship are eliminated. 
+
+    \\ \hline 
+
+    \rn &
+
+    In the star system games, if a detection routine results in
+    "detected and damaged," the spaceship is eliminated when the
+    destination is reached [9.31]. &
+
+    Undergo detection routine that results in "detected and damaged" &
+    
+    Spaceship is eliminated on arrival. 
+
+    \\ \hline 
+
+    \rn &
+    
+    If a detection routine results in "eliminated," the spaceship and
+    all characters on board are eliminated immediately [9.31]. &
+    
+    Undergo detection routine that results in "eliminated" &
+
+    Spaceship and characters in it are eliminated. 
+    
+    \\ \hline 
+
+  \end{longtable}
+
+\end{center}

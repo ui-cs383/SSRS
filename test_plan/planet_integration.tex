@@ -1,0 +1,74 @@
+\subsubsection{Planets}
+
+\setcounter{rc}{0}
+
+\begin{center}
+
+  \begin{longtable}{| p{.5cm} | p{4.5cm} | p{4.5cm} | p{4.5cm} |}
+    \hline
+    \textbf{\#}&
+    \textbf{Rule Description}&
+    \textbf{Test Description}&
+    \textbf{Expected Result}
+    \\ \hline
+     
+    \rn &
+
+    At the beginnig of play, every planet has a loyalty counter in 1
+    of five states [15.1] &
+
+    Check evey planet's loyalty after game starts. &
+    
+    Loyalty counters are not null.  
+
+    \\ \hline 
+    \rn &
+
+    A loyalty counter at patriotic cannot be increased further in the
+    Imperial player's favor [15.13]. &
+    
+    Successful Imperial "Diplomacy" or "Political Tract" mission when
+    loyalty counter is set to patriotic. &
+
+    Loyalty counter does not change state. 
+    
+    \\ \hline
+
+    \rn &
+
+    A loyalty counter at unrest cannot be increased further in the
+    Rebel player's favor [15.13]. &
+    
+    Successful Rebel "Diplomacy" or "Political Tract" mission when
+    loyalty counter is set to patriotic. &
+
+    Loyalty counter does not change state. 
+   
+    \\ \hline
+
+    \rn &
+    
+    Loyalty counter on a planet in a state of rebellion or rebel
+    control cannot be moved [15.14]. &
+
+    Successful Rebel "Diplomacy" or "Political Tract" mission when
+    planet is in a state of rebellion or rebel control. &
+
+    Loyalty counter does not change state. 
+
+    \\ \hline
+
+    \rn &
+    
+    A planet in a state of rebellion is controlled by neither player
+    [15.4]. &
+
+    Put a planet in the state of rebellion. &
+
+    "Control indicator" is in neither a rebel or imperial state.
+
+    \\ \hline 
+
+  \end{longtable}
+
+\end{center}

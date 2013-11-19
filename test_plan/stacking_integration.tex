@@ -1,0 +1,103 @@
+\subsubsection{Stacking}
+
+\setcounter{rc}{0}
+
+\begin{center}
+
+  \begin{longtable}{| p{.5cm} | p{4.5cm} | p{4.5cm} | p{4.5cm} |}
+    \hline
+    \textbf{\#}&
+    \textbf{Rule Description}&
+    \textbf{Test Description}&
+    \textbf{Expected Result}
+    \\ \hline
+    
+    \rn &
+
+    Number of military units in a stack, in an environ can never
+    exceed the environ size [9.5] &
+
+    Try and place a military unit in an environ that is at capacity &
+    
+    Military unit is not added to the stack.
+
+    \\ \hline 
+    \rn &
+
+    There is no limit to the number of units in a stack [9.5]. &
+    
+    Construct an artifical stack out of all military units + all
+    characters + all ships&
+    
+    All units, characters, ships occupy the same stack.
+    
+    \\ \hline
+
+    \rn &
+
+    At the end of the operations phase, an environ may have at most
+    two stacks, one with characters eligible for missions and thier
+    spaceships and another for the rest of the player's forces
+    [9.5]. &
+
+    Attempt to end operations phase with three stacks in an environ &
+
+    ??? Combine forces automatically or prompt user to refact[16.14]or
+    forces???
+
+    \\ \hline 
+
+    \rn &
+
+    Character's stacked with military units must have leadership
+    rating of at least 1 to be named leader [9.52]. &
+
+    Attempt to name leader with less than 1 leadership rating. &
+    
+    Character does not assume leadership of stack.
+
+    \\ \hline
+
+    \rn &
+
+    If a stack has no military units and multiple spaceships, the each
+    spaceship must move as a separate stack and undergo any detection
+    routines accordingly [9.54]. &
+
+    Attempt to move a stack with two spaceships and no military
+    units. &
+    
+    Movement is not allowed until a spaceship is specified. 
+
+    \\ \hline 
+
+    \rn &
+    
+    A spaceship may not be moved unless it is stacked with military
+    units or a charcater with navigation rating of 1 or higher
+    [9.55]. &
+
+    Attempt to move a spaceship stacked with only a character with
+    navigation rating less than 1 &
+
+    Spaceship does not move.
+
+ 
+    \\ \hline
+
+    \rn &
+
+    If at the end of the operations phase, a character is not stacked
+    in the mission stack, character cannot perform missions during the
+    missions phase [9.57]. &
+
+    During missions phase, attempt to add character not stacked in the
+    mission stack to a mission group. &
+    
+    Character is not added to mission group.
+
+    \\ \hline 
+
+  \end{longtable}
+
+\end{center}

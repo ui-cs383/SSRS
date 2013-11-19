@@ -1,0 +1,114 @@
+\subsubsection{Combat}
+
+\setcounter{rc}{0}
+
+\begin{center}
+
+  \begin{longtable}{| p{.5cm} | p{4.5cm} | p{4.5cm} | p{4.5cm} |}
+    \hline
+    \textbf{\#}&
+    \textbf{Rule Description}&
+    \textbf{Test Description}&
+    \textbf{Expected Result}
+    \\ \hline
+    
+    \rn &
+
+    Rebel units spawned during rebellion immediately attack any
+    imperial units they are able [10.7]. &
+
+    Planet goes into state of rebellion and spawns rebel units in an
+    environ where there are imperial forces. &
+    
+    Rebel units engage in combat with imperial forces. 
+
+    \\ \hline 
+
+    \rn &
+
+    If a character stack in an environ is detecteda and there are no
+    friendly military forces present, if they successfully break off
+    from combat, they are no longer found and are no longer a part of
+    combat [12.51]. &
+
+    Break off from combat. &
+
+    Character state is no longer found and combat is terminated.
+
+    \\ \hline
+
+    \rn & 
+
+    If a character receives cumulative damage equal to their number of
+    endurace points that character is dead and is removed from play
+    [12.73]. &
+
+    Engage in combat that results in enough wounds to match a
+    character's endurance and assign those wounds to that character. &
+    
+    Character is removed from play.
+
+    \\ \hline
+
+    \rn &
+    
+    If attacking group is a squad, combat is firefight [12.31]. &
+
+    Attack with squad and check combat type.&
+    
+    Combat type is firefight. 
+
+    \\ \hline
+    
+    \rn & 
+    
+    Inactive characters do not contribute to combat rating or suffer
+    damage [12.42]. &
+
+    Engage in combat and set one character to inactive. &
+    
+    Character's stats do not contribute to combat rating and cannot
+    have wounds assigned to them after battle.
+
+    \\ \hline
+
+    \rn & 
+    
+    Attacking character does not have inactive forces [12.44]. &
+
+    Attack enemy forces. &
+
+    No option to set inactive forces.
+
+    \\ \hline
+
+    \rn & 
+    
+    Leaders are not eliminated in military combat but if their forces
+    are destroyed they are attacked by a squad [10.45]. &
+
+    Engage in military combat with a leader where all forces are
+    destoryd. &
+
+    Leader is not destroyed but is attacked by a squad. 
+
+    \\ \hline
+    
+    \rn &
+    
+    Characters stacked with military units are not effected by
+    military combat and do not effect military combat but if their
+    military units are eliminated, they are attacked by a squad
+    [10.6]. &
+
+    Engage in military combat with a stack containing characters where
+    all military forces are eliminated. &
+
+    Characters do not effect military combat and are not eliminated
+    but are engaged in squad combat.
+
+    \\ \hline
+
+  \end{longtable}
+
+\end{center}

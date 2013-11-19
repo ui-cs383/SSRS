@@ -1,0 +1,62 @@
+\subsubsection{Searching}
+
+\setcounter{rc}{0}
+
+\begin{center}
+
+  \begin{longtable}{| p{.5cm} | p{4.5cm} | p{4.5cm} | p{4.5cm} |}
+    \hline
+    \textbf{\#}&
+    \textbf{Rule Description}&
+    \textbf{Test Description}&
+    \textbf{Expected Result}
+    \\ \hline
+    
+    \rn &
+    
+    Search is conducted with either military units or
+    characters. Characters stacked with military units cannot be used
+    to conduct character search unless they are moved from the
+    military stack [11.21]. &
+
+    Attempt to perform character search with character stacked with
+    military. &
+
+    ??? Either search is not conducted or a military search is
+    conducted instead. ???
+
+    \\ \hline 
+
+    \rn &
+
+    Only the successful search group attacks [11.23].&
+
+    Successfully search with characters. & 
+
+    Only character combat should be initiated.
+    
+    \\ \hline
+
+    \rn &
+
+    Using characters to search results in their detection [11.31]. &
+
+    Search with undetected characters. &11
+
+    Characters become detected. 
+
+    \\ \hline 
+
+    \rn &
+    
+    Searching may only be done in environs where a player has units
+    and there are \textit{detected} enemy forces [11.1].&
+
+    Attempt to search an environ where there are no detected forces. &
+
+    No search is conducted. 
+
+    \\ \hline 
+  \end{longtable}
+
+\end{center}
