@@ -10,6 +10,8 @@
 {geometry}
 
 \newcommand{\comment}[1]{{\tt #1}}
+\newcounter{rc}
+\newcommand{\rn}{\stepcounter{rc}\therc}
 
 \begin{document}
 
@@ -200,8 +202,12 @@ Unit testing for each of these classes will consist of validating the class publ
 \item class instantiation
 \end{itemize}
 
+If the variable is not open to testing due to being private or otherwise not accessible to the user or other programs, such as testing, the unit instead will be tested at the smallest unit possible and practical.
+
+All functionality accessible by the user must be unit tested except where indicated in section \ref{risk}. This includes GUI capabilities. 
+
 \subsubsection{Integration Testing}
-Integration testing will validate the defined associations between classes. This will be an incremental process performed as new classes are created and after classes have successfully passed their unit testing phase. 
+Integration testing will validate the defined associations between classes. This will be an incremental process performed as new classes are created and after classes have successfully passed their unit testing phase or as necessary for deadlines. 
 \paragraph{Integration Tests to be Performed}
 \begin{itemize}
 \item Class sets under test exhibit the relationships as defined in the class diagram
@@ -217,6 +223,7 @@ System testing will exercise the overall software product to verify conformance 
 \subsection{Manual Testing}
 Manual testing will be required for the portions of the program that can not undergo automated testing. This section applies to the testing of the user interface to simulate user orientated testing to verify conformance to the documented use cases.
 
+TODO how should manual tests be reported, what is the format?
 
 \section[ITEM PASS/FAIL CRITERIA]{ITEM PASS/FAIL CRITERIA}
 
@@ -250,33 +257,33 @@ Each section should be brief and to the point, but yet convey enough information
 \subsection{Unit Testing Pass/Fail Criteria}
 Each of these tables might need to be expanded to cover priority and type of test (i.e. unittest, integration, system). Also, additions of conditionals might also be good.
 
-%\input{character_unit_tests}
+TODO any unittests here.
 
 \newpage
 
 \subsection{Integration Testing Pass/Fail Criteria}
 
-%\input{capture_integration}
-%\newpage
-%\input{combat_integration}
-%\newpage
-%\input{game_start_integration}
-%\newpage
-%\input{missions_integration}
-%\newpage
-%\input{movement_integration}
-%\newpage
-%\input{pdb_detection_integration}
-%\newpage
-%\input{planet_integration}
-%\newpage
-%\input{searching_integration}
-%\newpage
-%\input{stacking_integration}
-%\newpage
-%\input{turn_integration}
+\input{capture_integration}
+\newpage
+\input{combat_integration}
+\newpage
+\input{game_start_integration}
+\newpage
+\input{missions_integration}
+\newpage
+\input{movement_integration}
+\newpage
+\input{pdb_detection_integration}
+\newpage
+\input{planet_integration}
+\newpage
+\input{searching_integration}
+\newpage
+\input{stacking_integration}
+\newpage
+\input{turn_integration}
 
-%\newpage
+\newpage
 
 
 \subsection{System Testing Pass/Fail Criteria}
@@ -371,7 +378,7 @@ Completion of assigned System Tests &
 \end{tabularx}
 \end{center}
 
-\section[PLANNING RISKS AND CONTINGENCIES]{PLANNING RISKS AND CONTINENCIES}
+\section[PLANNING RISKS AND CONTINGENCIES]{PLANNING RISKS AND CONTINGENCIES}
 Because the end of the semester is fixed, there are no contingencies if the product does not meet requirements by that date. Public beatings will be carried out as needed.
 
 \section[APPROVALS]{APPROVALS}
