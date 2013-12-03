@@ -1,6 +1,8 @@
 \subsubsection{AI}
 \begin{center}
 
+\setcounter{rc}{0}
+
   \begin{longtable}{| p{.5cm} | p{4.5cm} | p{4.5cm} | p{4.5cm} |}
     \hline
     \textbf{\#}&
@@ -9,53 +11,48 @@
     \textbf{Expected Result}
     \\ \hline
     
-    1 &
+    \rn &
 
-    Imperial Units in the same environ as detected Rebel units may
-    declare combat. &
+    Imperial Units in the same environ as detected Rebel units may declare combat. &
 
-    Test two things: 1) AI decides to attack the Rebel Units. 2) 
-    AI decides not to attack the Rebel Units &
+    Test two things: 1) AI decides to attack the Rebel Units. 2) AI decides not to attack the Rebel Units &
     
     Both cases occur depending on game state.
 
     \\ \hline 
 
-    2 &
+   \rn &
 
     If a character(s) engaged in combat wish to break off, they may attempt
     to do so. If successful, they are hidden and will take no further damage &
 
-    Test two things: 1) AI attempts to break off from combat. 2) AI determines 
-    flight is futile and fights to the death. &
+    Test two things: 1) AI attempts to break off from combat. 2) AI determines flight is futile and fights to the death. &
 
     Both cases occur depending on game state
 
     \\ \hline
 
-    3 & 
+    \rn & 
 
     A character engaged in a firefight may be captured or killed &
 
-    Test two things: 1) AI attempts to capture an opponent. 2) AI
-    attempts to kill the opponent. &
+    Test two things: 1) AI attempts to capture an opponent. 2) AI attempts to kill the opponent. &
 
     Both cases occur depending on game state.
 
     \\ \hline
 
-    4 &
+    \rn &
 
     AI can decide to search for a detected Rebel character or unit stack &
 
-    Test two things: 1) AI searches for the Rebel unit(s) 2) AI doesn't &
-    search for the Rebel unit(s). &
+    Test two things: 1) AI searches for the Rebel unit(s) 2) AI doesn't search for the Rebel unit(s). &
 
     Both cases occur depending on game state.
 
     \\ \hline
 
-    5 &
+    \rn &
 
     A unit can move between environs or planets. &
 
@@ -65,19 +62,15 @@
 
     \\ \hline
 
-    6 &
+    \rn &
 
     A player may assign a mission to a character &
 
     AI assigns a mission to a character. &
 
-    The character is assigned the mission based on the game state &
-    and performs it best the character can.
+    The character is assigned the mission based on the game state and performs it best the character can.
+
 
     \\ \hline
-
-
-
   \end{longtable}
-
 \end{center}
