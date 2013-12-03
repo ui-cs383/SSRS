@@ -1,0 +1,119 @@
+\documentclass[a4wide]{article}
+\usepackage{a4wide}
+\usepackage{tabulary}
+\usepackage{longtable}
+\usepackage{tabularx}
+\usepackage{graphicx}
+\usepackage
+[
+%        a4paper,% other options: a3paper, a5paper, etc
+        left=2.7cm,
+        right=2.7cm,
+%        %top=3cm,
+%        %bottom=4cm,
+]
+{geometry}
+
+\newcommand{\comment}[1]{{\tt #1}}
+\newcounter{rc}
+\newcommand{\rn}{\stepcounter{rc}\therc}
+
+\begin{document}
+
+\title{\textsc{Rules Summary Document}
+  \\ Freedom in the Galaxy, Java and Python Teams
+  \vspace{10 mm}
+  \\ Version 1.0
+  \vspace{10 mm}}
+  
+\date{\today}
+
+\author{Prepared for:
+  \\ CS 383 Course Project
+  \vspace{10 mm}
+  \\Prepared by:
+  \\ Documentation Subteams of Python and Java Teams 
+  \vspace{10 mm}}
+  
+\maketitle
+\newpage
+  
+\begin{center}
+\noindent Freedom In The Galaxy Test Plan, Python Group
+
+\vspace{10 mm}
+
+\noindent \textsc{Record of Changes}   
+
+\vspace{10 mm}
+
+
+\begin{tabularx}{\textwidth}{| X | X | X | X | X | X |}
+  \hline
+  \textbf{Change Number} &
+    \textbf{Date Completed} &
+    \textbf{Location of Change (e.g. page \# or figure \#)} &
+    \textbf{Brief Description of Change} &
+    \textbf{Approved by (initials)} &
+    \textbf{Date Approved} 
+    \\ \hline 1 & Nov 24 & ALL  & INITIAL CONVERSION & - & -
+%    \\ \hline & & & & &  
+%    \\ \hline & & & & &  
+%    \\ \hline & & & & &  
+    \\ \hline
+\end{tabularx}
+\end{center}
+\newpage 
+\tableofcontents
+\newpage
+
+\section{Introduction}
+
+This is the introduction. The following sections contain all the rules as provided by the Galactic Guide and Rules of Play, except for the last section \ref{sec:changes}, which contains all the modification to the stated rules. Metric refers to the points given for implementing the rule. Blah blah blah.
+
+
+\input{capture_rules}
+
+\input{changes_rules}
+
+%Intention must be of one of two types in combat: “kill” and “capture”. [12.3]  \\
+%
+%There is a two column shift to the left for capture combat. [12.5]  \\
+%
+%If the attacker announces capture combat, the differential is shifted two to the left. [12.6] \\
+%
+%The decision to capture or kill applies to all rounds of combat [12.8] \\
+%
+%The capture occurs after all wounds have been assigned. [12.8]
+%
+%If a character is captured, the character is chosen randomly from all active characters. [12.8]
+%
+%A unit must be assigned to guard the captured character. [12.81]
+%
+%The captured character must be moved with a unit. [12.81]
+%
+%If the captured character is guarded by an enemy character, that guarding character cannot perform missions. [12.81]
+%
+%If the captured character is guarded by an enemy military unit, that military unit is unaffected. [12.81] 
+%
+%The captured character never contributes anything to enemy units. [12.81]
+%
+%The captured character can be moved at any time during the movement phase to any other character or military unit in the same environ. [12.81]
+%
+%A captured character unit can be freed by executing the “Free Prisoners” mission. [12.82]
+%
+%A captured character unit can also be freed if the captured character is not stacked with any enemy units at any time. [12.82]
+%
+%If the capturing force is eliminated in the same combat, the character is not considered captured. [12.83]
+%
+%If a character is captured and combat is still being resolved, the captured character contributes nothing to either side. [12.84]
+%
+%A player may only declare capture at the beginning of combat and if he is the attacker. [12.85]
+%
+%The * on the combat results table are ignored during kill type combat. [12.86]
+%
+%If during the action event, “Coup Mission aborted”, or the failure to complete an “Assassination” mission, there are no enemy units in the same environ, the characters are not captured. [12.87]
+
+
+\end{document}
+  
