@@ -17,6 +17,7 @@
 \newcommand{\comment}[1]{{\tt #1}}
 \newcounter{rc}
 \newcommand{\rn}{\stepcounter{rc}\therc}
+\newcommand{\newrule}[3]{\rn & #1 & #2 & #3 \\ \hline}
 
 \begin{document}
 
@@ -87,6 +88,12 @@ This is the introduction. The following sections contain all the rules as provid
 \input{rebel_military_units_rules}
 
 \input{rebellion_rules}
+
+\input{search_rules}
+
+\input{spaceship_rules}
+
+\input{stacking_rules}
 
 % Our changes to the official document
 \input{changes_rules}
