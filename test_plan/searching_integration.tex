@@ -12,6 +12,19 @@
     \textbf{Expected Result}
     \\ \hline
     
+    \newtc{Characters stacked with military units can be unstacked and then the characters can perform a search. [11.21]}
+    {Attempt to perform character search with a character stacked with
+    military.}
+    {Search is not conducted}
+    
+    \newtc{-}
+    {Attempt to perform character search with no character stacked with military.}
+    {Search allowed.}
+    
+    \newtc{Characters stacked with military units cannot be searched. [11.1]}
+    {Attempt to search for characters stacked with military units.}
+    {Search fails}
+    
     \rn &
     
     Search is conducted with either military units or
@@ -19,7 +32,7 @@
     to conduct character search unless they are moved from the
     military stack [11.21]. &
 
-    Attempt to perform character search with character stacked with
+    Attempt to perform character search with a character stacked with
     military. &
 
     ??? Either search is not conducted or a military search is
@@ -29,34 +42,22 @@
 
     \rn &
 
-    Only the successful search group attacks [11.23].&
+    Only the units in a successful search group may attack [11.23].&
 
-    Successfully search with characters. & 
+    Successfully search with characters and choose combat. & 
 
-    Only character combat should be initiated.
+    Character combat is initiated.
     
     \\ \hline
-
-    \rn &
-
-    Using characters to search results in their detection [11.31]. &
-
-    Search with undetected characters. &
-
-    Characters become detected. 
-
-    \\ \hline 
-
-    \rn &
     
-    Searching may only be done in environs where a player has units
-    and there are \textit{detected} enemy forces [11.1].&
+    \newtc{Using characters to search results in their detection [11.31].}
+    {Search with undetected characters.}
+    {Characters become detected.}
+    
+    \newtc{Searching may only be done in environs where a player has units
+    and there are \textit{detected} enemy forces [11.1].}
+    {Attempt to search an environ where there are no detected forces.}
+    {No search is conducted.}
 
-    Attempt to search an environ where there are no detected forces. &
-
-    No search is conducted. 
-
-    \\ \hline 
   \end{longtable}
-
 \end{center}
