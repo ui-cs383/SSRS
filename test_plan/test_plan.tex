@@ -13,6 +13,7 @@
 \newcounter{rc}
 \newcommand{\rn}{\stepcounter{rc}\therc}
 \newcommand{\newtc}[3]{\rn & #1 & #2 & #3 \\ \hline}
+\newcommand{\newut}[3]{\rn & #1 & #2 & #3 \\ \hline}
 
 \begin{document}
 
@@ -259,7 +260,16 @@ Each section should be brief and to the point, but yet convey enough information
 \subsection{Unit Testing Pass/Fail Criteria}
 Each of these tables might need to be expanded to cover priority and type of test (i.e. unittest, integration, system). Also, additions of conditionals might also be good.
 
-TODO any unittests here.
+% @todp any unittests here.
+% template unit_test_template.tex
+\newcommand{\first}{.5cm}
+\newcommand{\second}{4.5cm}
+\newcommand{\third}{4.5cm}
+\newcommand{\fourth}{4.5cm}
+
+\input{unit_test_template}
+\newpage
+
 
 \subsection{Integration Testing Pass/Fail Criteria}
 
