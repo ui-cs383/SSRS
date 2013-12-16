@@ -58,7 +58,10 @@
     \textbf{Date Approved} 
     \\ \hline 1 & Nov 9 & ALL  & INITIAL PREP & - & -
     \\ \hline 2 & Nov 11 & Sec5.1 pg6 ; Sec6 pg6 ; Sec7 pg6 ; Sec8.5 pg6 ; Sec9 pg8-9 ; Sec9.2.1 pg9-13 & 1st Draft Review and Approval & EThom JHall & Nov 11  
-    \\ \hline 3 & Nov 26 & Sec 9.3;  & AI Test Cases & - & - 
+    \\ \hline 3 & Nov 12-Nov25 & Integration Tests & Added Integration Tests & - & -
+    \\ \hline 4 & Nov 26 & Sec 9.3;  & AI Test Cases & - & -
+    \\ \hline 5 & Nov 27-Dec15 & Integration Tests & Added Integration Tests & - & -
+    \\ \hline 6 & Dec 16 & Various & Reviewed Document & - & -
 
 %    \\ \hline & & & & &  
 %    \\ \hline & & & & &  
@@ -73,7 +76,7 @@
 \section[IDENTIFIER]{TEST PLAN IDENTIFIER}
 FREEDOM IN THE GALAXY MASTER TEST PLAN VERSION 1.0, PYTHON GROUP
 \section[REFERENCES]{REFERENCES}
-Use Cases and State diagrams are available at {\tt https://github.com/Freedom-Galaxy}.
+Use Cases and State diagrams are available at {\tt https://github.com/Freedom-Galaxy}. Rules are contained in the SSDS.
 
 
 \section[INTRODUCTION]{INTRODUCTION}
@@ -155,44 +158,44 @@ The testing tools for use in this project include the standard library modules d
 Training will be available from other members of the team for any questions. Tutorials are also available on the Python website for doctest and unittest. Training for Nose is unknown.
 
 \subsection{Metric}
-The number of game rules implemented will be the metric.
+Metrics for this project will be the number of rules implemented. For each rule, a metric value is specified in the SSDS? This metric value is a number between 1 and 10. This number is based on several criteria, such as difficulty of the rule, priority of the rule, and how close other rules are to the rule. In order to apply any metrics, the relevant TCS test must be implemented and passed. This implementation must be signed off by another member or the team and the results attached to the necessary places in the project documents. After these requirements have been completed, the metric value can be earned.
 
 \subsection{Configurations}
 The AI and UI will be tested using both the Rebel and Imperial player, and all User type tests for both player types will be executed.
 
 \subsection{Software}
 The software will be developed with Python 2.7.5 with doctest and unittest of the same version. The current version of Nose is 1.3.0, the current version of Pygame is 1.2.1.
-\subsection{Hardware}
-The harware specifications used for testing will be at or higher than the minimum hardware specifications for Python 2.7.5.
 
-%\begin{itemize}
-%\item Microsoft Windows XP Professional SP3/Vista SP1/Windows 7 Professional
-%\begin{itemize}
-%	\item Processor: 800MHz Intel Pentium III or equivalent
-%	\item Memory: 512 MB
-%	\item Disk space: 750 MB of free disk space
-%\end{itemize}
-%\item Ubuntu 9.10
-%\begin{itemize}
-%	\item Processor: 800MHz Intel Pentium III or equivalent
-%	\item Memory: 512 MB
-%	\item Disk space: 650 MB of free disk space
-%\end{itemize}
-%\item Macintosh OS X 10.6 Intel
-%\begin{itemize}
-%	\item Processor: Dual-Core Intel (32 or 64-bit)
-%	\item Memory: 1 GB
-%	\item Disk space: 650 MB of free disk space
-%\end{itemize}
-%\end{itemize}
-%\end{comment}
+\subsection{Hardware}
+The hardware specifications used for testing will be at or higher than the minimum hardware specifications for Python 2.7.5.
+
+\begin{itemize}
+\item Microsoft Windows XP Professional SP3/Vista SP1/Windows 7 Professional
+\begin{itemize}
+	\item Processor: 800MHz Intel Pentium III or equivalent
+	\item Memory: 512 MB
+	\item Disk space: 750 MB of free disk space
+\end{itemize}
+\item Ubuntu 9.10
+\begin{itemize}
+	\item Processor: 800MHz Intel Pentium III or equivalent
+	\item Memory: 512 MB
+	\item Disk space: 650 MB of free disk space
+\end{itemize}
+\item Macintosh OS X 10.6 Intel
+\begin{itemize}
+	\item Processor: Dual-Core Intel (32 or 64-bit)
+	\item Memory: 1 GB
+	\item Disk space: 650 MB of free disk space
+\end{itemize}
+\end{itemize}
 \subsection{Automated Testing}
 The automated test process will be divided into three phases, Unit testing, Integration testing and System testing.
 
 \subsubsection{Unit Testing}
-Unit testing will be used to validate individual classes objects. Some objects will not be required to be validated by unit testing, such as the user interface and the supporting classes and any classes or code that is exempted according to section \ref{risk}.
+Unit testing will be used to validate individual classes objects. Some objects will not be required to be validated by unit testing, such as the user interface and the supporting classes and any classes or code that is exempted according to section \ref{risk}. A template is available for adding unit tests to this document.
 
-Each team should develop TCSs as needed for their code. Each TCS should include tests for all classes as required and for each test, validate as many inputs as needed to test that the class operates as required by the rules covered in the SSRS, and also according to an requirements and design documents applicable to that class.
+Each team should develop TCSs as needed for their code. Each TCS should include tests for all classes as required and for each test, validate as many inputs as needed to test that the class operates as required by the rules covered in the SSRS, and also according to an requirements and design documents applicable to that class. Unit tests should focus on those test types mentioned in the lecture, such as coverage, edge cases, etc.
 
 \subsubsection{Required Class Unit Tests}
 \begin{itemize}
@@ -301,11 +304,11 @@ Each of these tables might need to be expanded to cover priority and type of tes
 
 
 \subsection{System Testing Pass/Fail Criteria}
-TBD
+
 %\input{}
 
 \subsection{User Interface Manual Testing Pass/Fail Criteria}
-This is up to the client team?
+
 %\input{}
 
 \section[SUSPENSION CRITERIA]{SUSPENSION CRITERIA}
@@ -352,8 +355,7 @@ Training on portions of the project shall be carried out by the authors of the c
 
 
 \section[RESPONSIBILITIES]{RESPONSIBILITIES}
-
-The responsibility of this document is the entire Python Group
+This document is the responsibly of the all team members who's tasks fall under the requirements of this documents, such as those assigned to write tests, etc. Primary responsibility of this document is Robert Meine
 
 
 \section[SCHEDULE]{SCHEDULE}
