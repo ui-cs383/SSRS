@@ -1,20 +1,24 @@
 \section{Control}
 
+% status : completed, except for determining who controls the planet
+
+\subsection{General}
+
 \setcounter{rc}{0}
 
 \begin{center}
 
-  \begin{longtable}{| p{.5cm} | p{10.0cm} | p{2.0cm} | p{2.5cm} |}
+  \begin{longtable}{| p{\first} | p{\second} | p{\third} | p{\fourth} |}
     \hline
     \textbf{\#}&
     \textbf{Rule Description}&
     \textbf{Reference(s)}&
-    \textbf{Metric Value}
+    \textbf{Metric}
     \\ \hline
     
     \rn &
     
-    Attack by Sentry robots only occurs if the non?phasing player controls the planet. &
+    Attack by Sentry robots only occurs if the non-phasing player controls the planet. &
     
     13.46, 15.51 &
     
@@ -50,6 +54,8 @@
     
     -
     
+    \\ \hline
+    
     \rn &
     
     Characters do not have any effect and are ignored in determining who controls the planet. &
@@ -60,6 +66,8 @@
     
     \\ \hline
     
+    \rn &
+    
     Neither player may perform “Coup” or “Diplomacy” missions if the planet is in a state of Rebel controlled. &
     
     15.75 &
@@ -68,13 +76,126 @@
     
     \\ \hline
     
+    \rn &
+    
     If a planet’s loyalty is shifted when a planet is in a state of Rebellion Stopped, the Loyalty marker and Rebel?control marker are moved together.  & 
     
     15.75 &
     
     - 
     
+    \\ \hline
+    
+    \rn &
+    
+    A planet must be in one of four states: "Imperial Control", "Rebellion", "Rebel Control", "Rebellion Stopped". &
+    
+    15.5 &
+    
+    -
+    
+    \\ \hline
+    
+    \rn &
+    
+    Actual control of a planet is determined by military units and status of PDB. &
+    
+    15.5 &
+    
+    -
+    
+    \\ \hline
+    
+    \rn &
+    
+    Control of a planet may change at any time. &
+    
+    15.5 &
+    
+    -
+    
         
     \\ \hline
   \end{longtable}
 \end{center}
+
+\subsection{States}
+
+\subsubsection{Imperial Control}
+
+% status : completed, except for determining who controls the planet
+
+\setcounter{rc}{0}
+
+\begin{center}
+
+  \begin{longtable}{| p{\first} | p{\second} | p{\third} | p{\fourth} |}
+    \hline
+    \textbf{\#}&
+    \textbf{Rule Description}&
+    \textbf{Reference(s)}&
+    \textbf{Metric}
+    \\ \hline
+    
+    \newrule{All planets are in the state of Imperial control at the beginning of the game, except those marked “AC” in the Armegeddon scenario.}{15.51}{-}
+    
+    \newrule{If only Imperial military units, Rebel and Imperial military units, or no military units on the planet, the Imperial player controls the planet, regardless of whether the PDB is up or down.}{15.51}{-}
+    
+    \newrule{If there are only Rebel military units on the planet and the PDB is Up, the Imperial Controls the planet.}{15.51}{-}
+    
+    \newrule{If there are only Rebel military units on the planet and the PDB is Down, neither player controls the planet.}{15.51}{-}
+    
+  \end{longtable}
+\end{center}    
+
+
+\subsubsection{Rebellion}
+
+% status : completed, except for determining who controls the planet
+
+\setcounter{rc}{0}
+
+\begin{center}
+
+  \begin{longtable}{| p{\first} | p{\second} | p{\third} | p{\fourth} |}
+    \hline
+    \textbf{\#}&
+    \textbf{Rule Description}&
+    \textbf{Reference(s)}&
+    \textbf{Metric}
+    \\ \hline
+    
+    \newrule{If there are only imperial military units, or Rebel and Imperial military units on the planet, neither player controls the planet (regardless of whether the state of the PDB).}{15.52}{-}
+    
+    \newrule{If only Rebel military units or no military units on the planet and the PDB is down, neither player controls the planet.}{15.52}{-}
+    
+    \newrule{The Rebel player may place the the PDB up (according to [16.16])}{15.52}{-}
+    
+    \newrule{If there are only Rebel military units or no military units on a planet and the PDB is Up, neither player controls the planet.}{15.52}{-}
+    
+    \newrule{If at the end of the Imperial Player?turn and there are only Rebel military units or no military units, the PDB is Up, the planet is then Rebel controlled.}{15.52}{-}  
+    
+  \end{longtable}
+\end{center}      
+
+
+\subsubsection{Rebel Control}
+
+% status : completed, except for determining who controls the planet
+
+\setcounter{rc}{0}
+
+\begin{center}
+
+  \begin{longtable}{| p{\first} | p{\second} | p{\third} | p{\fourth} |}
+    \hline
+    \textbf{\#}&
+    \textbf{Rule Description}&
+    \textbf{Reference(s)}&
+    \textbf{Metric}
+    \\ \hline
+    
+    \newrule{Rebel Control occurs when at the end of the Imperial player turn, there are only Rebel military units or no military units and the PDB is Up.}{15.53}{-}
+
+  \end{longtable}
+\end{center}      

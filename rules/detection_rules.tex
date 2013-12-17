@@ -1,0 +1,297 @@
+\section{Detection}
+\label{sub:detection}
+
+% status : in progress
+
+\subsection{Detection using a PDB}
+
+\setcounter{rc}{0}
+
+\begin{center}
+
+  \begin{longtable}{| p{\first} | p{\second} | p{\third} | p{\fourth} |}
+    \hline
+    \textbf{\#}&
+    \textbf{Rule Description}&
+    \textbf{Reference(s)}&
+    \textbf{Metric}
+    \\ \hline
+    
+    \rn &
+    
+    The PDB can be used to attempt detection of Enemy characters entering, leaving, or traveling on the planet in a spaceship &
+    
+    8.2 &
+    
+    - 
+    
+    \\ \hline
+    
+    \rn &
+    
+    PDB can attempt to detect enemy spaceships when an enemy spaceship leaves or arrives on a planet with a PDB with an “up” status and under control of the non?phasing player &
+    
+    9.3 &
+    
+    -
+    
+    \\ \hline
+    
+    \rn & 
+    
+    The outcome of the detection is one of the following four results: “Undetected”, “Detected”, and “Detected and Damaged”, and “Eliminated”. & 
+    
+    9.31 &
+    
+    -
+    
+    \\ \hline
+    
+    \rn &
+    
+    If the outcome of the detection is “Undetected”, undetected units can continue movement and detected units become undetected and can continue movement. &
+    
+    9.31 &
+    
+    -
+    
+    \\ \hline
+    
+    \rn &
+    
+    If the outcome of the detection is “Detected” all characters in the spaceship have a status now of “detected” and movement continues &
+    
+    9.31 &
+    
+    -
+        
+    \\ \hline
+    
+    \rn &
+    
+    If the outcome of the detection is “Detected and Damaged”, all the characters in the spaceship have a status of “detected”. &
+    
+    9.31 &
+    
+    -
+    
+    \\ \hline
+    
+    \rn &
+    
+    If the outcome of the detection is “Detected and Damaged”, the spaceship is eliminated when the destination is reached (No effect on the passengers). &
+    
+    9.31 &
+    
+    -
+    
+    \\ \hline
+    
+    \rn &
+    
+    If the outcome of the detection is “Eliminated”, the spaceship and all characters on board are eliminated. &
+    
+    9.31 &
+    
+    -
+    
+    \\ \hline
+    
+    \rn &
+    
+    If the PDB has a level of 0 (and status of “up”), the PDB may still detect an enemy spaceship, however, the outcomes of “Detected and Damaged” and “Eliminated” are treated as an outcome of “Detected” &
+    
+    9.31 &
+    
+    -
+    
+    \\ \hline
+    
+    \rn &
+    
+    A “down” PDB cannot be used for detection. &
+    
+    9.32 &
+    
+    -
+    
+    \\ \hline
+    
+    \rn &
+    
+    Detection against the same spaceship may be done twice (i.e. move from and to a planet controlled by an enemy PDB) & 
+    
+    9.33 &
+    
+    -
+    
+    \\ \hline
+    
+    \rn &
+    
+    Movement from one environ to another on the same planet can be detected just once. &
+    
+    9.33 &
+    
+    -
+    
+    \\ \hline
+    
+    \rn &
+    
+    Military units or characters specifically never undergo detection. &
+    
+    9.34 &
+    
+    -
+    
+    \\ \hline
+    
+    \rn &
+   
+   A stack with military units are considered detected with regards to enemy PDBs. &
+   
+   9.52 &
+   
+   -
+   
+   \\ \hline
+   
+   \rn &
+   
+   Each spaceship much be detected separately. & 
+   
+   9.54 &
+   
+   -
+   
+   \\ \hline
+
+    
+  \end{longtable}
+\end{center}
+
+\subsection{Movement and Detection}
+
+\setcounter{rc}{0}
+
+\begin{center}
+
+  \begin{longtable}{| p{\first} | p{\second} | p{\third} | p{\fourth} |}
+    \hline
+    \textbf{\#}&
+    \textbf{Rule Description}&
+    \textbf{Reference(s)}&
+    \textbf{Metric}
+    \\ \hline
+    
+    \rn &
+    
+    Detected players moving from one environ to another on the same planet without a spaceship change status from “detected” to “undetected” if no detected characters are in the destination environ &
+    
+    9.35 &
+    
+    - 
+    
+    \\ \hline
+    
+    \rn &
+    
+    If a spaceship receives two outcomes of “Detected and Damaged” in one turn, upon the second “Detected and Damaged” result, the outcome is considered to be “Eliminated”. &
+    
+    9.35 &
+    
+    -
+    
+    \\ \hline
+    
+    \rn &
+    
+    If “undetected” characters move to an environ with “detected” characters, those “undetected” characters become “detected”. &
+    
+    9.4 &
+    
+    -
+    
+    \\ \hline
+    
+    \rn &
+    
+    If “detected” characters move to an environ with “undetected” characters, the “undetected” characters become “detected”. &
+    
+    9.4 &
+    
+    -
+    
+    \\ \hline
+    
+    \rn &
+    
+    Enemy can make a reaction move due to “detected” characters and may conduct a search for those characters during the Search Phase & 
+    
+    9.41 &
+    
+    -
+    
+    \\ \hline
+    
+    \rn &
+    
+    Characters may be detected due to events on an action card when resolving mission or due to a search. & 
+    
+    9.42 &
+    
+    -
+    
+   \\ \hline
+   
+   \rn &
+   
+   Assassination mission can only be performed against a detected enemy character. &
+   
+   9.44 &
+   
+   -
+   
+   \\ \hline
+   
+   \rn &
+   
+   If a spaceship leaves a planet and is ineligible to conduct the Detection Routine, the spaceship and all characters are no longer detected. & 
+   
+   9.45 &
+   
+   -
+   
+   \\ \hline
+
+
+  \end{longtable}
+\end{center}
+
+\subsection{Detection and Searching}
+
+\setcounter{rc}{0}
+
+\begin{center}
+
+  \begin{longtable}{| p{\first} | p{\second} | p{\third} | p{\fourth} |}
+    \hline
+    \textbf{\#}&
+    \textbf{Rule Description}&
+    \textbf{Reference(s)}&
+    \textbf{Metric}
+    \\ \hline
+    
+    \rn &
+    
+    When a player uses characters to search, those characters are automatically detected. &
+    
+    11.31 &
+    
+    - 
+    
+    \\ \hline
+
+  \end{longtable}
+\end{center}    

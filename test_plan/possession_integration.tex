@@ -1,0 +1,154 @@
+\subsubsection{Possessions}
+
+\begin{center}
+
+  \begin{longtable}{| p{.5cm} | p{4.5cm} | p{4.5cm} | p{4.5cm} |}
+    \hline
+    \textbf{\#} &
+    \textbf{Rule Description} &
+    \textbf{Test Description} &
+    \textbf{Expected Result}
+    \\ \hline
+    
+    1 &
+
+    When rebel player receives a possession it must be immediately
+    assigned to a character [14.11]. &
+
+    Get possession as rebel character. &
+    
+    Prompt to assign possession to character. 
+
+    \\ \hline 
+
+    2 &
+
+    When a rebel player receives a possession from a successful
+    mission, the player must assign the possession to a character in
+    that mission group [14.11]. &
+
+    Get possession from mission and try to assign to character outside
+    of mission group. &
+
+    Character cannot receive possession.
+    
+    \\ \hline
+
+    3 &
+
+    Possessions are transferred between characters at the beginning of
+    the missions phase [14.12]. &
+
+    Attempt to transfer possession during operations phase. &
+
+    Possession is not transferred. 
+
+    \\ \hline 
+
+    4 &
+    
+    Possessions may only be transferred between characters in the same
+    environ [14.12]. &
+
+    Attempt to transfer possession to character in another environ. &
+
+    Possession is not transferred. 
+
+    \\ \hline
+
+    5 &
+    
+    A character may only have one companion possession at one time
+    [14.13]. &
+
+    Attempt to assign companion possession to character that already
+    has a companion possession. &
+
+    Character is not assigned companion possession. 
+
+    \\ \hline 
+
+    6 &
+    
+    A character may only have one spaceship possession at one time [14.13]. &
+
+    Attempt to assign spaceship possession to character that already
+    has a spaceship possession. &
+
+    Character is not assigned spaceship possession. 
+ 
+    \\ \hline
+
+    7 &
+
+    During star system game, if a possession becomes inoperative, it is
+    lost [14.22]. &
+
+    Set possession to inoperative. &
+
+    Possession is removed from play. 
+
+    \\ \hline 
+
+    8 &
+
+    If possession card states "lost after one use", it is returned to
+    the possession card deck after use [14.23]. &
+
+    Use possession that is lost after one use. &
+    
+    Possession is removed from character inventory and put back in
+    possession deck.
+
+    \\ \hline 
+
+    9 &
+
+    If a character is killed, any possessions besides spaceships are
+    removed from play [14.25]. &
+
+    Kill a character with possessions. Kill a character with a
+    spaceship. &
+
+    Possessions are lost and not returned to deck. Spaceship is not
+    lost.
+    
+    \\ \hline
+
+    10 &
+
+    Destroyed possessions are not returned to the possession deck
+    [14.26]. &
+
+    Destroy a possession. &
+
+    Possessions are lost and not returned to deck. 
+
+    \\ \hline
+
+    11 &
+
+    If a rebel character is captured, their possessions, except for
+    spaceships, are removed from play [14.26]. &
+
+    Capture a rebel character. &
+
+    Possessions are lost and not returned to deck. Spaceship is not
+    lost.
+
+    \\ \hline
+
+    12 &
+
+    A companion counts as a passenger on a spaceship [14.3]. &
+
+    Attempt to add a character with a companion to a ship that has
+    only one more spot available. &
+
+    Character does not board ship.
+
+    \\ \hline
+
+  \end{longtable}
+
+\end{center}
