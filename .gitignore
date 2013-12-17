@@ -31,3 +31,7 @@
 *.xdy
 *.tdo
 *.xcf
+
+# Excluding pdfs for now to avoid potential merge issues of binary files.
+# Just compile the LaTeX yourself.
+*.pdf
