@@ -11,7 +11,7 @@
 \usepackage{supertabular}
 \usepackage{hhline}
 \usepackage{hyperref}
-\hypersetup{pdftex, colorlinks=true, linkcolor=blue, citecolor=blue, filecolor=blue, urlcolor=blue, pdftitle=SYSTEM AND SOFTWARE ARCHITECTURAL AND DETAILED DESIGN DESCRIPTI, pdfauthor=Clinton Jeffery, pdfsubject=, pdfkeywords=}
+\hypersetup{pdftex, colorlinks=true, linkcolor=blue, citecolor=blue, filecolor=blue, urlcolor=blue, pdftitle=SYSTEM AND SOFTWARE ARCHITECTURAL AND DETAILED DESIGN DESCRIPTION, pdfauthor=Clinton Jeffery, pdfsubject=, pdfkeywords=}
 \usepackage[pdftex]{graphicx}
 % Outline numbering
 \setcounter{secnumdepth}{5}
@@ -104,15 +104,15 @@
 \pagestyle{Standard}
 \setlength\tabcolsep{1mm}
 \renewcommand\arraystretch{1.3}
-\title{SYSTEM AND SOFTWARE ARCHITECTURAL AND DETAILED DESIGN DESCRIPTI}
-\author{Clinton Jeffery}
-\date{2010-11-18T11:30:10.24}
+\title{SYSTEM AND SOFTWARE ARCHITECTURAL AND DETAILED DESIGN DESCRIPTION}
+\author{Python Team}
+\date{2013-12-19}
 \begin{document}
 \clearpage\setcounter{page}{1}\pagestyle{Standard}
 \thispagestyle{FirstPage}
 {\centering\selectlanguage{english}\bfseries\color{black}
 SYSTEM AND SOFTWARE\newline
-DESIGN DESCRIPTION (SSDD) TEMPLATE
+DESIGN DESCRIPTION (SSDD)
 \par}
 
 {\centering\selectlanguage{english}\bfseries\color{black}
@@ -120,7 +120,9 @@ DESIGN DESCRIPTION (SSDD) TEMPLATE
 \par}
 
 {\centering\selectlanguage{english}\bfseries\color{black}
-Version A.2, November 2010
+Version 0.1
+\newline
+December 19,2013
 \par}
 
 {\centering\selectlanguage{english}\bfseries\color{black}
@@ -172,7 +174,7 @@ FOR
 \bigskip
 
 {\centering\selectlanguage{english}\bfseries\color{black}
-[ state program/system name here ]
+Freedom In The Galaxy
 \par}
 
 
@@ -203,11 +205,11 @@ FOR
 \bigskip
 
 {\centering\selectlanguage{english}\bfseries\color{black}
-Version [[insert version number]]
+Version 0.1
 \par}
 
 {\centering\selectlanguage{english}\bfseries\color{black}
-[[insert date]]
+December 19, 2013
 \par}
 
 
@@ -221,7 +223,7 @@ Prepared for:
 \par}
 
 {\centering\selectlanguage{english}\bfseries\color{black}
-[ state customer name(s) here ]
+Dr. Clinton Jeffery
 \par}
 
 
@@ -235,9 +237,53 @@ Prepared by:
 \par}
 
 {\centering\selectlanguage{english}\bfseries\color{black}
-[insert your name(s)]
+Robert Meine
 \par}
-
+{\centering\selectlanguage{english}\bfseries\color{black}
+Ranger Adams
+\par}
+{\centering\selectlanguage{english}\bfseries\color{black}
+Justin Hall
+\par}
+{\centering\selectlanguage{english}\bfseries\color{black}
+Sean Harris
+\par}
+{\centering\selectlanguage{english}\bfseries\color{black}
+Emeth Thompson
+\par}
+{\centering\selectlanguage{english}\bfseries\color{black}
+Christopher Waltrip
+\par}
+{\centering\selectlanguage{english}\bfseries\color{black}
+Ben Cumber
+\par}
+{\centering\selectlanguage{english}\bfseries\color{black}
+Jordan Leitman
+\par}
+{\centering\selectlanguage{english}\bfseries\color{black}
+Joe Matranga
+\par}
+{\centering\selectlanguage{english}\bfseries\color{black}
+Greg Donaldson
+\par}
+{\centering\selectlanguage{english}\bfseries\color{black}
+Jeffery Crocker
+\par}
+{\centering\selectlanguage{english}\bfseries\color{black}
+Chi-Hsiang Wang
+\par}
+{\centering\selectlanguage{english}\bfseries\color{black}
+Tao Zhang
+\par}
+{\centering\selectlanguage{english}\bfseries\color{black}
+Paul Bailey
+\par}
+{\centering\selectlanguage{english}\bfseries\color{black}
+Andrew Schwartzmeyer
+\par}
+{\centering\selectlanguage{english}\bfseries\color{black}
+Samual Foster
+\par}
 {\centering\selectlanguage{english}\bfseries\color{black}
 University of Idaho
 \par}
@@ -613,7 +659,7 @@ approved\\\hline
 A - ADDED \ M - MODIFIED \ D -- DELETED}
 
 \clearpage{\centering\selectlanguage{english}\bfseries\color{black}
-[ put program /system name here ]
+Freedom In The Galaxy
 \par}
 
 {\centering\selectlanguage{english}\bfseries\color{black}
@@ -634,40 +680,33 @@ Section\ \ Page}
 \section[INTRODUCTION]{\selectlanguage{english}\bfseries\color{black}
 INTRODUCTION}
 {\selectlanguage{english}\itshape\color{black}
-This section of this document should introduce this document and its
-audience, and the project, the system, and the software object of this
-SSDD. \ For compliance with ISO/IEC 42010:2007 (§5.1) (and ISO/IEC
-12207:2008) at a minimum the following information shall be included in
-this SSDD document: Date of Document Issue, Document Status, Document
-Issuing Organization, Document Change History, Document Summary,
-Document Scope, Document Context, Glossary, and References.}
+Freedom In The Galaxy is classic strategic and tactical board game first published in 1979 by SPI. It is now published by Avalon Hill and has been well loved by its fans for decades. The game is rated as medium complexity by BroardGameGeek.com, the premiere online boardgamer's lounge. Its rule set and design has long been an excellent candidate for adaptation to software by unexperienced Software Engineering students with a desire to learn. This document outlines the architecture and design of Python Team's implementation of Freedom In The Galaxy to a digital version. It is being compiled for the project's members, reviewers, and future collaborators.  
+}
 
 \subsection{IDENTIFICATION}
-{\selectlanguage{english}\itshape\color{black}
-This subsection shall contain a full identification of this document,
-and the system and software to which this document applies, including,
-as applicable, identification number(s), title(s), abbreviation(s),
-version number(s) for the document, the system, and the software, and
-software release number(s).}
-
 {\selectlanguage{english}\color{black}
-[Insert text here.]}
+Title : SYSTEM AND SOFTWARE DESIGN DESCRIPTION (SSDD)
+\newline
+Version: 0.1
+\newline
+Software: Freedom In The Galaxy
+\newline
+Release : 0.1
+}
 
 \subsection[DOCUMENT PURPOSE, SCOPE, AND INTENDED
 AUDIENCE]{\selectlanguage{english}\bfseries\color{black} DOCUMENT
 PURPOSE, SCOPE, AND INTENDED AUDIENCE}
-{\selectlanguage{english}\itshape\color{black}
-This subsection shall contain a statement on the purpose of this
-document, the scope or context of the document, and the intended
-audience.}
 
 \subsubsection{Document Purpose}
 {\selectlanguage{english}\color{black}
-[Insert text here.]}
+This document is meant to describe and detail all aspects of the software architecture and design. It should provide references to the SSRS which map the component software structures and design features to specific requirements. The SSDD also should describe design features that are far abstracted from the requirements. These features could be alterations to the original requirements or implementation design choices.
+}
 
 \subsubsection{Document Scope and/or Context}
 {\selectlanguage{english}\color{black}
-[Insert text here.]}
+
+}
 
 \subsubsection{Intended Audience for Document}
 {\selectlanguage{english}\color{black}
