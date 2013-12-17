@@ -1,0 +1,832 @@
+\documentclass[12pt,letterpaper]{scrreprt}
+
+%----------------------------------------------------------------------
+%				Required Packages
+%----------------------------------------------------------------------
+\usepackage{usecases}
+\usepackage{enumitem}
+%\usepackage{paralist}
+%\usepackage{tabto}
+\usepackage[top=2cm,bottom=3.5cm]{geometry}
+
+%----------------------------------------------------------------------
+%				Title Page
+%----------------------------------------------------------------------
+\title{CS383: Software Engineering}
+\subtitle{HW2: Use Cases\\Fall 2013}
+\author{CS383 Python Team} % Include everyone's name?
+\date{}
+
+%----------------------------------------------------------------------
+%				Additional Settings
+%----------------------------------------------------------------------
+\setcounter{tocdepth}{3}
+\setcounter{secnumdepth}{3}
+
+
+
+
+%----------------------------------------------------------------------
+%				Use Case Document Start
+%----------------------------------------------------------------------
+\begin{document}
+
+% Initializations
+%\NumTabs{2} % This is for creating a two column use case scenario
+\maketitle
+\tableofcontents % Eventually uncomment this
+
+\chapter{Use cases}
+        \section{Pre-Game}
+                \subsection{Pre-game I: Setting up the Player(s)}
+                \begin{usecase}
+                  \addtitle{Pre-game I}{Setting up the Player(s)}
+                  \addfield{Summary}{The players connect with each other.}
+                  \additemizedfield{Actors}{
+                    \item Human player(s)
+                  }
+                  \additemizedfield{Preconditions}{
+                    \item Game client(s) and server(s) have been started
+                  }
+                  \additemizedfield{Primary Scenario: Multi-player}{
+                    \item Players adjust settings and ensure general connectivity
+                    \item Players find each other either via server matching or other communication
+                    \item Players connect to each other for the game-start
+                    \item Players choose a side, one of:
+                      \begin{enumerate}
+                        \item Rebel Player
+                        \item Imperial Player
+                      \end{enumerate}
+                  }
+                  \additemizedfield{Alternative Scenario: Single-player}{
+                    \item Player adjusts settings
+                    \item Player chooses side, one of:
+                      \begin{enumerate}
+                        \item Rebel Player
+                        \item Imperial Player
+                      \end{enumerate}
+                    \item Player chooses AI difficulty level
+                  }
+                 \end{usecase}
+                \subsection{Pre-game II: Choosing the Game}
+                \begin{usecase}
+                  \addtitle{Pre-game II}{Choosing the Game}
+                  \addfield{Summary}{The players choose a type of game
+                    before scenario selection.}
+                  \additemizedfield{Actors}{
+                        \item Rebel Player
+                        \item Imperial Player
+                  }
+                  \additemizedfield{Preconditions}{
+                        \item Player match-up has been completed
+                        \item Computer and Network players have been set-up
+                  }
+                  \additemizedfield{Primary Scenario: Multi-player}{
+                        \item The players vote to agreement on one of the following games:
+                              \begin{enumerate}
+                                    \item Star-system Game
+                                    \item Province Game
+                                    \item Galactic Game
+                              \end{enumerate}
+                  }
+                  \additemizedfield{Alternative Scenario: Single-player}{
+                        \item If single-player, the human player chooses one of:
+                              \begin{enumerate}
+                                    \item Star-system Game
+                                    \item Province Game
+                                    \item Galactic Game
+                              \end{enumerate}
+                  }
+                \end{usecase}
+                \subsection{Pre-game III: Choosing the Scenario}
+                \begin{usecase}
+                  \addtitle{Pre-game III}{Choosing the Scenario}
+                  \addfield{Summary}{The players choose from among the
+                    available scenarios for their chosen game.}
+                  \additemizedfield{Actors}{
+                    \item Imperial Player
+                    \item Rebel Player
+                  }
+                  \additemizedfield{Preconditions}{
+                    \item Game type has been chosen
+                  }
+                  \additemizedfield{Primary Scenario: Star-System Game}{
+                    \item The system displays the Star-System game scenarios and their information
+                          \begin{enumerate}
+                                \item Flight to Egrix
+                                \item The Varu Powderkeg
+                          \end{enumerate}
+                    \item The players vote to agreement on which scenario to play
+                  }
+                  \additemizedfield{Alternative Scenario: Province Game}{
+                    \item The system displays the Province game scenarios and their information
+                        \begin{enumerate}
+                              \item The Empire's Backdoor
+                              \item Orlog Besieged
+                        \end{enumerate}
+                    \item The players vote to agreement on which scenario to play
+                  }
+                  \additemizedfield{Alternative Scenario: Galactic Game}{
+                    \item There is only one scenario for the Galactic Game, and that is the Campaign
+                    \item The players
+                  }
+                \end{usecase}
+        \section{Game opening}
+                \subsection{Game Setup I: Game Setup}
+                
+                \begin{usecase}
+                	\addtitle{Game Setup I}{Game Setup}
+                	\addfield{Summary}{System sets up game state and then Players make purchases and place armies before the start of the first Game-Turn}
+                	\additemizedfield{Actors}{
+                		\item Rebel Player
+                		\item Imperial Player
+					}
+					\additemizedfield{Preconditions}{
+						\item Pre-Game Setup has been completed
+						}
+					\addscenario{Primary Scenario}{
+						\item System performs initial setup
+						\item Imperial Player purchases armies
+						\item Imperial Player places armies
+						\item Rebel Player determines location of Rebel Secret Base (Galactic only)
+					}
+                \end{usecase}
+                              
+\section{Movement}
+              \subsection{Movement I: Within a Planet}
+                \begin{usecase}
+                  \addtitle{Movement I}{Movement Within a Planet}
+                  \addfield{Summary}{Player moves Character(s) or military units from Environ to Environ on single planet}
+                  \additemizedfield{Actors}{
+                    \item Phasing Player
+                    \item Non-Phasing Player
+                  }
+                  \additemizedfield{Preconditions}{
+                    \item It is the movement segment of the phasing players turn or it is the reaction segment of the non-phasing player
+                  }
+                  \additemizedfield{Primary Scenario: Units not detectable by PDB}{
+                    \item Player chooses which units are to be moved and where to move them
+                    \item System moves units to new environ
+                  }
+                  \additemizedfield{Alternative Scenario: Units are dectectable by PDB}{
+                    \item System handles PDB Rules
+                  }
+                  \end{usecase}
+                
+                 
+                \subsection{Movement II: Movement between Planets}
+                \begin{usecase}
+                  \addtitle{Movement II}{Movement between planets}
+                  \addfield{Summary}{Player moves elegible units between planets}
+                  \additemizedfield{Actors}{
+                        \item Phasing Player
+                        \item Non-Phasing Player
+                  }
+                  \additemizedfield{Preconditions}{
+                       \item Military units must be mobile or stacked with mobile military units. Characters must be on a ship
+                       \item non-phasing player may intercept
+                  }
+                  \additemizedfield{Primary Scenario: Travel occurs in single star system}{
+                                    \item Player chooses which units are to be moved and where to move them within the star system.
+                                    \item System processes PDB check.
+                                    \item Non Phasing player may react on per orbit basis, intercepting.
+                  }
+                  \additemizedfield{Alternative Scenario: Travel occurs between multiple star systems }{
+                                        \item Player chooses which units are to be moved inside one star system and the destination inside another star system.
+                                    \item System processes PDB check
+                                    \item Player Hyper Jumps
+                                    \item Non Phasing Player may react on per orbit basis
+                  }
+                \end{usecase}
+
+
+
+    
+	\subsection{Movement III: Interception}
+	\begin{usecase}
+	\addtitle{Movement III}{Interception}
+	\addfield{Summary}{The non-Phasing Player responds to Phasing Player Interplanetary Military Movement}
+	\additemizedfield{Precondition}{
+		\item Phasing Player moves military unit in/out of Orbit Box containing non-Phasing Player military units
+		\item OR Phasing Player military unit begins Interplanetary Military Movement Segment inside Orbit Box containing non-Phasing Player military units
+	}
+	\additemizedfield{Precondition}{
+		\item non-Phasing Player must have at least one (non-Atrocity, non-Suicide Squad) military unit available to intercept (not on interception stack)
+	}
+	\additemizedfield{Actor}{
+		\item Non-Phasing Player
+	}
+	\addscenario{Success Scenario}{
+		\item Non-Phasing Player chooses to intercept Phasing Player's unit
+		\item Non-Phasing Player chooses one or more (non-Atrocity, non-Suicide Squad) military units to intercept with
+		\item System places intercepted and intercepting units on Orbit Box's interception stack
+		\item Phasing Player's Interplanetary Military Movement Segment continues
+	}
+	\addscenario{Alternative Scenario: Declines Intercept}{
+		\item Non-Phasing Player chooses not to intercept
+		\item Phasing Player's Interplanetary Military Movement Segment continues
+	}
+	\end{usecase}
+	\section{Military Combat}
+\subsection{Military Combat I: Environ Military Combat}
+\begin{usecase}
+  \addtitle{Military Combat I}{Environ Military Combat}
+  \addfield{Summary}{
+  	Both players have military units in the same environ and the Movement and Enemy reaction segments of the operation phase are over. One of the players must decide to attack and the combat is resolved by the computer.
+  	}
+  \additemizedfield{Actors}{
+  \item Phasing Player
+  \item Non-Phasing Player
+  }
+  \additemizedfield{Preconditions}{
+      \item Movement Segment of the Operations phase has been completed by the Phasing Player.
+      \item Enemy Reaction Segment of the Operations phase has been completed by the Non-Phasing Player.
+      \item There must be an environ with both players military units.
+  }
+  \addscenario{Primary Scenario}{
+    \item Phasing Player chooses which environ to resolve conflict.
+    \item Phasing Player decides if they want to attack.
+    \item If yes...
+      \begin{itemize}
+        \item Players choose leaders if they can.
+        \item The computer determines the outcome of the attack.
+      \end{itemize}
+    \item If no...
+      \begin{itemize}
+        \item Does Non-Phasing Player wish to attack?
+        \item If yes...
+          \begin{itemize}
+            \item Players choose leaders if they can.
+            \item The computer determines the outcome of the attack.
+          \end{itemize}
+        \item If not
+        \item Phasing Player chooses next environ. Process repeats until there are no remaining conflicts.
+        \end{itemize}
+  	}
+\end{usecase}
+	
+\subsection{Military Combat II: Combat after a Rebellion}
+\begin{usecase}
+  \addtitle{Military Combat II}{Environ Military Combat after a Rebellion}
+  \addfield{Summary}{A rebellion has occured and the Rebel player receives military units as a result.
+                     Those rebel military units are also placed on an environ with imperial units. The rebel
+                   player can choose to attack.}
+  \additemizedfield{Actors}{
+      \item Rebel Player
+      \item Imperial Player
+  }
+  \additemizedfield{Preconditions}{
+      \item A rebellion must have just occurred.
+  }
+  \addscenario{Primary Scenario}{
+  \item Does the rebel wish to attack?
+  \item If yes...
+    \begin{itemize}
+      \item Players choose leaders.
+      \item Computer handles the attack.
+    \end{itemize}
+  \item If no...
+  \item Nothing happens. Player Turn resumes.
+  }
+\end{usecase} 
+\subsection{Military Combat III: Space Military Combat}
+\begin{usecase}
+  \addtitle{Military Combat III}{Space Military Combat}
+  \addfield{Summary}{Two opposing enemy units in the same orbit box may enter combat.}
+  \additemizedfield{Actors}{
+      \item Phasing Player
+      \item Non-Phasing Player
+  }
+  \additemizedfield{Preconditions}{
+  		\item Province or Galactic Game is being played.
+      \item Neither unit is in an interception stack.
+      \item Both units must be in the same orbit box.
+  }
+  \addscenario{Primary Scenario}{
+    \item Phasing Player chooses which orbit to resolve conflict.
+    \item Phasing Player decides if they want to attack.
+    \item If yes...
+      \begin{itemize}
+        \item Players choose leaders if they can.
+        \item The computer determines the outcome of the attack.
+      \end{itemize}
+    \item If no...
+      \begin{itemize}
+        \item Does Non-Phasing Player wish to attack?
+        \item If yes...
+          \begin{itemize}
+            \item Players choose leaders if they can.
+            \item The computer determines the outcome of the attack.
+          \end{itemize}
+        \item If no...
+        \item Phasing Player chooses next orbit. Process repeats until there are no remaining conflicts.
+        \end{itemize}
+  }
+\end{usecase}	
+		\section{Character Combat}
+			% Section Author: Jeff Crocker
+		\subsection{Character Combat I: Combat against Enemy}
+		\begin{usecase}
+		\addtitle{Character Combat I}{Phasing vs Non-Phasing}
+		\addfield{Summary}{Non-Phasing Player's characters or military units have found Phasing Player characters and initiated combat, which shall be resolved immediately in a series of rounds of character combat procedure.}
+		\additemizedfield{Actors}{
+			\item Phasing Player
+			\item Non-Phasing Player
+		}
+		\additemizedfield{Preconditions}{
+			\item Non-Phasing Player's search has found enemy characters and has initiated combat.
+			}
+		\addscenario{Primary Scenario}{
+				\item Determine whether the character combat will be \textit{hand to hand} or a \textit{firefight}.
+				\begin{enumerate}
+				\item If a squad is the attacking force, the combat is a firefight
+				\item If characters are the attacking force, the Non-Phasing Player may dictate whether \textit{hand to hand} or a \textit{firefight}.
+				\end{enumerate}
+			\item Non-Phasing Player announces whether attempting to kill or capture.
+				\begin{enumerate}
+				\item If attempting to capture, shift two-columns to the left on the Character Combat Results Table for all resulting combat, including \textit{break off} attemps.
+				\end{enumerate}
+			\item Phasing Player assigns \textit{active} defenders from those available with at least one character required.
+			\item System determines \textit{combat differential} and informs both Phasing and Non-Phasing players.
+			\item Phasing Player may attempt to \textit{break off} from combat. 
+				\begin{enumerate}
+				\item Phasing Player attempts \textit{break off}
+					\begin{enumerate}
+					\item If \textit{break off} successful for only inactive defenders, those defenders are no longer found or involved in combat.
+					\item If \textit{break off} successful for active AND inactive defenders, both are no longer found and combat ends.
+					\item If \textit{break off} is unsuccessful defenders suffer a right column shift on the Character Combat Results Table for combat.
+					\end{enumerate}
+				\end{enumerate}
+			\item Unless all defending characters have succeeded in breaking off, System determines combat consequences, i.e. number of wounds and captured characters.
+			\item Both Phasing and Non-Phasing Player allocate respective wounds.
+			\item Repeat steps 3-7 indefinitely as long as both sides have live uncaptured characters and defender has not broken off.
+		}
+		\addscenario{Alternative Scenario: Phasing Player Fully Breaks Off}{
+			\item If Phasing Player \textit{breaks off} with all remaining units, combat ends.
+		}
+		\additemizedfield{Related Use Cases}{
+			\item Search: Effects of a Search
+		}
+		\end{usecase}
+		
+		\subsection{Character Combat II: Combat against System}
+		\begin{usecase}
+		\addtitle{Character Combat II}{Phasing vs Non-Player Attackers}
+		\addfield{Summary}{Characters have encountered either a Creature or Irate Locals as an action event.}
+		\additemizedfield{Actors}{
+			\item Phasing Player
+		}
+		\additemizedfield{Preconditions}{
+			\item Encountered a Creature or Irate Locals as an action event.
+			}
+		\addscenario{Primary Scenario}{
+				\item Determine whether the character combat will be \textit{hand to hand} or a \textit{firefight}.
+				\begin{enumerate}
+				\item If a Creature is the attacking force, the combat is a \textit{hand to hand}
+				\item If Irate Locals are the attacking force, reference the Irate Locals Chart to determine combat type.
+				\end{enumerate}
+			\item System informs Phase Player that attacker is attempting to kill, as Creatures and Irate Locals always do.
+			\item Phasing Player assigns \textit{active} defenders from those available with at least one character required.
+			\item System determines \textit{combat differential} and informs both Phasing and Non-Phasing players.
+			\item Phasing Player may attempt to \textit{break off} from combat. 
+				\begin{enumerate}
+				\item Phasing Player attempts \textit{break off}
+					\begin{enumerate}
+					\item If \textit{break off} successful for only inactive defenders, those defenders are no longer found or involved in combat.
+					\item If \textit{break off} successful for active AND inactive defenders, both are no longer found and combat ends.
+					\item If \textit{break off} is unsuccessful defenders suffer a right column shift on the Character Combat Results Table for combat.
+					\end{enumerate}
+				\end{enumerate}
+			\item Unless all defending characters have succeeded in breaking off, System determines combat consequences, i.e. number of wounds and captured characters.
+			\item Phasing Player allocates wounds.
+			\item System allocates wounds to Creature or Irate Locals.
+			\item Repeat steps 3-7 indefinitely as long as both sides have live uncaptured characters and defender has not broken off.
+		}
+		\addscenario{Alternative Scenario: Phasing Player Fully Breaks Off}{
+			\item If Phasing Player \textit{breaks off} with all remaining units, combat ends.
+		}
+		\additemizedfield{Related Use Cases}{
+			\item Missions: Mission Phase
+		}
+		\end{usecase}	
+	\section{Search}
+                \subsection{Search I: Search Phase}
+                % Search Overview Use Case
+                \begin{usecase}
+                \addtitle{Search I}{Search Phase}
+                \addfield{Summary}{The Non-Phasing Player may attempt to search out detected enemy character(s). If the search is successful, the Non-Phasing Player gains intel on the enemy character(s) and may then engage in Character Combat. Searches are attempted with friendly character(s) and/or military units on a per-Environ basis where there are enemy character(s) detected.}
+                \additemizedfield{Actors}{
+                        \item Non-Phasing Player
+                }
+                \additemizedfield{Preconditions}{
+                        \item Operations Phase has been completed and/or Phasing Player is attempting a mission.
+                        \item Non-Phasing player has character(s) and/or military units present in an Environ with detected enemy character(s).
+                        }
+                \addscenario{Primary Scenario}{                                         
+                        \item                   
+                                \begin{enumerate}
+                                        \item Non-Phasing Player chooses an eligible Environ.                                                   \begin{center}
+                                        • -- OR --
+                                        \end{center}
+                                        \item Phasing Player has character(s) attempting a mission and has become detected.
+                                \end{enumerate}
+                        \item System determines and displays eligible characters and/or military units.
+                        \item Non-Phasing Player chooses eligible units to attempt a search.
+                                
+                        \item If the search is successful, the Non-Phasing player may decide to engage the enemy in Character Combat.
+                        \item Non-Phasing Player may choose the next eligible Environ to perform a search in and the process repeats until no eligible Environs remain.
+                                \begin{enumerate}
+                                        \item If the Phasing Player has character(s) attempting a mission and becomes detected, steps 2-4 are repeated.
+                                \end{enumerate}
+                }
+                \addscenario{Alternative Scenario: Do Not Search}{
+                        \item Non-Phasing Player may choose not to search.  In this case, the Search Phase is complete.
+                }
+                \addscenario{Alternative Scenario: Search Not Possible}{
+                        \item No eligible Environs are present for searching; the Search phase is skipped.
+                }
+                \additemizedfield{Related Use Cases}{
+                        \item Character Combat: %waiting for character combat use case
+                }
+                \end{usecase}
+
+        \section{Possessions}
+                \subsection{Possessions I: Using Possessions}
+                % Search Overview Use Case
+                \begin{usecase}
+                \addtitle{Possessions I}{Using Possessions}
+                \addfield{Summary}{The Rebel Player may attempt to use Possession(s) owned by his/her character(s) during an eligible phase. Once the item is used, the system determines the state of the Possession.}
+                \additemizedfield{Actors}{
+                        \item Rebel Player 
+                }
+                \additemizedfield{Preconditions}{
+                        \item Rebel player is in an eligible phase to use a Possession in their control.
+                        }
+                \addscenario{Primary Scenario}{                                                     
+                                                 \item Rebel player opens their inventory to look at their available Possessions.                        
+                        \item Rebel player chooses a Possession they wish to use.
+                        \item The item is used and its state is determined by the system.
+                        \item Rebel player may continue to use available Possessions.
+                        \item Rebel player closes inventory.
+                        \item The phase continues.
+                }
+                \addscenario{Alternative Scenario: Possessions Not Used}{
+                        \item Rebel player doesn't use a Possession and closes inventory.
+                }
+                \additemizedfield{Related Use Cases}{
+                        \item None
+                }
+                \end{usecase}                           
+\subsection{Possessions II: Transferring Possessions}
+                % Search Overview Use Case
+                \begin{usecase}
+                \addtitle{Possessions II}{Transfer Possessions}
+                \addfield{Summary}{The Rebel Player may assign a Possession to another character that is stacked with the character who currently owns the Possession.}
+                \additemizedfield{Actors}{
+                        \item Rebel Player
+                }
+                \additemizedfield{Preconditions}{
+                        \item Rebel player is beginning the Mission Phase and has stacked characters with Possessions.
+                        }
+                \addscenario{Primary Scenario}{                                                     
+                        \item Rebel player opens their inventory to look at their available Possessions.                        
+                        \item Rebel player chooses a Possession they wish to reassign.
+                        \item Rebel player chooses another character the Possession is reassigned to.
+                        \item Rebel player closes inventory.
+                        \item The phase continues.
+                }
+                \addscenario{Alternative Scenario: Possessions Not Transfered}{
+                        \item Rebel player doesn't transfer a Possession and closes inventory.
+                }
+                \additemizedfield{Related Use Cases}{
+                        \item None
+                }
+                \end{usecase} 
+	
+		\section{Missions}
+		\subsection{Missions I: Mission Phase}
+		% Missions Overview Use Case
+		\begin{usecase}
+		\addtitle{Missions I}{Mission Phase}
+		\addfield{Summary}{The phasing player goes on missions to try and gain resources of some sort to help him/her win the game.  Missions are chosen and completed on a per-Environ basis.}
+		\additemizedfield{Actors}{
+			\item Phasing Player
+		}
+		\additemizedfield{Preconditions}{
+			\item Search Phase has been completed.
+			\item Phasing player has characters that are eligible to complete missions.
+			}
+		\addscenario{Primary Scenario}{
+			\item Phasing Player chooses Environ.
+			\item System determines and displays eligible characters.
+			\item Phasing Player groups characters into Mission Groups.
+				\begin{enumerate}
+				\item If Phasing Player controls Rebel Camp in selected Environ, it is also an eligible Mission Group.
+				\end{enumerate}
+			\item System displays eligible Missions.
+			\item Phasing Player chooses Missions.
+			\item Phasing Player assigns Missions to Mission Groups.
+			\item Phasing Player attempts to complete Missions.
+			\item Phasing Player chooses next Environ to complete Missions in and repeats until no eligible Characters remain.
+		}
+		\addscenario{Alternative Scenario: No Missions}{
+			\item Phasing Player may choose not to complete any Missions.  In this case, the Mission Phase is complete.
+		}
+		\addscenario{Alternative Scenario: Cancel Missions}{
+			\item Phasing Player may choose to Abort a mission at any time.  Any incomplete Missions are then considered Aborted.
+		}
+		\additemizedfield{Related Use Cases}{
+			\item Missions II: Completing Missions in One Environ
+		}
+		\end{usecase}
+		
+		\subsection{Missions II: Completing Missions in One Environ}
+		\begin{usecase}
+		\addtitle{Missions II}{Completing Missions in One Environ}
+		\addfield{Summary}{The Phasing Player attempts to complete Missions by completing the Events chosen by the System.
+		}
+		\additemizedfield{Actors}{
+			\item Phasing Player (regularly)
+			\item Non-Phasing Player (occasionally)
+		}
+		\additemizedfield{Preconditions}{
+			\item Mission Groups have been chosen, and Missions have been Assigned.
+		}
+		\addscenario{Primary Scenario}{
+			\item System determines number of ``Mission Attempts'' and determines Action Events for each Attempt.
+			\item Phasing Player completes Action Event.
+				%\begin{enumerate}
+				%	\item Non-Phasing Player may be involved with an Action Event.
+				%\end{enumerate}
+			\item Missions are completed based on results of Action Event.
+			\item Phasing Player continues attempting Missions until:
+				\begin{enumerate}
+				\item All Missions are completed (successfully or unsuccessfully) or Aborted.
+				\item No Mission Attempts remain.
+				\end{enumerate}
+			\item System calculates results of Bonus Mission Attempts for incomplete missions.
+		}
+		\end{usecase}
+\section{Galactic Use Cases}
+\subsection{Galactic I: Galactic Event Cards}
+\begin{usecase}
+\addtitle{Galactic Event Case I}{Drawing Galactic Event Card}
+\addfield{Precondition}{Currently in Galactic Event Phase}
+\addfield{Actor}{Both players}
+\addscenario{Success Scenario}{
+\item Random card is drawn
+\item Actor(s) carry out instructions
+}
+\addscenario{Alternate Scenario 1}{
+\item[2.a] The event affects a later game turn
+\begin{enumerate}[label=\arabic*.]
+\item Card is prominently displayed until game turn
+\item Carry out instructions when specified turn occurs
+\end{enumerate}
+}
+\end{usecase}
+
+%% II
+\subsection{Galactic II: Imperial Taxation}
+\begin{usecase}
+\addtitle{Imperial Resource Case I}{Imperial player collects taxes}
+\addfield{Precondition}{Currently in Resource Phase}
+\addfield{Actor}{Imperial Player}
+\addscenario{Success Scenario}{
+\item Actor determines which planets are eligible to tax
+\item Actor chooses which eligible planets will be taxed (with repercussions)
+
+\item Actor chooses tax level (full or half of resource value)
+\item Actor collects taxes from province(s)
+
+\item Actor adjusts Loyalty marker
+\item Actor adjusts Resource Tract
+
+\item Actor collects taxation Force Points from Slave World, Industry World, or Gem World if applicable.
+}
+\end{usecase}
+
+%% III
+\subsection{Galactic III: Rebel Base Use Cases}
+\begin{usecase}
+\addtitle{Rebel Base Case I}{Rebel base chosen}
+\addfield{Precondition}{Start of game}
+\addfield{Actor}{Rebel player}
+\addscenario{Success Scenario}{
+\item Rebel player chooses planet to place secret base
+}
+\end{usecase}
+
+%% IV
+\subsection{Galactic IV: Rebel Base Revealed Voluntarily}
+\begin{usecase}
+\addtitle{Rebel Base Case II}{Rebel base revealed by Rebel player actively}
+\addfield{Related Case}{Rebel base revealed by Rebel player passively}
+\addfield{Precondition}{Rebel player wants to place units}
+\addfield{Actor}{Rebel player}
+\addscenario{Success Scenario}{
+\item Actor desires to place units bought with Force points.
+\item Actor places units on the planet
+
+\item Actor reveals Rebel secret base
+}
+\end{usecase}
+
+%% V
+\subsection{Galactic V: Rebel Base Revealed Forcefully}
+\begin{usecase}
+\addtitle{Rebel Base Case III}{Rebel based revealed by Rebel player passively}
+\addfield{Related Case}{Rebel base revealed by Rebel player actively}
+\addfield{Precondition}{Imperial player succeeds at Gather Information mission}
+\addfield{Actor}{Rebel player}
+\addscenario{Success Scenario}{
+\item Actor reveals two planets that the rebel base is NOT on (16 total planets)
+}
+\addscenario{Alternate Scenario 1}{
+\item[1.a] No more planets to reveal
+\begin{enumerate}[label=\arabic*.]
+\item Actor reveals secret Rebel base
+\end{enumerate}
+}
+\end{usecase}
+
+
+%% VI
+
+\subsection{Galactic VI: Maintenance and Resources}
+\begin{usecase}
+\addtitle{Maintenance Use Case I}{Maintenance}
+\addfield{Precondition}{During Resource Phase}
+\addfield{Actor}{Imperial player}
+\addscenario{Success Scenario}{
+\item Actor adds up number of units and PDB
+\item This amount is subtracted from available Force Points
+}
+\end{usecase}
+
+
+%% VII
+\subsection{Galactic VII: Spending Force Points} 
+\begin{usecase}
+\addtitle{Spending Resources Case II}{Spend Force points}
+\addfield{Precondition}{Currently in Resource Phase}
+\addfield{Actor}{Either player}
+\addscenario{Success Scenario}{
+\item Computer calculates Force Points based on Resource Tract
+\item Actor chooses to use Force Points to purchase units or PDB upgrades
+\item Actor places units purchased on the game map
+}
+\end{usecase}
+
+%% XII
+\subsection{Galactic VIII: Secret Planet discovered via Character or Companion} 
+\begin{usecase}
+\addtitle{Secret Planet Case IV}{Rebel player discovers secret planet}
+\addfield{Precondition}{Mareg or the Advisor Android is in the Orbit Box of a secret planet}
+\addfield{Actor}{Rebel player}
+\addscenario{Success Scenario}{
+\item Planet secret is revealed
+}
+\end{usecase}
+
+\subsection{Galactic IX: Secret Planets discovered via Mission}
+\begin{usecase}
+\addtitle{Secret Planet Case V}{Rebel player discovers 2 secret planets}
+\addfield{Precondition}{If the Rebel player completes a Gather Information mission}
+\addfield{Actor}{Rebel player}
+\addscenario{Success Scenario}{
+\item 2 planet secrets are revealed. Imperial Player chooses
+}
+\end{usecase}
+
+\subsection{Galactic X: All Secret Planets discovered}
+\begin{usecase}
+\addtitle{Secret Planet Case VI}{Rebel player discovers all secret planets}
+\addfield{Precondition}{If the Rebel Player completes a Gather Information mission on the Imperial Acrhives planet}
+\addfield{Actor}{Rebel Player}
+\addscenario{Success Scenario}{
+\item All planet secrets are revealed
+}
+\end{usecase}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% End secret planets use cases
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%
+%% Atrocities
+%%%%
+
+%% XV
+\subsection{Galactic XI: Buying Atrocity Unit}
+\begin{usecase}
+\addtitle{Atrocities Case I}{Buying an Atrocity Unit}
+\addfield{Preconditions}{ 1) 1 per game turn; 2) Imperial Player has enough Force points; 3) Only if there is an available unit in the ``counter box''
+}
+\addfield{Actor}{Imperial Player}
+\addscenario{Success Scenario}{
+\item Actor purchases Atrocity Unit
+\item Atrocity places unit in the Orbit box of the first Province Capital (Diomas) or the Throne Planet (Orlog).
+}
+\end{usecase}
+
+%% XVI
+\subsection{Galactic XII: Moving Atrocity Units}
+\begin{usecase}
+\addtitle{Atrocities Case II}{Moving an Atrocity Unit}
+\addfield{Preconditions}{1) Must have an Atrocity Unit; 2) Follows Strategic Assignment restrictions on movement
+}
+\addfield{Actor}{Imperial Player}
+\addscenario{Success Scenario}{
+\item Actor may move Atrocity Unit into Orbit box but not Environ box.
+}
+\end{usecase}
+
+%% XVII
+\subsection{Galactic XIII: Committing Atrocities}
+\begin{usecase}
+\addtitle{Atrocities Case III}{Committing Atrocities}
+\addfield{Preconditions}{1) Either player draws Action Event, ``Imperial Player may commit Atrocity''; 2) Imperial player owns a Level 2 PDB or Elite unit; 3) Rebel base revealed and Imperial player has a unit that can commit an Atrocity; 4) Galactic Event ``Emperor in a Rare Mood'' allows Imperial player to commit an Atrocity on any planet; 5) Can only commit one Atrocity for each event;
+}
+\addfield{Related Cases}{1) Sneak Attack Atrocity; 2) Strafe Attack Atrocity; 3) Chemical Attack Atrocity; 4) Planet Stabilizer Attack Atrocity
+}
+\addfield{Actor}{Imperial Player}
+\addscenario{Success Scenario}{
+\item Imperial player chooses Atrocity
+\item Game board changes depending on Atrocity chosen
+}
+\end{usecase}
+
+%% XVIII
+\subsection{Galactic XIV: Sneak Attack Atrocity}
+\begin{usecase}
+\addtitle{Atrocities Case IV}{Sneak Attack Atrocity}
+\addfield{Precondition}{Imperial Elite unit in selected Environ}
+\addfield{Actor}{Imperial Player}
+\addscenario{Success Scenario}{
+\item Imperial Player declares immediate determined assault on Rebel Military Units
+\item Combat occurs
+\item Rebel wounds doubled
+\item Loyalty marker shifts one space in Rebel player's favor.
+}
+\end{usecase}
+
+%% XIX
+\subsection{Galactic XIV: Strafe Attack Atrocity}
+\begin{usecase}
+\addtitle{Atrocities Case V}{Strafe Attack Atrocity}
+\addfield{Precondition}{Level 2 PDB on chosen planet}
+\addfield{Actor}{Imperial Player}
+\addscenario{Success Scenario}{
+\item Imperial Player declares strafe attack on planet
+\item Both player's military units are destroyed
+\item Characters receive one wound each
+\item PDB is reduced to level 1
+\item Loyalty marker shifts 2 spaces in Rebel's favor
+}
+\addscenario{Alternate Scenario 1}{
+\item[5.a] Planet is at unrest
+\begin{enumerate}[label=\arabic*.]
+\item Planet is immediately placed into Rebellion
+\item The Domino Effect can be initiated
+\end{enumerate}
+}
+\end{usecase}
+
+%% XX
+\subsection{Galactic XV: Chemical Attack Atrocity}
+\begin{usecase}
+\addtitle{Atrocities Case VI}{Chemical Attack Atrocity}
+\addfield{Precondition}{Resolution or Peacemaker in Planet's Orbit box}
+\addfield{Actor}{Imperial Player}
+\addscenario{Success Scenario}{
+\item All Rebel military units from special Environs are destroyed
+\item All non-Rhone characters receive two wounds each.
+\item Loyalty marker shifts two spaces in Rebel player's favor.
+}
+\addscenario{Alternate Scenario 1}{
+\item[] Mass hypnotic chemicals
+\begin{enumerate}[label=\arabic*.]
+\item Character's unaffected (unsure if this means by wounding chemicals or by hypnosis)
+\item Loyalty can't change until atrocity is lifted (by Imperial Choice, Spaceship Quest mission, Military Combat).
+\item The ship used to commit the atrocity stays in the orbit box until it is moved or defeated in combat.
+\item Once lifted, the loyalty is immediately shifted two spaces in Rebel's favor.
+\end{enumerate}
+}
+\end{usecase}
+
+%% XXI
+\subsection{Galactic XVI: Planet Stabilizer Attack Atrocity}
+\begin{usecase}
+\addtitle{Atrocities Case VII}{Planet Stabilizer Attack Atrocity}
+\addfield{Precondition}{Planet Stabilizers in chosen Planet's orbit box}
+\addfield{Actor}{Imperial Player}
+\addscenario{Success Scenario}{
+\item Imperial player can choose to either halt the planet's rotation, or commit a Chemical Attack Atrocity
+\item Everything on the planet (including Orbit box) is destroyed. This includes the Planet Stabilizer
+\item Planet is destroyed.
+\item Domino Effect is immediately initiated
+}
+\end{usecase}
+		
+\end{document}
