@@ -1,0 +1,64 @@
+@startuml
+
+
+hide circle
+skinparam shadowing false
+skinparam classFontStyle Bold
+skinparam classFontSize 14
+title Class Diagram
+
+note as Title
+<b>Class Diagram
+Authors:
+Ben Cumber
+
+Reviewed By:
+Jeff Crocker
+
+end note
+
+class Game{
+}
+
+class Character{
+    
+}
+
+class Environ{
+    
+}
+
+class Unit{
+    
+}
+
+class Mission{
+
+}
+
+class Planet{
+    
+}
+
+class Possession{
+    
+}
+
+class Race{
+    
+}
+
+class Stack{
+    
+}
+
+Game o-- "*" Stack
+Game o-- "*" Planet
+Character "*" --o Stack
+Character -- "*" Possession: owns
+Environ "2-5" --o Planet
+Environ -- Race: Inhabits
+Unit "*" --o Stack
+Stack "*" -- Mission: is assigned
+Stack -- Environ: is located
+@enduml
