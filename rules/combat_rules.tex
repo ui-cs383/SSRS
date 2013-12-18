@@ -2,8 +2,10 @@
 
 % status : starrt?
 
-\subsection{Capture Combat}
-For rules associated with capturing specifically, refer to section \ref{sub:capture}. For rules associated with searching specifically, refer to section \ref{sub:search}. For PDB combat rules, refer to section \ref{sub:pdb}.
+\subsection{Types of Combat}
+For rules associated with capturing specifically, refer to section \ref{sub:capture}. For rules associated with searching specifically, refer to section \ref{sub:search}. For PDB combat rules, refer to section \ref{sub:pdbcombat}.
+
+\subsection{General Combat}
 
 \setcounter{rc}{0}
 
@@ -17,7 +19,257 @@ For rules associated with capturing specifically, refer to section \ref{sub:capt
     \textbf{Metric}
     \\ \hline
     
-    \newrule{The environ size limit is per player.}{9.51}{-}
+    \newrule{Only the first number of each military unit shall be used (Combat Strength)}{7.1}{1} 
+    
+    \newrule{Stacks with military units attack/attacked according to Environ Combat rules}{9.52}{6}
+    
+    \newrule{Current sequence of play is interrupted during combat and resumes only after combat is completed.}{12.0}{2}
+    
+  \end{longtable}
+\end{center}
+
+\subsection{Environ Combat}
+
+Environ combat is one round and no wounds are applied to any unit. Damage either results in a unit being killed or has no effect.
+
+\setcounter{rc}{0}
+
+\begin{center}
+
+  \begin{longtable}{| p{\first} | p{\second} | p{\third} | p{\fourth} |}
+    \hline
+    \textbf{\#}&
+    \textbf{Rule Description}&
+    \textbf{Reference(s)}&
+    \textbf{Metric}
+    \\ \hline
+    
+    \newrule{Military combat can occur during any players Military Combat Segment in any environ that contains military units of both players.}{10.0}{7}
+    
+    \newrule{Environ combat is not required unless initiated by each player.}{10.0}{3}
+    
+    \newrule{Either player can initiate combat during any player’s Combat segment.}{10.0}{2}
+    
+    \newrule{For each environ, if the phasing player decides not to initiate combat, the non?phasing player can decide to initiate combat/.}{10.1}{6}
+    
+    \newrule{The combat decision happens for each and every environ with military units from both players.}{10.0}{7}
+    
+    \newrule{Combat in an environ must take place between all military units in the environ.}{10.1}{6}
+    
+    \newrule{Shifts to the ratio column can be due to leader and environ bonuses.}{10.2}{3}
+    
+    \newrule{The shift for leader bonus is equal to that characters leadership rating (or the difference if both players have leaders) .}{10.4}{2}
+    
+    \newrule{If the military unit does not have a leader and a character unit with a leadership rating above one is in the environ, that character can become the leader.}{10.4}{2}
+    
+    \newrule{The maximum number of leaders for each side of battle is 1.}{10.43}{2}
+    
+    \newrule{Leaders can also negate the penalty column shift in Special Environs.}{10.44}{2}
+    
+    \newrule{Leaders cannot be eliminated to fulfill military combat results.}{10.45}{1}
+    
+    \newrule{If all military units are eliminated, then the leader is attacked by a squad from the surviving enemy units.}{10.45}{3}
+    
+    \newrule{The maximum ratios are ‘1-5’ and ‘5-1’ for combat without leaders. Any computed ratio outside that range shall be set to the nearest ratio.}{10.22}{3}
+    
+    \newrule{For environ combat with leaders, the maximum ratios are ‘1-6’ and ‘6-1’.}{10.42}{3}
+    
+    \newrule{If the Rebel player has a military unit with the same type of the environ in which the combat is taking place, the rebel player receives a column shift bonus.}{10.5}{2}
+    
+    \newrule{In a “special” environ, the Imperial player receives a column penalty (unless there is a leader) independent of any other bonus/penalty.}{10.5}{2}
+    
+    \newrule{Characters stacked with military units in combat are not effected or effect combat.}{10.6}{3}
+    
+    \newrule{If a player’s military units are eliminated during combat, the characters are immediately attacked by the surviving military units (squad) according to the rules of character combat.}{10.6}{3}
+    
+    \newrule{The character attacking squad has strength equal to the strength of the enemy military units. If characters survive, they are stacked with other friendly characters in the environ.}{10.6}{2}
+    
+  \end{longtable}
+\end{center}
+
+	
+\subsection{Character Combat}
+
+Squad combat is performed according to the rules of character combat. Squad combat occurs if all military units of one side are eliminated and characters remain, or if military units successfully search for characters.
+
+Character combat also occurs during missions due to irate locals or creature attacks.
+
+\setcounter{rc}{0}
+
+\begin{center}
+
+  \begin{longtable}{| p{\first} | p{\second} | p{\third} | p{\fourth} |}
+    \hline
+    \textbf{\#}&
+    \textbf{Rule Description}&
+    \textbf{Reference(s)}&
+    \textbf{Metric}
+    \\ \hline
+    
+    \newrule{Character combat occurs when phasing player's characters have been found by non-phasing characters or military units.}{12.0}{5}
+    
+    \newrule{Character combat intentions are "kill" and "capture"}{12.3}{5} 
+    
+    \newrule{Combat is of one of two types: “hand-to-hand” and “firefight”.}{12.3}{6}
+    	
+    \newrule{Character combat occurs when phasing player's characters encounter a creature while on a mission.}{12.0}{4}
+    
+    \newrule{Character combat occurs when phasing player's characters encounter an irate local while on a mission.}{12.0}{4}
+    
+    \newrule{The defending force is always the force controlled by the phasing player}{12.0}{1}
+    
+    \newrule{Attacking force is controlled by the non-phasing player.}{12.0}{1}
+    
+    \newrule{Character combat is resolved in one or more rounds.}{12.0}{6}
+    
+    \newrule{The table used during this type of combat is the "Character Combat Results Table".}{12.0}{2}
+    
+    \newrule{Current sequence of play and any current event is interrupted during combat and resumes only after combat is completed.}{12.0}{2}
+    
+    \newrule{At least one of defending player's characters must be active for each round.}{12.0}{3}
+    
+    \newrule{In character combat, the attacking force must be one of the following: characters, a squad, a creature, or irate locals.}{12.1}{4}
+    
+    \newrule{If the attacking group is a squad, the combat is always “firefight”.}{12.31}{2}
+    
+    \newrule{If the attacking group is a groups of characters, the attacking group determines the type of combat.}{12.31}{4}
+    
+    \newrule{Defending player’s characters are divided into two groups: “active” and “inactive”.}{12.4}{5}
+    
+    \newrule{At least one character with a current combat ranting above 0 must be named as active defender if available.}{12.4}{2}
+    
+    \newrule{Active characters suffer all damage.}{12.41}{3}
+    
+    \newrule{Active characters gain possession bonuses.}{12.41}{3}
+    
+    \newrule{Inactive characters have a better chance of “break off”.}{12.42}{2}
+    
+    \newrule{Active and inactive character assignment occurs before each round of combat.}{12.43}{3}
+    
+    \newrule{The attacking player is never divided into active and inactive parts, all parts attack.}{12.44}{1}
+    
+    \newrule{Before resolving a round of combat, the defending player can attempt to break off.}{12.5}{3}
+    
+    \newrule{Both active and inactive characters can attempt to break off.}{12.5}{2}
+    
+    \newrule{The break off section of the combat results table determines success or fail of breaking off.}{12.5}{2}
+    
+    \newrule{Characters that successfully break off are no longer considered found and are no longer apart of character combat.}{12.51}{2}
+    
+    \newrule{Break off must be for all characters, active and inactive.}{12.52}{3}
+    
+    \newrule{The attacking player cannot break off.}{12.52}{2}
+    
+    \newrule{Failing break off results in a one to the right column shift during combat.}{12.53}{3}
+    
+    \newrule{Total defense strength equals combat rating of all active characters with possession bonuses minus wounds.}{12.6}{6}
+    
+    \newrule{Defense strength is subtracted from attack strength to determine the differential.}{12.6}{5}
+    
+    \newrule{The differential will correspond to one of the columns on the Character Combat Results Table.}{12.6}{3}
+    
+    \newrule{If the attacker announces capture combat, the differential is shifted two to the left.}{12.6}{3}
+    
+    \newrule{If the combat is firefight, all combat results are doubled.}{12.6}{3}
+    
+    \newrule{If the combat is hand-to-hand, all combat results are normal.}{12.6}{1}
+    
+    \newrule{After a round of combat, both players assigns wounds to characters equal to the number of damage points taken.}{12.7}{4}
+    
+    \newrule{A character cannot take more damage than remaining endurance points.}{12.7}{3}
+    
+    \newrule{Combat rating is reduced by 1 for each wound received.}{12.7}{2}
+    
+    \newrule{A character can take damage up to the number of endurance points.}{12.7}{4}
+    
+    \newrule{A players contribution to the combat rating can never be less than zero (if wounds greater than combat rating).}{12.72}{3}
+    
+    \newrule{If a character receives cumulative damage equal to the number of endurance points, the character is dead.}{12.73}{7}
+    
+    \newrule{If the attacking force is not composed of characters, then if the attacking force receives wounds equal to endurance, combat ceases.}{12.74}{2}
+    
+    \newrule{Wounds assigned in the attacking force are substracted from combat strength.}{12.74}{4}
+    
+    
+  \end{longtable}
+\end{center}
+
+\subsection{Character Combat and Creatures/Irate Locals}
+
+\setcounter{rc}{0}
+
+\begin{center}
+
+  \begin{longtable}{| p{\first} | p{\second} | p{\third} | p{\fourth} |}
+    \hline
+    \textbf{\#}&
+    \textbf{Rule Description}&
+    \textbf{Reference(s)}&
+    \textbf{Metric}
+    \\ \hline
+    
+    \newrule{Character combat involving creatures only occurs when the “Creature attacks one Mission Group” event card is drawn.}{12.12}{2}
+    
+    \newrule{Character combat involving irate locals only occurs when the “Irate Locals attack one Mission Group” event card is drawn.}{12.13}{2}
+    
+    \newrule{The creature is considered the attacking force in creature combat.}{12.10}{3}
+    
+    \newrule{Irate locals are considered the attacking force in irate locals combat.}{12.10}{3}
+    
+    \newrule{Character combat involving creatures is resolved immediately.}{12.12}{1}
+    
+    \newrule{Character combat involving irate locals is resolved immediately.}{12.13}{1}
+    
+    \newrule{Only one character mission group is attacked.}{12.2}{4}
+    
+    \newrule{If more than one character mission groups are present in the environ, the mission group attacked is chosen at random.}{12.2}{3}
+    
+    \newrule{Combat involving irate locals may be “firefight” or “hand-to-hand” as determined by the Irate Locals chart.}{12.31}{2}
+    
+    \newrule{The intention of combat involving creatures is always “kill”.}{12.32}{3}
+    
+    \newrule{The intention of combat involving irate locals is always “kill”.}{12.32}{3}
+    
+  \end{longtable}
+\end{center}
+
+
+\subsection{PDB Combat}
+\label{sub:pdbcombat}
+
+\setcounter{rc}{0}
+
+\begin{center}
+
+  \begin{longtable}{| p{\first} | p{\second} | p{\third} | p{\fourth} |}
+    \hline
+    \textbf{\#}&
+    \textbf{Rule Description}&
+    \textbf{Reference(s)}&
+    \textbf{Metric}
+    \\ \hline
+    
+    \newrule{PDB combat does not occur against spaceships.}{9.21}{3}
+    
+    \newrule{An attack by a Level 2 PDB is resolved using 3-1 column of the table.}{9.22}{1}
+    
+    \newrule{An attack by a Level 1 PDB is resolved using the ‘1-1’ column of the table.}{9.22}{-}
+    
+    \newrule{A level 0 PDB cannot be used to attack.}{9.22}{3}
+    
+    \newrule{Surviving moving units can continue movement.}{9.24}{5}
+    
+    \newrule{If PDB incurs a loss of 2 when attacking, it is placed in “down” status.}{9.25}{3}
+    
+    \newrule{If PDB incurs a loss of 3 when attacking, it is placed in “down” status and reduced a level.}{9.25}{3}
+    
+    \newrule{A loss of 1 has no effect on a PDB.}{9.25}{1}
+    
+    \newrule{A unit cannot attack an enemy PDB.}{9.26}{1}
+    
+    \newrule{Due to movement restrictions, a unit can be attacked/detected at most twice during the movement turn (when leaving and then entering an environ on another planet).}{9.27}{5}
+    
+    \newrule{A stack with military units are considered detected with regards to enemy PDBs.}{9.52}{1}
     
   \end{longtable}
 \end{center}

@@ -7,8 +7,8 @@
 \usepackage
 [
 %        a4paper,% other options: a3paper, a5paper, etc
-        left=2.7cm,
-        right=2.7cm,
+        left=2.5cm,
+        right=2.5cm,
 %        %top=3cm,
 %        %bottom=4cm,
 ]
@@ -22,7 +22,7 @@
 \begin{document}
 
 \title{\textsc{Rules Summary Document}
-  \\ Freedom in the Galaxy, Java and Python Teams
+  \\ Freedom in the Galaxy, Python Team
   \vspace{10 mm}
   \\ Version 1.0
   \vspace{10 mm}}
@@ -33,7 +33,7 @@
   \\ CS 383 Course Project
   \vspace{10 mm}
   \\Prepared by:
-  \\ Documentation Subteams of Python and Java Teams 
+  \\ Documentation Subteam of Python 
   \vspace{10 mm}}
   
 \maketitle
@@ -58,6 +58,8 @@
     \textbf{Approved by (initials)} &
     \textbf{Date Approved} 
     \\ \hline 1 & Nov 24 & ALL  & INITIAL CONVERSION & - & -
+    \\ \hline - & Dec 17 & ALL & ADDED MORE RULES & - & -
+    \\ \hline - & Dec 17 & ALL & ADDED METRICS & - & -
 %    \\ \hline & & & & &  
 %    \\ \hline & & & & &  
 %    \\ \hline & & & & &  
@@ -70,14 +72,14 @@
 
 \section{Introduction}
 
-The following sections contain all the rules as provided by the Galactic Guide and Rules of Play, except for the last section \ref{sec:changes}, which contains all the modification by the Python team to the official rules. Metric refers to the points given for implementing the rule, which is described in detail in the Test Plan document.
+The following sections contain the rules found in the Galactic Guide and Rules of Play requirement documents, except for the last section \ref{sec:changes}, which contains all the modification by the Python team to the official rules. Metric refers to the points given for implementing the rule, which is described in detail in the Test Plan document.
 
-All rules are valid for at least the Star System game of Freedom in the Galaxy. Some rules do not apply or are changed in the Province and Galactic game.
+All rules are valid for at least the Star System game of Freedom in the Galaxy. Some rules do not apply or are changed in the Province and Galactic game and are ignored in this document.
 
 \newcommand{\first}{.5cm}
-\newcommand{\second}{11.0cm}
-\newcommand{\third}{2.5cm}
-\newcommand{\fourth}{1.5cm}
+\newcommand{\second}{12.0cm}
+\newcommand{\third}{2.25cm}
+\newcommand{\fourth}{1.25cm}
 
 \input{capture_rules}
 
@@ -91,13 +93,21 @@ All rules are valid for at least the Star System game of Freedom in the Galaxy. 
 
 \input{environ_rules}
 
+\input{game_turn_rules}
+
+\input{healing_rules}
+
+\input{military_units_rules}
+
+\input{mission_rules}
+
+\input{movement_rules}
+
 \input{pdb_rules}
 
 \input{possessions_rules}
 
 \input{reaction_rules}
-
-\input{rebel_military_units_rules}
 
 \input{rebellion_rules}
 

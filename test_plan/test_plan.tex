@@ -4,8 +4,8 @@
 \usepackage{graphicx}
 \usepackage
 [
-        left=2.7cm,
-        right=2.7cm,
+        left=2.5cm,
+        right=2.5cm,
 ]
 {geometry}
 
@@ -62,6 +62,7 @@
     \\ \hline 4 & Nov 26 & Sec 9.3;  & AI Test Cases & - & -
     \\ \hline 5 & Nov 27-Dec15 & Integration Tests & Added Integration Tests & - & -
     \\ \hline 6 & Dec 16 & Various & Reviewed Document & - & -
+    \\ \hline 7 & Dec 17 & TCs & Merged Last Changes to TCs & - & -
 
 %    \\ \hline & & & & &  
 %    \\ \hline & & & & &  
@@ -76,11 +77,11 @@
 \section[IDENTIFIER]{TEST PLAN IDENTIFIER}
 FREEDOM IN THE GALAXY MASTER TEST PLAN VERSION 1.0, PYTHON GROUP
 \section[REFERENCES]{REFERENCES}
-Use Cases and State diagrams are available at {\tt https://github.com/Freedom-Galaxy}. Rules are contained in the SSDS.
+Use Cases and State diagrams are available at {\tt https://github.com/Freedom-Galaxy}. Rules are contained in the SSDS available at {\tt https://github.com/SSDS}.
 
 
 \section[INTRODUCTION]{INTRODUCTION}
-The purpose of this master test plan is to state the processes used by the Python Team in testing the Freedom in the Galaxy software project. This master plan covers the entire testing plan for the project. The Python Team is divided into three sub teams. Each sub team each has different testing requirements and should prepare documents accordingly.
+The purpose of this test plan is to state the processes used by the Python Team in testing the Freedom in the Galaxy software project. This test plan covers the entire testing plan for the project. The Python Team is divided into three sub teams. Each sub team each has different testing requirements and should prepare documents accordingly according to the requirements stated in this document.
 
 \section[TEST ITEMS]{TEST ITEMS}
 \begin{itemize}
@@ -89,19 +90,18 @@ The purpose of this master test plan is to state the processes used by the Pytho
 \item User Interface Functions
 \item Network Layer Functions
 \item API Level Functions
+\item GUI Fuctions
 \item Requirements stated in System Software Requirement Specification
 \item Requirements stated in System Software Design Documentation
 \end{itemize}
 
 \section[SOFTWARE RISK ISSUES]{SOFTWARE RISK ISSUES}
 \label{risk}
-Each piece of code has different levels of risk to the party. Standard library modules are usually designed to be backwards compatible, do not change for each version of Python, are heavily tested before incorporation into the standard library, and have a high level of use. Therefore, the standard library modules have a very low level of risk to the project. The tests will therefore be focused on the correct use of those modules.
+Each piece of code has different levels of risk to the party. Standard library modules are usually designed to be backwards compatible are heavily tested before incorporation into the standard library, and have a high level of use. Therefore, the standard library modules have a low level of risk to this project. The tests will therefore be focused on the correct use of those modules.
 
 Third party software has a higher level of risk than standard library and a much larger variance of quality. Some of the software has been heavily tested and some is only in a prerelease state. The level of quality of each third party module will have to be determined and testing scaled according. The level of risk can be reduced if sufficient tests are included with the library.
 
-Testing will mainly focus on code written by Python Group members. This plan largely focuses on providing a testing plan that adequately covers both rules and implementation.
-
-As the code base is not yet complete, the complexity of the code cannot be yet determined. Also, since the documentation is often incomplete, risk also arises because of poor documentation. Complete and improved documentation of all areas of code with reduce this risk.
+Testing will mainly focus on code written by Python Group members. This plan largely focuses on providing a testing plan that adequately covers both rules and implementation. As the code base is not yet complete, the complexity of the code cannot be yet determined. Also, since the documentation is often incomplete, risk also arises because of poor documentation. Complete and improved documentation of all areas of code will reduce this risk.
 
 Finally, because the length of this project is short and is not dependent on any third party schedules, there is no to little risk from new versions of software or failure of any third party.
 
@@ -129,23 +129,23 @@ Play game with graphical interface & Med
 \\ \hline
 Play game with text interface? & Low
 \\ \hline
-User Experience & -
+User Experience & Med
 \\ \hline
 \end{tabularx}
 \end{center}
 
 \section[FEATURES NOT TO BE TESTED]{FEATURES NOT TO BE TESTED}
 \begin{center}
-\begin{tabularx}{\textwidth}{| X | X |}
+\begin{tabularx}{\textwidth}{| X | c |}
   \hline
   \textbf{Feature Description} &
-    \textbf{Details} 
+    \textbf{Risk Level} 
 \\ \hline
- Python Standard Library.
+ Python Standard Library. & Low
  \\ \hline
- Probably we can put third party modules here.
+ Probably we can put third party modules here. & Med
  \\ \hline
- Speed of software.
+ Speed of software. & Low
 \\ \hline
 \end{tabularx}
 \end{center}
@@ -157,8 +157,10 @@ The testing tools for use in this project include the standard library modules d
 
 Training will be available from other members of the team for any questions. Tutorials are also available on the Python website for doctest and unittest. Training for Nose is unknown.
 
-\subsection{Metric}
-Metrics for this project will be the number of rules implemented. For each rule, a metric value is specified in the SSDS? This metric value is a number between 1 and 10. This number is based on several criteria, such as difficulty of the rule, priority of the rule, and how close other rules are to the rule. In order to apply any metrics, the relevant TCS test must be implemented and passed. This implementation must be signed off by another member or the team and the results attached to the necessary places in the project documents. After these requirements have been completed, the metric value can be earned.
+\subsection{Metrics}
+Products Metrics for this project will be the number of rules implemented. For each rule, a metric value is specified in the SSDS? This metric value is a number between 1 and 10. This number is based on several criteria, such as difficulty of the rule, priority of the rule, and how close other rules are to the rule. In order to apply any metrics, the relevant TCS test must be implemented and passed. This implementation must be signed off by another member or the team and the results attached to the necessary places in the project documents. After these requirements have been completed, the metric value can be earned.
+
+Other code metrics here.
 
 \subsection{Configurations}
 The AI and UI will be tested using both the Rebel and Imperial player, and all User type tests for both player types will be executed.
@@ -263,7 +265,7 @@ Each section should be brief and to the point, but yet convey enough information
 \subsection{Unit Testing Pass/Fail Criteria}
 Each of these tables might need to be expanded to cover priority and type of test (i.e. unittest, integration, system). Also, additions of conditionals might also be good.
 
-% @todp any unittests here.
+% @todo any unittests here.
 % template unit_test_template.tex
 \newcommand{\first}{.5cm}
 \newcommand{\second}{4.5cm}
@@ -282,15 +284,17 @@ Each of these tables might need to be expanded to cover priority and type of tes
 \newpage
 \input{game_start_integration}
 \newpage
+\input{gameturn_integration}
+\newpage
 \input{missions_integration}
 \newpage
 \input{movement_integration}
 \newpage
-\input{possession_integration}
-\newpage
 \input{pdb_detection_integration}
 \newpage
 \input{planet_integration}
+\newpage
+\input{possession_integration}
 \newpage
 \input{searching_integration}
 \newpage
@@ -390,6 +394,14 @@ Delivery of System Tests and Manual Tests &
 Completion of assigned System Tests &
 12/10/2013
 \\ \hline
+
+Delivery of Software Metics &
+Completion of assigned metrics &
+12/13/2013
+\\ \hline
+
+Delivery of All SSDS SSRS related testing requirements & &
+12/17/2013
 
 \end{tabularx}
 \end{center}

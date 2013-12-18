@@ -1,0 +1,163 @@
+\subsubsection{Rebellion}
+
+\setcounter{rc}{0}
+
+Conditions: Star System Game
+
+\begin{center}
+
+  \begin{longtable}{| p{.5cm} | p{4.5cm} | p{4.5cm} | p{4.5cm} |}
+    \hline
+    \textbf{\#}&
+    \textbf{Rule Description}&
+    \textbf{Test Description}&
+    \textbf{Expected Result}
+    \\ \hline
+    
+    \rn &
+    
+    A planet goes into Rebellion when a Start Rebellion mission is successfully completed on the planet that is in a state of unrest [15.2, 15.52] &
+    
+    Rebel successfully completes Start Rebellion on a planet that is in a state of unrest &
+    
+    Planet is now in a state of Rebellion.
+    
+    \\ \hline
+    
+    \rn &
+    
+    &
+    
+    Rebel successfully completes Start Rebellion on a planet that is not in a state of unrest and not in a state of Rebellion. &
+    
+    Mission has no effect and is ignored.
+    
+    \\ \hline
+    
+    \rn &
+    
+    &
+    
+    Rebel successfully completes Start Rebellion on a planet that in a state of Rebellion. &
+    
+    Mission has no effect and is ignored.
+    
+    \\ \hline
+    
+    \rn &
+    
+    Only Rebel player may attempt Start Rebellion mission. &
+    
+    Imperial player attempts Start Rebellion mission &
+    
+    Mission cannot be attempted.
+    
+    \\ \hline
+    
+    \rn &
+    
+    &
+    
+    Rebel player attempts Start Rebellion mission &
+    
+    Mission assignment is accepted.
+    
+    \\ \hline
+    
+    \rn &
+    
+    A player may select the "Start Rebellion" mission even if the planet is not in a state of Unrest. &
+    
+    Rebel player attempts Start Rebellion mission on a planet under any state of control. &
+    
+    Mission assignment is accepted.
+    
+    \\ \hline
+    
+    \rn &
+    
+    The Stop Rebellion mission is only available to the Imperial Player &
+    
+    Rebel player attempts Stop Rebellion on a planet in a state of Rebellion &
+    
+    Mission assignment is rejected.
+    
+    \\ \hline
+    
+    
+    \rn &
+
+    Rebel units spawned during rebellion may immediately attack any
+    imperial units [10.7]. &
+
+    Planet goes into state of rebellion and spawns rebel units in an
+    environ where there are imperial forces and the player decides to attack &
+    
+    Rebel units engage in combat with imperial forces.
+    
+    \\ \hline
+    
+    \rn &
+    
+    Rebel military units that cannot be placed due to environ size restrictions are placed at the beginning of the first Rebel Operations Phase when they can be legally placed. [15.44] &
+    
+    Planet goes into a state of rebellion with all environs full or has only enough excess capacity for some of the spawned military units and some capacity is available during the next Rebel Operations Phase. &
+    
+    Rebel player may place some or all of remaining military units.
+    
+    \\ \hline
+    
+    \rn &
+    
+    Rebel military units placed because of starting rebellion, are placed regardless of other rebel or imperial military units. [15.43] &
+    
+    Rebel places military units on an environ with Imperial military units with a total less than the environ size. &
+    
+    Placement accepted.
+    
+    \\ \hline
+    
+    \rn &
+    
+    - &
+    
+    Rebel places military units on an environ with Imperial military units at environ size. &
+    
+    Placement accepted.
+    
+    \\ \hline
+    
+    \rn &
+    
+    Rebel military units placed because of starting rebellion, can move regularly after being placed. [15.43] &
+    
+    During a reaction phase, move spawned military units in reaction. &
+    
+    Reaction movement accepted.
+    
+   \\ \hline
+   
+   \rn &
+   
+   - &
+   
+   During movement phase, move spawned military units. &
+   
+   Movement accepted.
+   
+   \\ \hline
+   
+   \rn &
+   
+   When the planet is placed into rebellion, the Imperial Player loses control of the planet. [15.4] &
+   
+   A planet under Imperial control is placed into rebellion. &
+   
+   Planet is no longer under Imperial control
+    
+    
+
+    \\ \hline 
+  \end{longtable}
+\end{center}
+    

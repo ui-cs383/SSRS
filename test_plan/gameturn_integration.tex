@@ -1,0 +1,148 @@
+   \subsubsection{Game Turn}
+
+For each set of tests, test both Rebel players and Imperial players.
+
+\setcounter{rc}{0}
+
+\begin{center}
+
+  \begin{longtable}{| p{.5cm} | p{4.5cm} | p{4.5cm} | p{4.5cm} |}
+    \hline
+    \textbf{\#}&
+    \textbf{Rule Description}&
+    \textbf{Test Description}&
+    \textbf{Expected Result}
+    \\ \hline
+    
+    \rn &
+    
+    Mission Assignment only occurs on the player's Mission Assignment Segment &
+
+    Start player Mission Assignment during player's Mission Assignment Segment &
+    
+    Mission Assignment Accepted. 
+    
+    \\ \hline 
+    
+    \rn &
+     - &
+     
+    Start non-phasing player Mission Assignment during player's Mission Assignment Segment &
+    
+    Mission Assignment Rejected.
+    
+    \\ \hline 
+    
+    \rn &
+    
+    - &
+    
+    Start player's Mission Assignment during player's Mission Action Segment &
+    
+    Mission Assignment Rejected.
+    
+    \\ \hline 
+    
+    4 &
+    
+    - &
+    
+    Start player's  Mission Assignment during player's Operations Phase &
+    
+    Mission Assignment Rejected.
+
+    \\ \hline 
+    
+    5 &
+    
+    - &
+    
+    Start player's Mission Assignment during player's Mission Phase &
+    
+    Mission Assignment Rejected
+    
+    \\ \hline 
+    
+    6 &
+    
+    - &
+    
+    Start Rebel Mission Assignment during the Imperial's Operations Phase &
+    
+    Mission Assignment Rejected
+    
+    \\ \hline 
+    
+    7 &
+    
+    - &
+    
+    Start Rebel Mission Assignment during the Imperial's Search Phase &
+    
+    Mission Assignment Rejected
+    
+    \\ \hline 
+    
+    8 &
+    
+    - &
+    
+    Start Rebel Mission Assignment during the Game Turn Interphase &
+    
+    Mission Assignment Rejected
+    
+    \\ \hline 
+    
+    9 & 
+    
+    During a player's Movement Segment, only the phasing player's units can move &
+    
+    Move movable unit of phasing player &
+    
+    Movement Accepted
+    
+    \\ \hline 
+    
+    10 &
+    
+    - &
+    
+    Move movable unit of non-phasing player &
+    
+    Movement Rejected
+    
+    \\ \hline 
+    
+    11 &
+    
+    During a player's Reaction Segment, only the non-phasing units can move &
+    
+    Move movable unit of non-phasing player according to reaction rules during Reaction Segment &
+    
+    Movement Accepted
+    
+    \\ \hline 
+    
+    12 &
+    
+    - &
+    
+    Move movable unit of phasing player according to reaction rules &
+    
+    Movement Rejected
+    
+    \\ \hline 
+    
+    13 &
+    
+    - &
+    
+    Move moveable unit of non-phasing player according to reaction rules not during Reaction Segment &
+    
+    Movement Rejected
+    
+    \\ \hline 
+
+  \end{longtable}
+
+\end{center}
