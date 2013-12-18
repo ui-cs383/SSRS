@@ -3,8 +3,8 @@
 
 % status : started
 
-\subsection{General PDB}
-For rules regarding detection, see section \ref{sub:detection}
+\subsection{PDB}
+For rules regarding detection, see section \ref{sub:detection}. For rules regarding PDB combat, see section \ref{sub:pdbcombat}.
 
 \setcounter{rc}{0}
 
@@ -18,77 +18,33 @@ For rules regarding detection, see section \ref{sub:detection}
     \textbf{Metric}
     \\ \hline
     
-    \newrule{The PDB is controlled by the player who controls the planet.}{8.0}{-}
+    \newrule{The PDB is controlled by the player who controls the planet.}{8.0}{7}
     
-    \newrule{Every planet has a PDB.}{8.0}{-}
+    \newrule{Every planet has a PDB.}{8.0}{3}
     
-    \newrule{The level of the PDB is one of the following values: 0,1,2.}{8.0}{-}
+    \newrule{The level of the PDB is one of the following values: 0,1,2.}{8.0}{2}
     
-    \newrule{The PDB can have status of “up” or “down”.}{8.0}{-}
+    \newrule{The PDB can have status of “up” or “down”.}{8.0}{2}
     
-    \newrule{A status of “up” means functional and a status of “down” means not functioning.}{8.0}{-}
+    \newrule{A status of “up” means functional and a status of “down” means not functioning.}{8.0}{1}
     
-    \newrule{If the planet is not in control of either player, the PDB cannot be used by any player.}{8.33}{-}
+    \newrule{If the planet is not in control of either player, the PDB cannot be used by any player.}{8.33}{3}
     
-    \newrule{The level of a PDB cannot be improved.}{8.13}{-}
+    \newrule{The level of a PDB cannot be improved.}{8.13}{1}
     
-    \newrule{A PDB can be used to attempt detection of Enemy characters entering, leaving, or traveling on the planet in a spaceship.}{8.2}{-}
+    \newrule{A PDB can be used to attempt detection of Enemy characters entering, leaving, or traveling on the planet in a spaceship.}{8.2}{8}
     
-    \newrule{The PDB can only be used if the status is “up”.}{8.2}{-}
+    \newrule{The PDB can only be used if the status is “up”.}{8.2}{4}
     
-    \newrule{A PDB with a status of “down” cannot be used for any purpose.}{8.2}{-}
+    \newrule{A PDB with a status of “down” cannot be used for any purpose.}{8.2}{3}
     
-    \newrule{The PDB can change to “down” status due to “Sabotage Mission” (n53), Action Event “Locals Raid” (n70).}{8.31}{-}
+    \newrule{The PDB can change to “down” status due to “Sabotage Mission” (n53), Action Event “Locals Raid” (n70).}{8.31}{6}
     
-    \newrule{If units move from environ to another environ on the same planet, the PDB cannot be used for detection.}{9.0}{-}
+    \newrule{If units move from environ to another environ on the same planet, the PDB cannot be used for detection.}{9.0}{3}
     
-    \newrule{If characters move across the planet without a spaceship, the PDB cannot be used for detection.}{9.0}{-}
+    \newrule{If characters move across the planet without a spaceship, the PDB cannot be used for detection.}{9.0}{2}
     
-    \newrule{If the characters move across the planet with a spaceship, the characters are considered to be in the spaceship and can be detected.}{9.0}
-    
-  \end{longtable}
-\end{center}
-    
-\subsection{PDB Combat}
-\label{sub:pdbcombat}
-
-\setcounter{rc}{0}
-
-\begin{center}
-
-  \begin{longtable}{| p{\first} | p{\second} | p{\third} | p{\fourth} |}
-    \hline
-    \textbf{\#}&
-    \textbf{Rule Description}&
-    \textbf{Reference(s)}&
-    \textbf{Metric}
-    \\ \hline
-    
-    \newrule{Military combat does not occur against spaceships.}{9.21}{-}
-    
-    \newrule{An attack by a Level 2 PDB is resolved using 3?1 column of the table.}{9.22}{-}
-    
-    \newrule{An attack by a Level 1 PDB is resolved using the ‘1?1’ column of the table.}{9.22}{-}
-    
-    \newrule{A level 0 PDB cannot be used to attack.}{9.22}{-}
-    
-    \newrule{Surviving moving units can continue movement.}{9.24}{-}
-    
-    \newrule{If PDB incurs a loss of 2 when attacking, it is placed in “down” status.}{9.25}{-}
-    
-    \newrule{If PDB incurs a loss of 2 when attacking, it is placed in “down” status.}{9.25}{-}
-    
-    \newrule{If PDB incurs a loss of 3 when attacking, it is placed in “down” status and reduced a level.}{9.25}{-}
-    
-    \newrule{A loss of 1 has no effect on a PDB.}{9.25}{-}
-    
-    \newrule{A unit cannot attack an enemy PDB.}{9.26}{-}
-    
-    \newrule{Due to movement restrictions, a unit can be attacked/detected at most twice during the movement turn (when leaving and then entering an environ on another planet).}{9.27}{-}
-    
-    \newrule{If a spaceship leaves a planet and is ineligible to conduct the Detection Routine, the spaceship is no longer detected.}{9.45}
-    
-    \newrule{A stack with military units are considered detected with regards to enemy PDBs.}{9.52}{-}
+    \newrule{If the characters move across the planet with a spaceship, the characters are considered to be in the spaceship and can be detected.}{9.0}{4}
     
   \end{longtable}
 \end{center}

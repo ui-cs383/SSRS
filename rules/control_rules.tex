@@ -39,7 +39,7 @@
     
     \rn &
     
-    If the Imperial player has less spaceships in play than at the beginning of the game and has any Imperial Knight on an Imperial?controlled planet, that Imperial player can received a spaceship, which is stacked with the Imperial Knight up to the beginning of the play limit. &
+    If the Imperial player has less spaceships in play than at the beginning of the game and has any Imperial Knight on an Imperial controlled planet, that Imperial player can received a spaceship, which is stacked with the Imperial Knight up to the beginning of the play limit. &
     
     14.61 &
     
@@ -63,7 +63,7 @@
     
     15.74 &
     
-    - 
+    2
     
     \\ \hline
     
@@ -73,17 +73,17 @@
     
     15.75 &
     
-    - 
+    3 
     
     \\ \hline
     
     \rn &
     
-    If a planet’s loyalty is shifted when a planet is in a state of Rebellion Stopped, the Loyalty marker and Rebel?control marker are moved together.  & 
+    If the loyalty of a planet is shifted when a planet is in a state of Rebellion Stopped, the Loyalty marker and Rebel control marker are moved together.  & 
     
     15.75 &
     
-    - 
+    5
     
     \\ \hline
     
@@ -93,7 +93,7 @@
     
     15.5 &
     
-    -
+    5
     
     \\ \hline
     
@@ -103,7 +103,7 @@
     
     15.5 &
     
-    -
+    2
     
     \\ \hline
     
@@ -113,7 +113,7 @@
     
     15.5 &
     
-    -
+    3
     
         
     \\ \hline
@@ -138,13 +138,13 @@
     \textbf{Metric}
     \\ \hline
     
-    \newrule{All planets are in the state of Imperial control at the beginning of the game, except those marked “AC” in the Armegeddon scenario.}{15.51}{-}
+    \newrule{All planets are in the state of Imperial control at the beginning of the game, except those marked “AC” in the Armegeddon scenario.}{15.51}{2}
     
-    \newrule{If only Imperial military units, Rebel and Imperial military units, or no military units on the planet, the Imperial player controls the planet, regardless of whether the PDB is up or down.}{15.51}{-}
+    \newrule{If only Imperial military units, Rebel and Imperial military units, or no military units on the planet, the Imperial player controls the planet, regardless of whether the PDB is up or down.}{15.51}{4}
     
-    \newrule{If there are only Rebel military units on the planet and the PDB is Up, the Imperial Controls the planet.}{15.51}{-}
+    \newrule{If there are only Rebel military units on the planet and the PDB is Up, the Imperial Controls the planet.}{15.51}{4}
     
-    \newrule{If there are only Rebel military units on the planet and the PDB is Down, neither player controls the planet.}{15.51}{-}
+    \newrule{If there are only Rebel military units on the planet and the PDB is Down, neither player controls the planet.}{15.51}{4}
     
   \end{longtable}
 \end{center}    
@@ -166,15 +166,15 @@
     \textbf{Metric}
     \\ \hline
     
-    \newrule{If there are only imperial military units, or Rebel and Imperial military units on the planet, neither player controls the planet (regardless of whether the state of the PDB).}{15.52}{-}
+    \newrule{If there are only imperial military units, or Rebel and Imperial military units on the planet, neither player controls the planet (regardless of whether the state of the PDB).}{15.52}{4}
     
-    \newrule{If only Rebel military units or no military units on the planet and the PDB is down, neither player controls the planet.}{15.52}{-}
+    \newrule{If only Rebel military units or no military units on the planet and the PDB is down, neither player controls the planet.}{15.52}{4}
     
-    \newrule{The Rebel player may place the the PDB up (according to [16.16])}{15.52}{-}
+    \newrule{The Rebel player may place the the PDB up (according to [16.16])}{15.52}{3}
     
-    \newrule{If there are only Rebel military units or no military units on a planet and the PDB is Up, neither player controls the planet.}{15.52}{-}
+    \newrule{If there are only Rebel military units or no military units on a planet and the PDB is Up, neither player controls the planet.}{15.52}{4}
     
-    \newrule{If at the end of the Imperial Player?turn and there are only Rebel military units or no military units, the PDB is Up, the planet is then Rebel controlled.}{15.52}{-}  
+    \newrule{If at the end of the Imperial Player?turn and there are only Rebel military units or no military units, the PDB is Up, the planet is then Rebel controlled.}{15.52}{4}  
     
   \end{longtable}
 \end{center}      
@@ -196,9 +196,37 @@
     \textbf{Metric}
     \\ \hline
     
-    \newrule{Rebel Control occurs when at the end of the Imperial player turn, there are only Rebel military units or no military units and the PDB is Up.}{15.53}{-}
+    \newrule{Rebel Control occurs when at the end of the Imperial player turn, there are only Rebel military units or no military units and the PDB is Up.}{15.53}{4}
     
-    % @todo
+    \newrule{If there are only Rebel military units, Rebel and Imperial military units, or no military units on the planet, the Rebel player controls the planet, regardless of whether the PDB is up or down.}{15.53}{-}
+    
+    \newrule{If there are only Imperial military units on the planet and the PDB is Up, the Rebel player controls the planet.}{15.53}{-}
+    
+    \newrule{If there are only Imperial military units on the planet and the PDB is Down, neither player controls the planet.}{15.53}{-}
 
   \end{longtable}
 \end{center}      
+
+
+\subsubsection{Rebellion Stopped}
+
+% status : completed, except for determining who controls the planet
+
+\setcounter{rc}{0}
+
+\begin{center}
+
+  \begin{longtable}{| p{\first} | p{\second} | p{\third} | p{\fourth} |}
+    \hline
+    \textbf{\#}&
+    \textbf{Rule Description}&
+    \textbf{Reference(s)}&
+    \textbf{Metric}
+    \\ \hline
+    
+    \newrule{A planet is in a State of Stop Rebellion when the Imperial player has completed a “Stop Rebellion” mission.}{15.54}{-}
+    
+    \newrule{If there are only Imperial units on the planet, the Imperial player controls the planet, regardless of the state of the PDB, otherwise neither player controls the planet.}{15.54}{-}
+
+  \end{longtable}
+\end{center}   
