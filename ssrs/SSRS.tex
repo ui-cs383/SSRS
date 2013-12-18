@@ -1,0 +1,1257 @@
+% This file was converted to LaTeX by Writer2LaTeX ver. 1.0.2
+% see http://writer2latex.sourceforge.net for more info
+\documentclass[twoside,letterpaper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb,amsfonts,textcomp}
+\usepackage{color}
+\usepackage{array}
+\usepackage{supertabular}
+\usepackage{hhline}
+\usepackage{hyperref}
+\hypersetup{pdftex, colorlinks=true, linkcolor=black, citecolor=black, filecolor=black, urlcolor=black}
+\usepackage[pdftex]{graphicx}
+
+
+% Outline numbering
+\setcounter{secnumdepth}{5}
+%\renewcommand\thesection{\arabic{section}}
+%\renewcommand\thesubsection{\arabic{section}.\arabic{subsection}}
+%\renewcommand\thesubsubsection{\arabic{section}.\arabic{subsection}.\arabic{subsubsection}}
+%\renewcommand\theparagraph{\arabic{section}.\arabic{subsection}.\arabic{subsubsection}.\arabic{paragraph}}
+%\renewcommand\thesubparagraph{\arabic{section}.\arabic{subsection}.\arabic{subsubsection}.\arabic{paragraph}.\arabic{subparagraph}}
+\makeatletter
+\newcommand\arraybslash{\let\\\@arraycr}
+\makeatother
+% Page layout (geometry)
+\setlength\voffset{-1in}
+\setlength\hoffset{-1in}
+\setlength\topmargin{0.5in}
+\setlength\oddsidemargin{1in}
+\setlength\evensidemargin{1in}
+\setlength\textheight{8.25in}
+\setlength\textwidth{6.5in}
+\setlength\footskip{0.5in}
+\setlength\headheight{0.5in}
+\setlength\headsep{0.5in}
+% Footnote rule
+\setlength{\skip\footins}{0.0469in}
+\renewcommand\footnoterule{\vspace*{-0.0071in}\setlength\leftskip{0pt}\setlength\rightskip{0pt plus 1fil}\noindent\textcolor{black}{\rule{0.25\columnwidth}{0.0071in}}\vspace*{0.0398in}}
+% Pages styles
+\makeatletter
+\newcommand\ps@Standard{
+  \renewcommand\@oddhead{\selectlanguage{english}\rmfamily\color{black} University of Idaho CS Department Instructional Use\hfill \hfill NOT FOR RELEASE}
+  \renewcommand\@evenhead{\@oddhead}
+  \renewcommand\@oddfoot{\foreignlanguage{english}{\textcolor{black}{SSRS Page }}\foreignlanguage{english}{\textcolor{black}{\thepage{}}}}
+  \renewcommand\@evenfoot{\@oddfoot}
+  \renewcommand\thepage{\arabic{page}}
+}
+\newcommand\ps@Convertviii{
+  \renewcommand\@oddhead{}
+  \renewcommand\@evenhead{\@oddhead}
+  \renewcommand\@oddfoot{}
+  \renewcommand\@evenfoot{\@oddfoot}
+  \renewcommand\thepage{\arabic{page}}
+}
+\newcommand\ps@Convertvii{
+  \renewcommand\@oddhead{}
+  \renewcommand\@evenhead{\@oddhead}
+  \renewcommand\@oddfoot{}
+  \renewcommand\@evenfoot{\@oddfoot}
+  \renewcommand\thepage{\arabic{page}}
+}
+\newcommand\ps@Convertvi{
+  \renewcommand\@oddhead{}
+  \renewcommand\@evenhead{\@oddhead}
+  \renewcommand\@oddfoot{}
+  \renewcommand\@evenfoot{\@oddfoot}
+  \renewcommand\thepage{\arabic{page}}
+}
+\newcommand\ps@Convertv{
+  \renewcommand\@oddhead{}
+  \renewcommand\@evenhead{\@oddhead}
+  \renewcommand\@oddfoot{}
+  \renewcommand\@evenfoot{\@oddfoot}
+  \renewcommand\thepage{\arabic{page}}
+}
+\newcommand\ps@Convertiv{
+  \renewcommand\@oddhead{}
+  \renewcommand\@evenhead{\@oddhead}
+  \renewcommand\@oddfoot{}
+  \renewcommand\@evenfoot{\@oddfoot}
+  \renewcommand\thepage{\arabic{page}}
+}
+\newcommand\ps@Convertii{
+  \renewcommand\@oddhead{}
+  \renewcommand\@evenhead{\@oddhead}
+  \renewcommand\@oddfoot{}
+  \renewcommand\@evenfoot{\@oddfoot}
+  \renewcommand\thepage{\arabic{page}}
+}
+\newcommand\ps@FirstPage{
+  \renewcommand\@oddhead{}
+  \renewcommand\@evenhead{\@oddhead}
+  \renewcommand\@oddfoot{}
+  \renewcommand\@evenfoot{\@oddfoot}
+  \renewcommand\thepage{\arabic{page}}
+}
+\makeatother
+\pagestyle{Standard}
+\setlength\tabcolsep{1mm}
+\renewcommand\arraystretch{1.3}
+% footnotes configuration
+\makeatletter
+\renewcommand\thefootnote{\arabic{footnote}}
+\makeatother
+\title{SYSTEMS AND SOFTWARE REQUIREMENTS SPECIFICATION (SSRS) TEMPLATE}
+\author{Clinton Jeffery}
+\date{2010-11-18T11:33:37.30}
+
+
+% % % % % % % % % % % % % % %
+% Place my packages here    %
+% % % % % % % % % % % % % % %
+
+% New tables
+\usepackage[utf8]{inputenc}
+\usepackage{tabularx}
+\usepackage{ragged2e}
+\usepackage{booktabs}
+\usepackage{caption}
+\newcolumntype{C}[1]{>{\Centering}p{#1}}
+\renewcommand\tabularxcolumn[1]{C{#1}}
+%\usepackage{chngpage}
+
+% Appendices
+%\usepackage[titletoc,toc]{appendix}
+
+% Use verbatim to allow block comments.
+\usepackage{verbatim}
+\usepackage{newusecases}
+%\usepackage{fullpage}
+\usepackage{listings}
+\usepackage{url}
+\usepackage[parfill]{parskip}
+
+% Automatically clearpage after every section
+\usepackage{titlesec}
+\newcommand\sectionbreak{\ifnum\value{section}>0\clearpage\fi}
+
+
+
+\begin{document}
+
+% Removing rule spacing for tables
+\setlength{\aboverulesep}{0pt}
+\setlength{\belowrulesep}{0pt}
+\setlength{\extrarowheight}{.75ex}
+
+% % % % % % % % % % % % %
+% Cover Page            %
+% % % % % % % % % % % % %
+\begin{minipage}{\linewidth}
+\centering
+\textsc{
+	\textbf{
+		Systems and Software Requirements Specification (SSRS) 	\\
+							For								   	\\
+							\vspace{1em}
+						{\Large Freedom in the Star System}		\\
+}}
+\end{minipage}
+
+\vspace{2em}
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.8]{./images/fitss.png}
+\end{figure}
+
+\begin{minipage}{\linewidth}
+\centering
+Version 0.2\\
+17 December 2013\\
+
+\vspace{2em}
+
+Prepared for:\\
+Dr. Clinton Jeffrey\\
+\url{jeffreyc@uidaho.edu}\\
+JEB 230, University of Idaho
+
+\vspace{2em}
+
+Prepared by:\\
+Chris Waltrip\\
+University of Idaho\\
+Moscow, ID 83844-1010
+
+\vspace{2em}
+
+Material from:\\
+CS383 Python Team\\
+et. al. (Will eventually put all team member names in)\\
+University of Idaho\\
+Moscow, ID 83844-1010
+\end{minipage}
+
+
+\clearpage
+% % % % % % % % % % % % % %
+% Record of Changes Page  %
+% % % % % % % % % % % % % %
+\begin{minipage}{\linewidth}
+\centering
+\textsc{
+	\textbf{Freedom in the Star System SSRS}}
+
+\vspace{2em}
+
+\textsc{
+	\textbf{Record of Changes}}
+	
+\end{minipage}
+
+\begin{minipage}{\linewidth}
+% Table
+% Create column type for ``Brief Description''
+\newcolumntype{P}{>{\centering\arraybackslash}p{\dimexpr.25\linewidth-2\tabcolsep}}
+\centering
+%\captionof*{table}{\textsc{\textbf{Record of Changes}}}
+\begin{tabularx}{\textwidth}{XXXXPXX}\toprule[1.5pt] % Description column is multiline
+
+% Header
+\bf Change Number & \bf Change Date & \bf Change Location & \bf A\newline M\newline D & \bf Brief \newline Description & \bf Approved By \newline (Initials) & \bf Date Approved \\ \midrule[1.0pt]
+
+% Changes
+1 & 12/5/13 & Section 1 & A & Initial copy, filled in details & --- & ---\\
+2 & 12/17/13 & Section 3.2 & A & Added use cases & --- & ---\\
+3 & 12/17/13 & All Tables & M & Changed table formats & --- & ---\\
+4 & 12/17/13 & Preamble & M & Converted to minitables & --- & ---\\
+5 & 12/17/13 & Table of Contents & M & Slight design changes (uniformity) & --- & ---\\
+6 & 12/17/13 & Section 3.2 & M & Overhauled Use Case style & --- & ---\\
+
+% Footer
+\bottomrule[1.5pt]
+\end{tabularx}\par
+
+% Legend
+\bigskip
+\raggedleft % Align legend to the right
+\begin{tabular}{c l}
+\multicolumn{2}{c}{\textsc{Legend}} \\ \midrule[0.5pt]
+\textsc{\textbf{A}}   & Added\\
+\textsc{\textbf{M}}   & Modified\\
+\textsc{\textbf{D}}	  & Deleted\\
+\end{tabular}
+\end{minipage}
+
+\clearpage
+% % % % % % % % % % % % % %
+% Table of Contents Page  %
+% % % % % % % % % % % % % %
+\begin{minipage}{\linewidth}
+\centering
+\textsc{
+	\textbf{Freedom in the Star System SSRS}}
+
+\vspace{2em}
+
+%\textsc{
+%	\textbf{{\LARGE Table of Contents}}}
+
+%\vspace{2em}
+
+\end{minipage}
+
+% Set up TOC
+% Show lots of depth
+\setcounter{tocdepth}{9}
+% Center, bold and small caps ``Table of Contents''
+\renewcommand\contentsname{\centering\textsc{\textbf{Table of Contents}}}
+\tableofcontents
+%\clearpage\clearpage %\setcounter{page}{1}\pagestyle{Convertii}
+
+
+% % % % % % % % % % % % % %
+% Section 1               %
+% % % % % % % % % % % % % %
+\section{Introduction}
+%\textit{This section the document should
+%introduce the project, customer, audience, etc., without delving into
+%too much detail, because those details are provided in subsequent
+%sections.}
+
+\subsection{Identification}
+%{\selectlanguage{english}\itshape\color{black}
+%This paragraph shall contain a full identification of the system and the
+%software to which this document applies, including, as applicable,
+%identification number(s), title(s), abbreviation(s), version number(s),
+%and release number(s).}
+
+The software system being considered for development is referred to as \textit{Freedom in the Star System}.  The customer providing specifications for the system is Dr. Clinton Jeffrey, University of Idaho.  The ultimate customer, or end-user, of the system will be the general public.  This is a new project effort, so the version under development is version 0.1.0.
+
+\subsection{Purpose}
+The purpose of the system under development is entertainment.  While the system will be used by the general public, this document is intended to be read and understood by UICS software
+designers and coders. The document will also be vetted or approved by members of this team not involved in the writing of a given portion.
+
+\subsection{Scope}
+\textit{Freedom in the Galaxy} is a board game designed and owned by SPI (now Avalon Hill) in 1978.  \textit{Freedom in the Star System} will be a digital representation of the board game for the purposes of practicing software engineering standards in a controlled, educational environment.
+
+\subsection{Definitions, Acronyms, and Abbreviations}
+
+\begin{minipage}{\linewidth}
+% Table
+% Create column type for ``Brief Description''
+\newcolumntype{P}{>{\centering\arraybackslash}p{\dimexpr.25\linewidth-2\tabcolsep}}
+\centering
+%\captionof*{table}{\textsc{\textbf{Record of Changes}}}
+\begin{tabularx}{\textwidth}{lX}\toprule[1.5pt] % Description column is multiline
+
+% Header
+\bf Term of Acronym & \bf Definition\\ \midrule[1.0pt]
+
+% Acronyms
+Alpha test & Limited release(s) to inside testers and selected outside testers\\
+Beta test & Limited release(s) to cooperating customers wanting early access to developing systems\\
+Acceptance test & Final test; release of full functionality to customer for approval\\
+SSRS & System and Software Requirements Specification; this document\\
+SSDD & System and Software Design Document\\
+FITG & Freedom in the Galaxy; board game developed by SPI/Avalon Hill\\
+FITSS & Freedom in the Star System; partial digital adaptation of FITG\\
+SPI & That's a good question! Bought out by Avalon Hill\\
+
+% Footer
+\bottomrule[1.5pt]
+\end{tabularx}
+\end{minipage}
+
+
+\subsection{References}
+CITE Freedom in the Galaxy \\
+CITE Updates to the rules of FITG \\
+CITE Dr. J? (This document)\\
+CITE Dr. Oman? (Original of this document)
+
+\subsection{Overview and Restrictions}
+This document is for limited release only to UI CS personnel working on
+the project and those explicitly approved by UI CS personnel working on the project.
+
+Section 2 of this document describes the system under development from a
+holistic point of view. \ Functions, characteristics, constraints,
+assumptions, dependencies, and overall requirements are defined from
+the system-level perspective.
+
+Section 3 of this document describes the specific requirements of the
+system being developed. \ Interfaces, features, and specific
+requirements are enumerated and described to a degree sufficient for a
+knowledgeable designer or coder to begin crafting an architectural
+solution to the proposed system.
+
+Section 4 provides the requirements traceability information for the
+project.  Each feature of the system is indexed by the SSRS
+requirement number and linked to its SSDD and test references.
+
+Sections 5 and up are appendices including original information and
+communications used to create this document.
+
+
+% % % % % % % % % % % % % %
+% Section 2               %
+% % % % % % % % % % % % % %
+
+\section{Overall Description}
+%{\selectlanguage{english}\color{black}
+%\foreignlanguage{english}{\textit{This section of the document should
+%describe the general factors that affect the product and its
+%requirements. \ This section does not state specific requirements.
+%\ Instead, it provides the background for those requirements, which are
+%defined in detail in Section 3.}}\foreignlanguage{english}{ \ }}
+
+\subsection{Product Perspective}
+%{\selectlanguage{english}\color{black}
+%\foreignlanguage{english}{\textit{This subsection of the document should
+%put the product into perspective with other related products. \ If the
+%product \ is independent and totally self-contained, it should be so
+%stated here. If the document de[FB01?]nes a product that is a component
+%of a larger system, then this subsection should relate the requirements
+%of \ that larger system to functionality of the software and should
+%identify interfaces between that system and the software. \ A block
+%diagram showing the major components of the larger system,
+%interconnections, and external interfaces can be
+%helpful.}}\foreignlanguage{english}{\textbf{\textit{ }}}}
+
+%{\selectlanguage{english}\color{black}
+[ insert your text here ]
+
+\subsection{Product Functions}
+%{\selectlanguage{english}\itshape\color{black}
+%This subsection of the document should provide a summary of the major
+%functions that the software will perform. \ For the sake of clarity The
+%functions should be organized in a way that makes the list of functions
+%understandable to the \ customer or to anyone else reading the document
+%for the first time. \ Textual or graphical methods can be used to show
+%the different functions and their relationships. \ Such a diagram is
+%not intended to show a design of a product, but simply shows the
+%logical relationships among variables.}
+
+%{\selectlanguage{english}\color{black}
+[ insert your text here ]
+
+\subsection{User Characteristics}
+%{\selectlanguage{english}\itshape\color{black}
+%This subsection of the document should describe those general
+%characteristics of the intended users of the product including
+%educational level, experience, and technical expertise. \ It should not
+%be used to state speci[FB01?]c requirements, but rather should provide
+%the reasons why certain speci[FB01?]c requirements are later
+%speci[FB01?]ed in Section 3 of this document.}
+
+%{\selectlanguage{english}\color{black}
+[ insert your text here ] %}
+
+\subsection{Constraints}
+%{\selectlanguage{english}\itshape\color{black}
+%This subsection of the document should provide a general description of
+%any other items that will limit the developer{\textquoteright}s
+%options. \ These include: a) Regulatory policies; b) Hardware
+%limitations (e.g., signal timing requirements); c) Interfaces to other
+%applications; d) Parallel operation; e) Audit functions; f) Control
+%functions; g) Higher-order language requirements; h) Signal handshake
+%protocols; i) Reliability requirements; j) Criticality of the
+%application; k) Safety and security considerations.}
+
+%{\selectlanguage{english}\color{black}
+[ insert your text here ]%}
+
+\subsection{Assumptions and Dependencies}
+%{\selectlanguage{english}\itshape\color{black}
+%This subsection of the document should list each of the factors that
+%affect the requirements stated in the document. \ These factors are not
+%design constraints on the system and/or software but are, rather, any
+%changes to them that can affect the requirements in the document. For
+%example, an assumption may be that a speci[FB01?]c operating system
+%will be available on the hardware designated for the software product.
+%\ If, in fact, the operating system is not available, the document
+%would then have to change accordingly.}
+
+%{\selectlanguage{english}\color{black}
+[ insert your text here ]
+
+\subsection{System Level (Non-Functional) Requirements}
+%{\selectlanguage{english}\itshape\color{black}
+%This subsection of the document should identify system level (whole, not
+%functional) requirements that impact the construction, operation,
+%packaging and delivery of the system and software.}
+
+\subsubsection{Site Dependencies}
+%{\selectlanguage{english}\color{black}
+%\foreignlanguage{english}{\textit{This paragraph shall specify
+%site-dependent operational parameters and needs (such as parameters
+%indicating operation-dependent targeting constants or data
+%recording).}}\foreignlanguage{english}{
+%}\foreignlanguage{english}{\textit{. \ The requirements shall include,
+%as applicable, number of each type of equipment, type, size, capacity,
+%and other required characteristics of processors, memory, input/output
+%devices, auxiliary storage, communications/ network equipment, and
+%other required equipment or software that must be used by, or
+%incorporated into, the system. \ Examples include operating systems,
+%database management systems, communications/ network software, utility
+%software, input and equipment simulators, test software, and
+%manufacturing software. \ The correct nomenclature, version, and
+%documentation references of each such device or software item shall be
+%provided.}}}
+
+%{\selectlanguage{english}\color{black}
+[ insert your text here ]
+
+\subsubsection{Safety, Security and Privacy Requirements}
+%{\selectlanguage{english}\itshape\color{black}
+%This paragraph shall specify the system requirements, if any, concerned
+%with maintaining safety, security and privacy. \ These requirements
+%shall include, as applicable, the safety, security and privacy
+%environment in which the system must operate, the type and degree of
+%security or privacy to be provided, and the criteria that must be met
+%for safety/security/privacy certification and/or accreditation.}
+
+%{\selectlanguage{english}\color{black}
+[ insert your text here ]%}
+
+\subsubsection{Performance Requirements}
+%{\selectlanguage{english}\itshape\color{black}
+%This paragraph should specify both the static and the dynamic numerical
+%performance requirements placed on the soft ware or on human
+%interaction as a whole. \ Static numerical requirements may include the
+%following: a) The number of terminals to be supported; b) The number of
+%simultaneous users to be supported; c) Amount and type of information
+%to be handled. \ Dynamic numerical requirements may include, for
+%example, the numbers of transactions and tasks and the amount of data
+%to be processed within certain time periods for both normal and peak
+%workload conditions. \ All of these requirements should be stated in
+%measurable terms. For example, {\textquotedblleft}95\% of the
+%transactions shall be processed in less than
+%1msec.{\textquotedblright}}
+
+%{\selectlanguage{english}\color{black}
+[ insert your text here ] %}
+
+\subsubsection{System and Software Quality}
+%{\selectlanguage{english}\itshape\color{black}
+%This paragraph shall specify the requirements, if any, concerned with
+%hardware and software quality factors identified in the contract.
+%\ Examples include quantitative requirements regarding the
+%system{\textquoteright}s functionality (the ability to perform all
+%required functions), reliability (the ability to perform with correct,
+%consistent results), maintainability (the ability to be easily
+%corrected), availability (the ability to be accessed and operated when
+%needed), flexibility (the ability to be easily adapted to changing
+%requirements), portability (the ability to be easily modified for a new
+%environment), reusability (the ability to be used in multiple
+%applications), testability (the ability to be easily and thoroughly
+%tested), usability (the ability to be easily learned and used), and
+%other attributes.}
+
+%{\selectlanguage{english}\color{black}
+[ insert your text here ] %}
+
+\subsubsection{Packaging and Delivery Requirements}
+%{\selectlanguage{english}\itshape\color{black}
+%This paragraph shall specify the requirements, if any, for packaging,
+%labeling, handling and delivery of the system being developed to the
+%customer.}
+
+%{\selectlanguage{english}\color{black}
+%The executable system and all associated documentation (i.e., SSRS, SDD,
+%code listing, test plan (data and results), and user manual) will be
+%delivered to the customer on CD{\textquoteright}s and/or via email, as
+%specified by the customer at time of delivery. \ Although document
+%{\textquotedblleft}drops{\textquotedblright} will occur throughout the
+%system development process, the final, edited version of the above
+%documents will accompany the final, accepted version of the executable
+%system.}
+
+\subsubsection{Personnel-Related Requirements}
+The system under development has no special personnel-related
+characteristics.
+
+\subsubsection{Training-related requirements}
+
+No training materials or expectations are tied to this project other
+than the limited help screens built into the software and the
+accompanying user manual.
+
+\subsubsection{Logistics-Related Requirements}
+%{\selectlanguage{english}\itshape\color{black}
+%This paragraph shall specify the system requirements, if any, concerned
+%with logistics considerations. \ These considerations may include:
+%system maintenance, software support, system transportation modes,
+%supply-system requirements, impact on existing facilities, and impact
+%on existing equipment. \ }
+
+%{\selectlanguage{english}\color{black}
+[ Insert a description of the minimum hardware requirements and OS and
+application software dependencies here ] %}
+
+\subsubsection{Other Requirements}
+%{\selectlanguage{english}\itshape\color{black}
+%This paragraph shall specify additional system level requirements, if
+%any, not covered in the previous paragraphs.}
+
+%{\selectlanguage{english}\color{black}
+[ insert your text here ] %}
+
+\subsubsection{Precedence and Criticality of Requirements}
+%{\selectlanguage{english}\itshape\color{black}
+%This paragraph shall specify, if applicable, the order of precedence,
+%criticality, or assigned weights indicating the relative importance of
+%the requirements in this specification. \ Examples include identifying
+%those requirements deemed critical to safety, to security, or to
+%privacy for purposes of singling them out for special treatment. \ If
+%all requirements have equal weight, this paragraph shall so state. }
+
+%{\selectlanguage{english}\color{black}
+[ insert your text here ] %}
+
+%\clearpage
+% % % % % % % % % % % % % %
+% Section 3               %
+% % % % % % % % % % % % % %
+\section{Specific Requirements}
+%{\selectlanguage{english}\itshape\color{black}
+%This section of the document should contain all of the software
+%requirements to a level of detail sufficient to enable designers to
+%design a system to satisfy those requirements, and testers to test that
+%the system satisfies those requirements. \ Throughout this section,
+%every stated requirement should be externally perceivable by users,
+%operators, or other external systems. \ These requirements should
+%include at a minimum a description of every input \ into the system,
+%every output from the system, and all functions performed by the system
+%in response to an input or in support of an output. \ As this is often
+%the largest and most important part of the document, all requirements
+%should be uniquely identifiable and careful attention should be given
+%to organizing the requirements to maximize readability.}
+
+\subsection{External Interface Requirements}
+%{\selectlanguage{english}\itshape\color{black}
+%This subsection should be a detailed description of all inputs into and
+%outputs from the software system. \ It should complement the
+%constraints and dependencies defined in earlier sections, but not
+%repeat that information. \ Hardware, software, user, and other
+%communication interfaces need to be specified. \ Use the four
+%subsections listed below or the table on the next page, or some
+%combination of both.}
+
+\subsubsection{Hardware Interfaces}
+[ insert your
+text here ]
+
+\subsubsection{Software Interfaces}
+[ insert your
+text here ]
+
+\subsubsection{User Interfaces}
+[ insert your
+text here ]
+
+\subsubsection{Other Communication Interfaces}
+[ insert your
+text here ]
+
+
+\bigskip
+
+
+\bigskip
+
+\bigskip
+\clearpage
+%\setcounter{page}{1}\pagestyle{Convertiv}
+
+\begin{minipage}{\linewidth}
+\centering
+\textbf{External Interface Requirements}
+\end{minipage}
+
+\bigskip
+
+\begin{minipage}{\linewidth}
+\centering
+\captionof*{table}{\textbf{Hardware Interfaces}}
+\begin{tabular}{c c c c c c } \toprule[1.5pt]
+\bf Name & \bf Source/Destination & \bf Description & \bf Type/Range & \bf Dependencies & \bf Formats\\ \midrule[1.0pt]
+ text & text & text & text & text & text \\
+\bottomrule[1.5pt]
+\end {tabular} %\par
+\end{minipage}
+
+\bigskip
+
+\begin{minipage}{\linewidth}
+\centering
+\captionof*{table}{\textbf{Software Interfaces}}
+\begin{tabular}{c c c c c c } \toprule[1.5pt]
+\bf Name & \bf Source/Destination & \bf Description & \bf Type/Range & \bf Dependencies & \bf Formats\\ \toprule[1.0pt]
+ text & text & text & text & text & text \\
+\bottomrule[1.5pt]
+\end {tabular} %\par
+\end{minipage}
+
+\bigskip
+
+\begin{minipage}{\linewidth}
+\centering
+\captionof*{table}{\textbf{User Interfaces}}
+\begin{tabular}{c c c c c c } \toprule[1.5pt]
+\bf Name & \bf Source/Destination & \bf Description & \bf Type/Range & \bf Dependencies & \bf Formats\\ \toprule[1.0pt]
+ text & text & text & text & text & text \\
+\bottomrule[1.5pt]
+\end {tabular} %\par
+\end{minipage}
+
+\bigskip
+
+\begin{minipage}{\linewidth}
+\centering
+\captionof*{table}{\textbf{Other Communication Interfaces}}
+\begin{tabular}{c c c c c c } \toprule[1.5pt]
+\bf Name & \bf Source/Destination & \bf Description & \bf Type/Range & \bf Dependencies & \bf Formats\\ \toprule[1.0pt]
+ text & text & text & text & text & text \\
+\bottomrule[1.5pt]
+\end {tabular}\par
+\end{minipage}
+
+\clearpage %\setcounter{page}{1}\pagestyle{Convertv}
+\subsection{System Features}
+%{\selectlanguage{english}\itshape\color{black}
+%Functional requirements should define the fundamental actions (i.e.,
+%features) \ that must take place in the software in accepting and
+%processing the inputs and in processing and generating the outputs.
+%These requirements are given in the form of \textbf{Use Cases} where
+%possible, denoting a concrete use (discrete user-performable task) of
+%the system. Use case diagrams are followed by use case descriptions,
+%followed by any non-task features. Non-task features are generally
+%listed as {\textquotedblleft}shall{\textquotedblright} statements
+%starting with {\textquotedblleft}The system
+%shall{\dots}{\textquotedblright} \ These include: a) Validity checks on
+%the inputs; b) Exact sequence of operations; c) Responses to abnormal
+%situations, including error detection, handling and recovery; d)
+%Parameter specification and usage; e) Relationship of outputs to
+%inputs, including formulas for input to output conversion. \newline
+%\newline
+%It may be appropriate to partition the functional requirements into sub
+%functions or subprocesses, but that decomposition (here) does not imply
+%that the software design will also be partitioned that way. \ You
+%should repeat subsections 3.2.i for every specified feature defined for
+%the system or software.}
+
+\subsubsection{Use Case Diagrams}
+[insert 1+ use case diagrams here]
+
+\clearpage
+\subsubsection{System Feature 1: Setting up the Player(s)}
+\begin{usecase}
+  \addtitle{Pre-Game I}{Setting up the Player(s)}
+  \addfield{Summary}{The players connect with each other.}
+  \additemizedfield{Actors}{
+    \item Human player(s)
+  }
+  \additemizedfield{Preconditions}{
+    \item Game client(s) and server(s) have been started
+  }
+  \additemizedfield{Primary Scenario: Multi-player}{
+    \item Players adjust settings and ensure general connectivity
+    \item Players find each other either via server matching or other communication
+    \item Players connect to each other for the game-start
+    \item Players choose a side, one of:
+      \begin{enumerate}
+        \item Rebel Player
+        \item Imperial Player
+      \end{enumerate}
+  }
+  \additemizedfield{Alternative Scenario: Single-player}{
+    \item Player adjusts settings
+    \item Player chooses side, one of:
+      \begin{enumerate}
+        \item Rebel Player
+        \item Imperial Player
+      \end{enumerate}
+    \item Player chooses AI difficulty level
+  }
+  \finalize
+\end{usecase}
+
+\clearpage
+\subsubsection{System Feature 2: Choosing the Scenario}
+\begin{usecase}
+  \addtitle{Pre-game II}{Choosing the Scenario}
+  \addfield{Summary}{The players choose from among the
+    available scenarios for their chosen game.}
+  \additemizedfield{Actors}{
+    \item Imperial Player
+    \item Rebel Player
+  }
+  \additemizedfield{Preconditions}{
+    \item Game type has been chosen
+  }
+  \additemizedfield{Primary Scenario: Star-System Game}{
+    \item The system displays the Star-System game scenarios and their information
+          \begin{enumerate}
+                \item Flight to Egrix
+                \item The Varu Powderkeg
+          \end{enumerate}
+    \item The players vote to agreement on which scenario to play
+  }
+  \additemizedfield{Alternative Scenario: Province Game}{
+    \item The system displays the Province game scenarios and their information
+        \begin{enumerate}
+              \item The Empire's Backdoor
+              \item Orlog Besieged
+        \end{enumerate}
+    \item The players vote to agreement on which scenario to play
+  }
+  \additemizedfield{Alternative Scenario: Galactic Game}{
+    \item There is only one scenario for the Galactic Game, and that is the Campaign
+    \item The players
+  }
+    \finalize
+\end{usecase}
+\clearpage
+\subsubsection{System Feature 3: Game Setup}
+\begin{usecase}
+	\addtitle{Game Setup I}{Game Setup}
+	\addfield{Summary}{System sets up game state and then Players make purchases and place armies before the start of the first Game-Turn}
+	\additemizedfield{Actors}{
+		\item Rebel Player
+		\item Imperial Player
+	}
+	\additemizedfield{Preconditions}{
+		\item Pre-Game Setup has been completed
+		}
+	\addscenario{Primary Scenario}{
+		\item System performs initial setup
+		\item Imperial Player purchases armies
+		\item Imperial Player places armies
+		\item Rebel Player determines location of Rebel Secret Base (Galactic only)
+	}
+	\finalize
+\end{usecase}
+
+\clearpage
+\subsubsection{System Feature 4: Environ Movement}
+\begin{usecase}
+  \addtitle{Movement I}{Environ Movement}
+  \addfield{Summary}{Player moves Character(s) or military units from Environ to Environ on single planet}
+  \additemizedfield{Actors}{
+    \item Phasing Player
+    \item Non-Phasing Player
+  }
+  \additemizedfield{Preconditions}{
+    \item It is the movement segment of the phasing players turn or it is the reaction segment of the non-phasing player
+  }
+  \additemizedfield{Primary Scenario: Units not detectable by PDB}{
+    \item Player chooses which units are to be moved and where to move them
+    \item System moves units to new environ
+  }
+  \additemizedfield{Alternative Scenario: Units are dectectable by PDB}{
+    \item System handles PDB Rules
+  }
+    \finalize
+\end{usecase}
+
+\clearpage
+\subsubsection{System Feature 5: Interplanetary Movement}
+\begin{usecase}
+  \addtitle{Movement II}{Interplanetary Movement}
+  \addfield{Summary}{Player moves eligible units between planets}
+  \additemizedfield{Actors}{
+        \item Phasing Player
+        \item Non-Phasing Player
+  }
+  \additemizedfield{Preconditions}{
+       \item Military units must be mobile or stacked with mobile military units. Characters must be on a ship
+       \item non-phasing player may intercept
+  }
+  \additemizedfield{Primary Scenario: Travel occurs in single star system}{
+                    \item Player chooses which units are to be moved and where to move them within the star system.
+                    \item System processes PDB check.
+                    \item Non Phasing player may react on per orbit basis, intercepting.
+  }
+  \additemizedfield{Alternative Scenario: Travel occurs between multiple star systems }{
+                        \item Player chooses which units are to be moved inside one star system and the destination inside another star system.
+                    \item System processes PDB check
+                    \item Player Hyper Jumps
+                    \item Non Phasing Player may react on per orbit basis
+  }
+    \finalize
+\end{usecase}
+
+\clearpage
+\subsubsection{System Feature 6: Military Combat}
+\begin{usecase}
+  \addtitle{Military Combat I}{Military Combat}
+  \addfield{Summary}{
+  	Both players have military units in the same environ and the Movement and Enemy reaction segments of the operation phase are over. One of the players must decide to attack and the combat is resolved by the computer.
+  	}
+  \additemizedfield{Actors}{
+  \item Phasing Player
+  \item Non-Phasing Player
+  }
+  \additemizedfield{Preconditions}{
+      \item Movement Segment of the Operations phase has been completed by the Phasing Player.
+      \item Enemy Reaction Segment of the Operations phase has been completed by the Non-Phasing Player.
+      \item There must be an environ with both players military units.
+  }
+  \addscenario{Primary Scenario}{
+    \item Phasing Player chooses which environ to resolve conflict.
+    \item Phasing Player decides if they want to attack.
+    \item If yes...
+      \begin{itemize}
+        \item Players choose leaders if they can.
+        \item The computer determines the outcome of the attack.
+      \end{itemize}
+    \item If no...
+      \begin{itemize}
+        \item Does Non-Phasing Player wish to attack?
+        \item If yes...
+          \begin{itemize}
+            \item Players choose leaders if they can.
+            \item The computer determines the outcome of the attack.
+          \end{itemize}
+        \item If not
+        \item Phasing Player chooses next environ. Process repeats until there are no remaining conflicts.
+        \end{itemize}
+  	}
+  	  \finalize
+\end{usecase}
+
+\clearpage
+\subsubsection{System Feature 7: Military Combat after Rebellion}
+\begin{usecase}
+  \addtitle{Military Combat II}{Military Combat after Rebellion}
+  \addfield{Summary}{A rebellion has occured and the Rebel player receives military units as a result.
+                     Those rebel military units are also placed on an environ with imperial units. The rebel
+                   player can choose to attack.}
+  \additemizedfield{Actors}{
+      \item Rebel Player
+      \item Imperial Player
+  }
+  \additemizedfield{Preconditions}{
+      \item A rebellion must have just occurred.
+  }
+  \addscenario{Primary Scenario}{
+  \item Does the rebel wish to attack?
+  \item If yes...
+    \begin{itemize}
+      \item Players choose leaders.
+      \item Computer handles the attack.
+    \end{itemize}
+  \item If no...
+  \item Nothing happens. Player Turn resumes.
+  }
+    \finalize
+\end{usecase}
+
+
+\clearpage
+\subsubsection{System Feature 8: Character Versus Character Combat}
+\begin{usecase}
+	\addtitle{Character Combat I}{Phasing vs Non-Phasing}
+	\addfield{Summary}{Non-Phasing Player's characters or military units have found Phasing Player characters and initiated combat, which shall be resolved immediately in a series of rounds of character combat procedure.}
+	\additemizedfield{Actors}{
+		\item Phasing Player
+		\item Non-Phasing Player
+	}
+	\additemizedfield{Preconditions}{
+		\item Non-Phasing Player's search has found enemy characters and has initiated combat.
+		}
+	\addscenario{Primary Scenario}{
+			\item Determine whether the character combat will be \textit{hand to hand} or a \textit{firefight}.
+			\begin{enumerate}
+			\item If a squad is the attacking force, the combat is a firefight
+			\item If characters are the attacking force, the Non-Phasing Player may dictate whether \textit{hand to hand} or a \textit{firefight}.
+			\end{enumerate}
+		\item Non-Phasing Player announces whether attempting to kill or capture.
+			\begin{enumerate}
+			\item If attempting to capture, shift two-columns to the left on the Character Combat Results Table for all resulting combat, including \textit{break off} attemps.
+			\end{enumerate}
+		\item Phasing Player assigns \textit{active} defenders from those available with at least one character required.
+		\item System determines \textit{combat differential} and informs both Phasing and Non-Phasing players.
+		\item Phasing Player may attempt to \textit{break off} from combat. 
+			\begin{enumerate}
+			\item Phasing Player attempts \textit{break off}
+				\begin{enumerate}
+				\item If \textit{break off} successful for only inactive defenders, those defenders are no longer found or involved in combat.
+				\item If \textit{break off} successful for active AND inactive defenders, both are no longer found and combat ends.
+				\item If \textit{break off} is unsuccessful defenders suffer a right column shift on the Character Combat Results Table for combat.
+				\end{enumerate}
+			\end{enumerate}
+		\item Unless all defending characters have succeeded in breaking off, System determines combat consequences, i.e. number of wounds and captured characters.
+		\item Both Phasing and Non-Phasing Player allocate respective wounds.
+		\item Repeat steps 3-7 indefinitely as long as both sides have live uncaptured characters and defender has not broken off.
+	}
+	\addscenario{Alternative Scenario: Phasing Player Fully Breaks Off}{
+		\item If Phasing Player \textit{breaks off} with all remaining units, combat ends.
+	}
+	\finalize
+\end{usecase}
+
+\clearpage
+\subsubsection{System Feature 9: Character Versus Non-Player Combat}
+\begin{usecase}
+	\addtitle{Character Combat II}{Phasing vs Non-Player Attackers}
+	\addfield{Summary}{Characters have encountered either a Creature or Irate Locals as an action event.}
+	\additemizedfield{Actors}{
+		\item Phasing Player
+	}
+	\additemizedfield{Preconditions}{
+		\item Encountered a Creature or Irate Locals as an action event.
+		}
+	\addscenario{Primary Scenario}{
+			\item Determine whether the character combat will be \textit{hand to hand} or a \textit{firefight}.
+			\begin{enumerate}
+			\item If a Creature is the attacking force, the combat is a \textit{hand to hand}
+			\item If Irate Locals are the attacking force, reference the Irate Locals Chart to determine combat type.
+			\end{enumerate}
+		\item System informs Phase Player that attacker is attempting to kill, as Creatures and Irate Locals always do.
+		\item Phasing Player assigns \textit{active} defenders from those available with at least one character required.
+		\item System determines \textit{combat differential} and informs both Phasing and Non-Phasing players.
+		\item Phasing Player may attempt to \textit{break off} from combat. 
+			\begin{enumerate}
+			\item Phasing Player attempts \textit{break off}
+				\begin{enumerate}
+				\item If \textit{break off} successful for only inactive defenders, those defenders are no longer found or involved in combat.
+				\item If \textit{break off} successful for active AND inactive defenders, both are no longer found and combat ends.
+				\item If \textit{break off} is unsuccessful defenders suffer a right column shift on the Character Combat Results Table for combat.
+				\end{enumerate}
+			\end{enumerate}
+		\item Unless all defending characters have succeeded in breaking off, System determines combat consequences, i.e. number of wounds and captured characters.
+		\item Phasing Player allocates wounds.
+		\item System allocates wounds to Creature or Irate Locals.
+		\item Repeat steps 3-7 indefinitely as long as both sides have live uncaptured characters and defender has not broken off.
+	}
+	\addscenario{Alternative Scenario: Phasing Player Fully Breaks Off}{
+		\item If Phasing Player \textit{breaks off} with all remaining units, combat ends.
+	}
+	\additemizedfield{Related Use Cases}{
+		\item Missions: Mission Phase
+	}
+	  \finalize
+\end{usecase}
+
+\clearpage
+\subsubsection{System Feature 10: Search Phase}
+\begin{usecase}
+	\addtitle{Search I}{Search Phase}
+	\addfield{Summary}{The Non-Phasing Player may attempt to search out detected enemy character(s). If the search is successful, the Non-Phasing Player gains intel on the enemy character(s) and may then engage in Character Combat. Searches are attempted with friendly character(s) and/or military units on a per-Environ basis where there are enemy character(s) detected.}
+	\additemizedfield{Actors}{
+	        \item Non-Phasing Player
+	}
+	\additemizedfield{Preconditions}{
+	        \item Operations Phase has been completed and/or Phasing Player is attempting a mission.
+	        \item Non-Phasing player has character(s) and/or military units present in an Environ with detected enemy character(s).
+	        }
+	\addscenario{Primary Scenario}{                                         
+	        \item                   
+	                \begin{enumerate}
+	                        \item Non-Phasing Player chooses an eligible Environ.                                                   \begin{center}
+	                        ? -- OR --
+	                        \end{center}
+	                        \item Phasing Player has character(s) attempting a mission and has become detected.
+	                \end{enumerate}
+	        \item System determines and displays eligible characters and/or military units.
+	        \item Non-Phasing Player chooses eligible units to attempt a search.
+	                
+	        \item If the search is successful, the Non-Phasing player may decide to engage the enemy in Character Combat.
+	        \item Non-Phasing Player may choose the next eligible Environ to perform a search in and the process repeats until no eligible Environs remain.
+	                \begin{enumerate}
+	                        \item If the Phasing Player has character(s) attempting a mission and becomes detected, steps 2-4 are repeated.
+	                \end{enumerate}
+	}
+	\addscenario{Alternative Scenario: Do Not Search}{
+	        \item Non-Phasing Player may choose not to search.  In this case, the Search Phase is complete.
+	}
+	\addscenario{Alternative Scenario: Search Not Possible}{
+	        \item No eligible Environs are present for searching; the Search phase is skipped.
+	}
+	\additemizedfield{Related Use Cases}{
+	        \item Character Combat: %waiting for character combat use case
+	}
+	  \finalize
+\end{usecase}
+
+\clearpage
+\subsubsection{System Feature 11: Using Possessions}
+\begin{usecase}
+    \addtitle{Possessions I}{Using Possessions}
+    \addfield{Summary}{The Rebel Player may attempt to use Possession(s) owned by his/her character(s) during an eligible phase. Once the item is used, the system determines the state of the Possession.}
+    \additemizedfield{Actors}{
+            \item Rebel Player 
+    }
+    \additemizedfield{Preconditions}{
+            \item Rebel player is in an eligible phase to use a Possession in their control.
+            }
+    \addscenario{Primary Scenario}{                                                     
+                                     \item Rebel player opens their inventory to look at their available Possessions.                        
+            \item Rebel player chooses a Possession they wish to use.
+            \item The item is used and its state is determined by the system.
+            \item Rebel player may continue to use available Possessions.
+            \item Rebel player closes inventory.
+            \item The phase continues.
+    }
+    \addscenario{Alternative Scenario: Possessions Not Used}{
+            \item Rebel player doesn't use a Possession and closes inventory.
+    }
+    \additemizedfield{Related Use Cases}{
+            \item None
+    }
+      \finalize
+\end{usecase}
+
+\clearpage
+\subsubsection{System Feature 12: Transferring Possessions}
+\begin{usecase}
+    \addtitle{Possessions II}{Transfer Possessions}
+    \addfield{Summary}{The Rebel Player may assign a Possession to another character that is stacked with the character who currently owns the Possession.}
+    \additemizedfield{Actors}{
+            \item Rebel Player
+    }
+    \additemizedfield{Preconditions}{
+            \item Rebel player is beginning the Mission Phase and has stacked characters with Possessions.
+            }
+    \addscenario{Primary Scenario}{                                                     
+            \item Rebel player opens their inventory to look at their available Possessions.                        
+            \item Rebel player chooses a Possession they wish to reassign.
+            \item Rebel player chooses another character the Possession is reassigned to.
+            \item Rebel player closes inventory.
+            \item The phase continues.
+    }
+    \addscenario{Alternative Scenario: Possessions Not Transfered}{
+            \item Rebel player doesn't transfer a Possession and closes inventory.
+    }
+    \additemizedfield{Related Use Cases}{
+            \item None
+    }
+      \finalize
+\end{usecase}
+
+\clearpage
+\subsubsection{System Feature 13: Missions}
+\begin{usecase}
+	\addtitle{Missions I}{Completing Missions in One Environ}
+	\addfield{Summary}{The Phasing Player attempts to complete Missions by completing the Events chosen by the System.
+	}
+	\additemizedfield{Actors}{
+		\item Phasing Player (regularly)
+		\item Non-Phasing Player (occasionally)
+	}
+	\additemizedfield{Preconditions}{
+		\item Mission Groups have been chosen, and Missions have been Assigned.
+	}
+	\addscenario{Primary Scenario}{
+		\item System determines number of ``Mission Attempts'' and determines Action Events for each Attempt.
+		\item Phasing Player completes Action Event.
+			%\begin{enumerate}
+			%	\item Non-Phasing Player may be involved with an Action Event.
+			%\end{enumerate}
+		\item Missions are completed based on results of Action Event.
+		\item Phasing Player continues attempting Missions until:
+			\begin{enumerate}
+			\item All Missions are completed (successfully or unsuccessfully) or Aborted.
+			\item No Mission Attempts remain.
+			\end{enumerate}
+		\item System calculates results of Bonus Mission Attempts for incomplete missions.
+	}
+	  \finalize
+\end{usecase}
+
+
+
+% % % % % % % % % % % % % %
+% Section 4               %
+% % % % % % % % % % % % % %
+\section{Requirements Traceability}
+%{\selectlanguage{english}\itshape\color{black}
+%This section shall contain traceability information from each system
+%requirement in this specification to the system (or subsystem, if
+%applicable) requirements it addresses. \ A tabular form is preferred,
+%but not mandatory.}
+
+\subsection{Alpha Release}
+\begin{minipage}{\linewidth}
+% Table
+\centering
+\captionof*{table}{\textbf{Alpha Release}}
+\begin{tabularx}{\textwidth}{*{2}{c}X*{4}{c}}\toprule[1.5pt] % Description column is multiline
+
+% Header
+\bf Feature Name & \bf Req. No. & \bf Req. \newline Description & \bf Priority & \bf SDD & \bf Test Case(s) & \bf Test Result(s) \\ \midrule[1.0pt]
+
+% Features
+Feature A & 1.1 & It does something over and over and over & M & 2.2 & 2 & 75\% \\
+
+% Footer
+\bottomrule[1.5pt]
+\end{tabularx}\par
+
+% Legend
+\bigskip
+\raggedleft
+\begin{tabular}{c l} %{.3\textwidth}{c L}
+\multicolumn{2}{c}{\textsc{Legend}} \\ \midrule[0.5pt]
+\textsc{\textbf{L}}   & Low Priority\\
+\textsc{\textbf{H}}   & High Priority\\
+\textsc{\textbf{M}}	  & Mandatory Priority\\
+\textsc{\textbf{P}}   & Passed Test Case\\
+\textsc{\textbf{F}}   & Failed Test Case\\
+\textsc{\textbf{SDD}} & \parbox{3cm}{\vspace{.25em}
+						Link is version\\
+						and page number\\
+						or function name}
+\end{tabular}
+\end{minipage}
+
+\begin{comment}
+\subsection{Beta Release}
+\begin{minipage}{\linewidth}
+% Table
+\centering
+\captionof*{table}{\textbf{Beta Release}}
+\begin{tabularx}{\textwidth}{*{2}{c}X*{4}{c}}\toprule[1.5pt] % Description column is multiline
+
+% Header
+\bf Feature Name & \bf Req. No. & \bf Req. \newline Description & \bf Priority & \bf SDD & \bf Test Case(s) & \bf Test Result(s) \\ \midrule[1.0pt]
+
+% Features
+Feature A & 1.1 & It does something over and over and over & M & 2.2 & 2 & 75\% \\
+
+% Footer
+\bottomrule[1.5pt]
+\end{tabularx}\par
+
+% Legend
+\bigskip
+\raggedleft
+\begin{tabular}{c l} %{.3\textwidth}{c L}
+\multicolumn{2}{c}{\textsc{Legend}} \\ \midrule[0.5pt]
+\textsc{\textbf{L}}   & Low Priority\\
+\textsc{\textbf{H}}   & High Priority\\
+\textsc{\textbf{M}}	  & Mandatory Priority\\
+\textsc{\textbf{P}}   & Passed Test Case\\
+\textsc{\textbf{F}}   & Failed Test Case\\
+\textsc{\textbf{SDD}} & \parbox{3cm}{\vspace{.25em}
+						Link is version\\
+						and page number\\
+						or function name}
+\end{tabular}
+\end{minipage}
+\end{comment}
+
+\begin{comment}
+\subsection{Accepted Release}
+\begin{minipage}{\linewidth}
+% Table
+\centering
+\captionof*{table}{\textbf{Accepted Release}}
+\begin{tabularx}{\textwidth}{*{2}{c}X*{4}{c}}\toprule[1.5pt] % Description column is multiline
+
+% Header
+\bf Feature Name & \bf Req. No. & \bf Req. \newline Description & \bf Priority & \bf SDD & \bf Test Case(s) & \bf Test Result(s) \\ \midrule[1.0pt]
+
+% Features
+Feature A & 1.1 & It does something over and over and over & M & 2.2 & 2 & 75\% \\
+
+% Footer
+\bottomrule[1.5pt]
+\end{tabularx}\par
+
+% Legend
+\bigskip
+\raggedleft
+\begin{tabular}{c l} %{.3\textwidth}{c L}
+\multicolumn{2}{c}{\textsc{Legend}} \\ \midrule[0.5pt]
+\textsc{\textbf{L}}   & Low Priority\\
+\textsc{\textbf{H}}   & High Priority\\
+\textsc{\textbf{M}}	  & Mandatory Priority\\
+\textsc{\textbf{P}}   & Passed Test Case\\
+\textsc{\textbf{F}}   & Failed Test Case\\
+\textsc{\textbf{SDD}} & \parbox{3cm}{\vspace{.25em}
+						Link is version\\
+						and page number\\
+						or function name}
+\end{tabular}
+\end{minipage}
+\end{comment}
+
+
+\section{Appendix A. [insert name here]}
+%{\selectlanguage{english}\itshape\color{black}
+%Include copies of specifications, mockups, prototypes, etc. supplied or
+%derived from the customer. \ Appendices are labeled A, B, {\dots}n.
+%\ \ Reference each appendix as appropriate in the text of the document.
+%}
+[ insert appendix A here ]
+
+
+\end{document}

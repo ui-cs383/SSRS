@@ -1,0 +1,68 @@
+%% Use Cases Style File
+%% Created by Tom Desair (http://www.tomdesair.com)
+%% Modified by Chris Waltrip (walt2178 [at] vandals.uidaho.edu)
+%% Original Downloadable at:
+%% 			http://www.tomdesair.com/downloads/use-case-latex-template.zip
+%% Date Modified: 17 December 2013
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License, either version 1.3
+% of this license or (at your option) any later version.
+% The latest version of this license is in
+%   http://www.latex-project.org/lppl.txt
+% and version 1.3 or later is part of all distributions of LaTeX
+% version 2005/12/01 or later.
+
+% This has been modified to use the tabularx environment.  Whether it's
+% successful or not remains to be seen.
+
+%-------------------------------------------------------------------------------
+%                Required Packages
+%-------------------------------------------------------------------------------
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{tabularx}
+
+%-------------------------------------------------------------------------------
+%                Vertical Rule spacing
+%-------------------------------------------------------------------------------
+\setlength{\aboverulesep}{0pt}
+\setlength{\belowrulesep}{0pt}
+\setlength{\extrarowheight}{.75ex}
+\newcolumntype{Z}{>{\raggedright\arraybackslash}X}
+
+%-------------------------------------------------------------------------------
+%                \addtitle command: add the title of the use case
+%-------------------------------------------------------------------------------
+\newcommand\addtitle[2]{\toprule[2.0pt] \textbf{#1} & \textbf{#2}}
+
+%-------------------------------------------------------------------------------
+%                \addfield command: add a property of the use case
+%-------------------------------------------------------------------------------
+\newcommand\addfield[2]{\\ \midrule\textit{#1} & #2 }
+
+%-------------------------------------------------------------------------------
+%                \addscenario command: add the main (or alternative) scenario
+%                of the use case
+%-------------------------------------------------------------------------------
+\newcommand\addscenario[2]{\\ \midrule\textit{#1} & \begin{enumerate} #2 \end{enumerate}}
+
+%-------------------------------------------------------------------------------
+%                \additemizedfield command: add a field with an item list
+%-------------------------------------------------------------------------------
+\newcommand\additemizedfield[2]{\\ \midrule\textit{#1} & \begin{itemize} #2 \end{itemize}}
+
+%-------------------------------------------------------------------------------
+%                \finalizeusecase command: add the bottom bar to the use case
+%-------------------------------------------------------------------------------
+\newcommand\finalize{\\ \bottomrule[2.0pt]}
+
+
+%-------------------------------------------------------------------------------
+%                Define ``usecase'' environment
+%-------------------------------------------------------------------------------
+\newenvironment{usecase}
+				%{\tabularx{\linewidth}{|p{.2\linewidth} p{.8\linewidth}|}}
+				{\tabularx{\linewidth}{|p{.2\linewidth}|Z|}}
+				{\endtabularx}
+%-------------------------------------------------------------------------------
