@@ -1,0 +1,1268 @@
+% This file was converted to LaTeX by Writer2LaTeX ver. 1.0.2
+% see http://writer2latex.sourceforge.net for more info
+\documentclass[twoside,letterpaper]{article}
+%\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb,amsfonts,textcomp}
+\usepackage{color}
+\usepackage{array}
+\usepackage{supertabular}
+\usepackage{hhline}
+\usepackage{hyperref}
+\hypersetup{pdftex, colorlinks=true, linkcolor=black, citecolor=black, filecolor=black, urlcolor=black}
+\usepackage[pdftex]{graphicx}
+% Outline numbering
+\setcounter{secnumdepth}{5}
+\renewcommand\thesection{\arabic{section}}
+\renewcommand\thesubsection{\arabic{section}.\arabic{subsection}}
+\renewcommand\thesubsubsection{\arabic{section}.\arabic{subsection}.\arabic{subsubsection}}
+\renewcommand\theparagraph{\arabic{section}.\arabic{subsection}.\arabic{subsubsection}.\arabic{paragraph}}
+\renewcommand\thesubparagraph{\arabic{section}.\arabic{subsection}.\arabic{subsubsection}.\arabic{paragraph}.\arabic{subparagraph}}
+\makeatletter
+\newcommand\arraybslash{\let\\\@arraycr}
+\makeatother
+% List styles
+\newcommand\liststyleWWviiiNumii{%
+\renewcommand\theenumi{\arabic{enumi}}
+\renewcommand\theenumii{\arabic{enumii}}
+\renewcommand\theenumiii{\arabic{enumiii}}
+\renewcommand\theenumiv{\arabic{enumiv}}
+\renewcommand\labelenumi{\theenumi)}
+\renewcommand\labelenumii{\theenumii.}
+\renewcommand\labelenumiii{\theenumiii.}
+\renewcommand\labelenumiv{\theenumiv.}
+}
+% Page layout (geometry)
+\setlength\voffset{-1in}
+\setlength\hoffset{-1in}
+\setlength\topmargin{0.5in}
+\setlength\oddsidemargin{1in}
+\setlength\evensidemargin{1in}
+\setlength\textheight{8.25in}
+\setlength\textwidth{6.5in}
+\setlength\footskip{0.5in}
+\setlength\headheight{0.5in}
+\setlength\headsep{0.5in}
+% Footnote rule
+\setlength{\skip\footins}{0.0469in}
+\renewcommand\footnoterule{\vspace*{-0.0071in}\setlength\leftskip{0pt}\setlength\rightskip{0pt plus 1fil}\noindent\textcolor{black}{\rule{0.25\columnwidth}{0.0071in}}\vspace*{0.0398in}}
+% Pages styles
+\makeatletter
+\newcommand\ps@Standard{
+  \renewcommand\@oddhead{}
+  \renewcommand\@evenhead{\@oddhead}
+  \renewcommand\@oddfoot{\foreignlanguage{english}{\textcolor{black}{\hfill SSDD Page }}{\textcolor{black}{\thepage{}}}}
+  \renewcommand\@evenfoot{\@oddfoot}
+  \renewcommand\thepage{\arabic{page}}
+}
+\newcommand\ps@Convertix{
+  \renewcommand\@oddhead{}
+  \renewcommand\@evenhead{\@oddhead}
+  \renewcommand\@oddfoot{}
+  \renewcommand\@evenfoot{\@oddfoot}
+  \renewcommand\thepage{\arabic{page}}
+}
+\newcommand\ps@Convertviii{
+  \renewcommand\@oddhead{}
+  \renewcommand\@evenhead{\@oddhead}
+  \renewcommand\@oddfoot{}
+  \renewcommand\@evenfoot{\@oddfoot}
+  \renewcommand\thepage{\arabic{page}}
+}
+\newcommand\ps@Convertvii{
+  \renewcommand\@oddhead{}
+  \renewcommand\@evenhead{\@oddhead}
+  \renewcommand\@oddfoot{}
+  \renewcommand\@evenfoot{\@oddfoot}
+  \renewcommand\thepage{\arabic{page}}
+}
+\newcommand\ps@Convertvi{
+  \renewcommand\@oddhead{}
+  \renewcommand\@evenhead{\@oddhead}
+  \renewcommand\@oddfoot{}
+  \renewcommand\@evenfoot{\@oddfoot}
+  \renewcommand\thepage{\arabic{page}}
+}
+\newcommand\ps@Convertiv{
+  \renewcommand\@oddhead{}
+  \renewcommand\@evenhead{\@oddhead}
+  \renewcommand\@oddfoot{}
+  \renewcommand\@evenfoot{\@oddfoot}
+  \renewcommand\thepage{\arabic{page}}
+}
+\newcommand\ps@FirstPage{
+  \renewcommand\@oddhead{}
+  \renewcommand\@evenhead{\@oddhead}
+  \renewcommand\@oddfoot{\foreignlanguage{english}{\textcolor{black}{\hfill SSDD Page }}
+{\textcolor{black}{\thepage{}}}}
+  \renewcommand\@evenfoot{\@oddfoot}
+  \renewcommand\thepage{\arabic{page}}
+}
+\makeatother
+\pagestyle{Standard}
+\setlength\tabcolsep{1mm}
+\renewcommand\arraystretch{1.3}
+\title{SYSTEM AND SOFTWARE ARCHITECTURAL AND DETAILED DESIGN DESCRIPTION}
+\author{Python Team}
+\date{2013-12-19}
+
+% % % % % % % % % % % % % % %
+% Place my packages here    %
+% % % % % % % % % % % % % % %
+
+% New tables
+\usepackage[utf8]{inputenc}
+\usepackage{tabularx}
+\usepackage{ragged2e}
+\usepackage{booktabs}
+\usepackage{caption}
+\newcolumntype{C}[1]{>{\Centering}p{#1}}
+\renewcommand\tabularxcolumn[1]{C{#1}}
+%\usepackage{chngpage}
+
+% Appendices
+%\usepackage[titletoc,toc]{appendix}
+
+% Use verbatim to allow block comments.
+\usepackage{verbatim}
+%\usepackage{usecases}
+%\usepackage{fullpage}
+\usepackage{listings}
+\usepackage{url}
+\usepackage[parfill]{parskip}
+
+% Automatically clearpage after every section
+\usepackage{titlesec}
+\newcommand\sectionbreak{\ifnum\value{section}>0\clearpage\fi}
+
+\begin{document}
+% Removing rule spacing for tables
+\setlength{\aboverulesep}{0pt}
+\setlength{\belowrulesep}{0pt}
+\setlength{\extrarowheight}{.75ex}
+
+% % % % % % % % % % % % %
+% Cover Page            %
+% % % % % % % % % % % % %
+\begin{minipage}{\linewidth}
+\centering
+\textsc{
+	\textbf{
+		Systems and Software Design Description (SSDD):\\
+		Incorporating Architectural Views and Detailed Design Criteria\\
+							For								   	\\
+							\vspace{1em}
+						{\Large Freedom in the Star System}		\\
+}}
+\end{minipage}
+
+\vspace{2em}
+
+
+\begin{minipage}{\linewidth}
+\centering
+Version 0.2\\
+19 December 2013\\
+
+\vspace{2em}
+
+Prepared for:\\
+Dr. Clinton Jeffrey\\
+\url{jeffreyc@uidaho.edu}\\
+JEB 230, University of Idaho
+
+\vspace{2em}
+
+Prepared by:\\
+Robert Meine\\
+Ranger Adams\\
+Justin Hall\\
+Sean Harris\\
+Emeth Thompson\\
+Chris Waltrip\\
+Ben Cumber\\
+Jordan Leithart\\
+Joe Matranga\\
+Greg Donaldson\\
+Jeffrey Crocker\\
+Shaung Wang\\
+Tao Zhang\\
+Paul Bailey\\
+Andrew Schwartzmeyer\\
+Samuel Foster\\
+
+\vspace{1em}
+
+University of Idaho\\
+Moscow, ID 83844-1010
+\end{minipage}
+
+
+\clearpage
+% % % % % % % % % % % % % %
+% Record of Changes Page  %
+% % % % % % % % % % % % % %
+\begin{minipage}{\linewidth}
+\centering
+\textsc{
+	\textbf{Freedom in the Star System SSRS}}
+
+\vspace{2em}
+
+\textsc{
+	\textbf{Record of Changes}}
+	
+\end{minipage}
+
+\begin{minipage}{\linewidth}
+% Table
+% Create column type for ``Brief Description''
+\newcolumntype{P}{>{\centering\arraybackslash}p{\dimexpr.25\linewidth-2\tabcolsep}}
+\centering
+%\captionof*{table}{\textsc{\textbf{Record of Changes}}}
+\begin{tabularx}{\textwidth}{XXXXPXX}\toprule[1.5pt] % Description column is multiline
+
+% Header
+\bf Change Number & \bf Change Date & \bf Change Location & \bf A\newline M\newline D & \bf Brief \newline Description & \bf Approved By \newline (Initials) & \bf Date Approved \\ \midrule[1.0pt]
+
+% Changes
+1 & --- & --- & --- & --- & --- & ---\\
+2 & --- & --- & --- & --- & --- & ---\\
+3 & 12/19/13 & Entire Document & M & Changed formatting to match SSRS & --- & ---\\
+
+
+% Footer
+\bottomrule[1.5pt]
+\end{tabularx}\par
+
+% Legend
+\bigskip
+\raggedleft % Align legend to the right
+\begin{tabular}{c l}
+\multicolumn{2}{c}{\textsc{Legend}} \\ \midrule[0.5pt]
+\textsc{\textbf{A}}   & Added\\
+\textsc{\textbf{M}}   & Modified\\
+\textsc{\textbf{D}}	  & Deleted\\
+\end{tabular}
+\end{minipage}
+
+\clearpage
+
+% % % % % % % % % % % % % %
+% Table of Contents Page  %
+% % % % % % % % % % % % % %
+\begin{minipage}{\linewidth}
+\centering
+\textsc{
+	\textbf{Freedom in the Star System SSDD}}
+
+\vspace{2em}
+\end{minipage}
+
+% Set up TOC
+% Show lots of depth
+\setcounter{tocdepth}{9}
+% Center, bold and small caps ``Table of Contents''
+\renewcommand\contentsname{\centering\textsc{\textbf{Table of Contents}}}
+\tableofcontents
+
+\section{Introduction}
+Freedom In The Galaxy is classic strategic and tactical board game first published in 1979 by SPI. It is now published by Avalon Hill and has been well loved by its fans for decades. The game is rated as medium complexity by BroardGameGeek.com, the premiere online boardgamer's lounge. Its rule set and design has long been an excellent candidate for adaptation to software by unexperienced Software Engineering students with a desire to learn. This document outlines the architecture and design of Python Team's implementation of Freedom In The Galaxy to a digital version. It is being compiled for the project's members, reviewers, and future collaborators.
+
+\subsection{Identification}
+Title : System and Software Design Description (SSDD)\\
+Version: 0.1
+Software: Freedom in the Star System
+Release : 0.1
+
+\subsection{Document Purpose, Scope, and Intended Audience}
+
+\subsubsection{Document Purpose}
+This document is meant to describe and detail all aspects of the software architecture and design. It should provide references to the SSRS which map the component software structures and design features to specific requirements. The SSDD also should describe design features that are far abstracted from the requirements. These features could be alterations to the original requirements or implementation design choices.
+
+\subsubsection{Document Scope and/or Context}
+[Insert text here.]
+
+\subsubsection{Intended Audience for Document}
+[Insert text here.]
+
+\subsection{System and Software Purpose, Scope and Intended Users}
+This subsection shall contain a statement on the purpose of this system
+and software, the scope or context of the system and software, and the
+intended users of the system and software. The subsection shall
+describe the system boundaries and the software boundaries, both with
+respect to their containing system and other systems of interest. It
+shall be clear from this section: 1) what is the relationship of other
+systems-of-interest with the system described in this document and 2)
+what is the relationship between the system and the particular software
+described in this SSDD.
+
+\subsubsection{System and Software Purpose}
+[Insert text here.]
+
+\subsubsection{System and Software Scope/or Context}
+[Insert text here.]
+
+\subsubsection{Intended Users for the System and Software}
+[Insert text here.]
+
+\clearpage
+\subsection{Definitions, Acronyms, and Abbreviations}
+\begin{minipage}{\linewidth}
+% Table
+% Create column type for ``Brief Description''
+\newcolumntype{P}{>{\centering\arraybackslash}p{\dimexpr.25\linewidth-2\tabcolsep}}
+\centering
+%\captionof*{table}{\textsc{\textbf{Record of Changes}}}
+\begin{tabularx}{\textwidth}{lX}\toprule[1.5pt] % Description column is multiline
+
+% Header
+\bf Term of Acronym & \bf Definition\\ \midrule[1.0pt]
+
+% Acronyms
+Acquirer & The person, team or organization that pursues a system or softwar eproduct or service from a supplier.  The acquirer may be a buyer, customer, owner, purchaser, or user.  ISO/IEC 42010:2007 (S. 3.1) \\
+AD & Architectural Description: A collection of products to document an architecture. ISO/IEC 42010:2007 (S. 3.4)\\
+Alpha test & Limited release(s) to inside testers and selected outside testers.\\
+Architect & The person, team, or organization responsible for systems architecture.  ISO/IEC 42010:2007 (S. 3.2)\\
+Architectural View & A representation of a while system from the perspective of a related set of concerns.  ISO/IEC 42010:2007 (S. 3.9)\\
+Architecture & The fundamental organization of a system embodied in its components, their relationships to each other, and to the environment, and the principles guiding its design and evolution.  ISO/IEC 42010:2007 (S. 3.5)\\
+Beta test & Limited release(s) to cooperating customers wanting early access to developing systems\\
+Design Entity & An element (component) of a design that is structurally and fundamentally distinct from other elements and that is separately named and referenced.  IEEE STD 1016-1998 (S. 3.1)\\
+Design View & A subset of design entity attribute information that is specifically suited to the needs of a software project activity.  IEEE STD 1016-1998 (S. 3.2)\\
+Acceptance test & Final test; release of full functionality to customer for approval\\
+DFD & Data Flow Diagram\\
+SDD & Software Design Document, aka SDS, Software Design Specification\\
+Software Design Description & A representation of a software system created to facilitate analysis, planning, implementation, and decision making.  A blueprint or model of a software system.  The SDD is used as the primary medium for communication software design information.  IEEE STD 1016-1998 (S. 3.4)\\ 
+SSRS & System and Software Requirements Specification; this document\\
+SSDD & System and Software Design Document\\
+System & A collection of components organized to accomplish a specific function or set of functions.  ISO/IEC 42010:2007 (S. 3.7)\\
+%System and Software Architecture and Design Description & An architectural and detailed design description that includes a software system within the context of its enclosing system the enclosed software, and their relationship and interfaces.\\
+System Stakeholder & An individual, team or organization (or classes thereof) with interests in, or concerns, relative to, a system.  ISO/IEC 42010:2007 (S. 3.8)\\
+FITG & Freedom in the Galaxy; board game developed by SPI/Avalon Hill\\
+FITSS & Freedom in the Star System; partial digital adaptation of FITG\\
+SPI & Simulations Publications Incorporated; original creators of FITG\\
+GUI & Graphical User Interface; a visual client that a user can use to interact with the system\\
+AI & Artificial Intelligence; a method of decision making that appears to make intelligent decisions to a given problem\\
+LAN & Local Area Network; --\\
+
+% Footer
+\bottomrule[1.5pt]
+\end{tabularx}
+\end{minipage}
+
+\subsection{Document References}
+This subsection shall list full bibliographic citations of all documents
+referenced in this SSDD.  This subsection shall also identify the
+source for all materials not available in printed form (e.g., web-based
+information) and list the complete URL along with owner, author,
+posting date, and date last visited.
+
+\liststyleWWviiiNumii
+\begin{enumerate}
+\item {\selectlanguage{english}\color{black}
+\foreignlanguage{english}{CSDS,
+}\foreignlanguage{english}{\textit{System and Software Requirements
+Specification Template}}\foreignlanguage{english}{, Version 1.0, July
+31, 2008, Center for Secure and Dependable Systems, University of
+Idaho, Moscow, ID, 83844.}}
+\item {\selectlanguage{english}\color{black}
+\foreignlanguage{english}{ISO/IEC/IEEE,
+}\foreignlanguage{english}{\textit{IEEE Std 1471-2000 Systems and
+software engineering -- Recommended practice for architectural
+description of software intensive systems,}}\foreignlanguage{english}{
+First edition 2007-07-15, \ International Organization for
+Standardization and International Electrotechnical Commission,
+(ISO/IEC), Case postale 56, CH-1211 GenS. ve 20, Switzerland, and The
+Institute of Electrical and Electronics Engineers, Inc., (IEEE), 445
+Hoes Lane, Piscataway, NJ 08854, USA.}}
+\item {\selectlanguage{english}\color{black}
+\foreignlanguage{english}{IEEE, }\foreignlanguage{english}{\textit{IEEE
+Std 1016-1998 Recommended Practice for Software Design
+Descriptions}}\foreignlanguage{english}{, 1998-09-23, The Institute of
+Electrical and Electronics Engineers, Inc., (IEEE) 445 Hoes Lane,
+Piscataway, NJ 08854, USA.}}
+\item {\selectlanguage{english}\color{black}
+\foreignlanguage{english}{3) ISO/IEC/IEEE,
+}\foreignlanguage{english}{\textit{IEEE Std. 15288-2008 Systems and
+Software Engineering -- System life cycle
+processes,}}\foreignlanguage{english}{ Second edition 2008-02-01,
+\ International Organization for Standardization and International
+Electrotechnical Commission, (ISO/IEC), Case postale 56, CH-1211 GenS. ve
+20, Switzerland, and The Institute of Electrical and Electronics
+Engineers, Inc., (IEEE), 445 Hoes Lane, Piscataway, NJ 08854, USA.}}
+\item {\selectlanguage{english}\color{black}
+\foreignlanguage{english}{ISO/IEC/IEEE, IEEE Std. 12207-2008,
+}\foreignlanguage{english}{\textit{Systems and software engineering --
+Software life cycle processes, }}\foreignlanguage{english}{Second
+edition 2008-02-01, \ International Organization for Standardization
+and International Electrotechnical Commission, (ISO/IEC), Case postale
+56, CH-1211 }\foreignlanguage{english}{GenS. ve 20, Switzerland, and The
+Institute of Electrical and Electronics Engineers, Inc., (IEEE), 445
+Hoes Lane, Piscataway, NJ 08854, USA.}}
+\end{enumerate}
+\subsection{Document Overview}
+This subsection shall provide an overview of the organization of this
+SSDD.
+
+Section 2 of this document describes the system and software constraints
+imposed by the operational environment, system requirements and user
+characteristics, and then identifies the system stakeholders and lists
+describes their concerns and mitigations to those concerns.
+
+Section 3 of this document describes the system and software
+architecture from several viewpoints, including, but not limited to,
+the developer{\textquoteright}s view and the user{\textquoteright}s
+view.
+
+Section 4 provides detailed design descriptions for every component
+defined in the architectural view(s). \ Sections 5 provides
+traceability information connecting the original specifications
+(referenced above) to the architectural components and design entities
+identified in this document.
+
+Section 6 and beyond are appendices including original information and
+communications used to create this document.
+
+\subsection{Document Restrictions}
+This document is for LIMITED RELEASE ONLY to UI CS personnel working on
+the project and [ state others who will receive the document ].
+
+\section{Constraints and Stakeholder Concerns}
+%{\selectlanguage{english}\itshape\color{black}
+%This section of the document shall identify environmental or usability
+%constraints placed upon the development and use of the system and
+%software, the stakeholders of the system and software, and their
+%concerns about the system and software, if any.}
+
+\subsection{Constraints}
+{\selectlanguage{english}\itshape\color{black}
+This subsection shall identify and describe in detail the architectural
+and usability constraints that are imposed by the physical environment
+or system requirements or the user characteristics.}
+
+\subsubsection{Environmental constraints.}
+There are no environmental constraints imposed by \textit{Freedom in the Star System}
+
+\subsubsection{System requirement constraints.}
+[Insert text here.]
+
+\subsubsection{User characteristic constraints.}
+[Insert text here.]
+
+\subsection{Stakeholder Concerns}
+{\selectlanguage{english}\itshape\color{black}
+This subsection shall identify all the system and software stakeholders.
+Some categories have already been included, add more categories as
+needed. Within each category add the list of stakeholders and their
+details. For compliance with ISO/IEC 42010:2007 (S. 5.2) at a minimum the
+following concerns shall be identified and described for the system and
+software object of this SSDD: appropriateness of the architected
+solution for achieving its desired mission, feasibility of
+construction, risks of system construction and operation to all
+stakeholders, maintainability, deployability, and evolvability. \ Other
+stakeholder concerns for the system and software might be: construction
+cost, expected lifetime, cost of operation, cost of maintenance, system
+safety, data security and privacy, operator and user safety, etc. For
+each concern make a reference to the corresponding stakeholder(s) (a
+concern might come from more than one stakeholder).}
+
+
+\bigskip
+
+{\selectlanguage{english}\itshape\color{black}
+The following tabular form is preferred, but not required. \ You may
+eliminate inappropriate rows and add categories and concerns as
+needed.}
+
+\begin{flushleft}
+\tablehead{\hline
+\multicolumn{4}{|m{7.42956in}|}{\centering
+\selectlanguage{english}\bfseries\color{black} Stakeholder x Concern x
+Mitigation Table}\\\hline
+\multicolumn{1}{|m{1.2198598in}|}{\centering
+{\selectlanguage{english}\bfseries\color{black} Stakeholder}\par
+
+\centering \selectlanguage{english}\bfseries\color{black} Concern} &
+\centering \selectlanguage{english}\bfseries\color{black} List of
+Stakeholders (e.g. Acquirers, Developers, Testers, Maintainers, Users,
+Operators, Auditors, Others) &
+\centering \selectlanguage{english}\bfseries\color{black} Stated Concern
+&
+\centering\arraybslash \selectlanguage{english}\bfseries\color{black}
+Mitigation Mechanism or Design Criteria Reference Number\\\hline
+\multicolumn{1}{|m{1.2198598in}|}{\selectlanguage{english}\color{black}
+Appropriateness of the system and software in fulfilling its
+mission(s).} &
+~
+ &
+~
+ &
+~
+\\\hline}
+\begin{supertabular}{m{1.2198598in}|m{1.4837599in}|m{2.2962599in}|m{2.19346in}|}
+ &
+~
+ &
+~
+ &
+~
+\\\hhline{~---}
+ &
+~
+ &
+~
+ &
+~
+\\\hhline{~---}
+\multicolumn{1}{|m{1.2198598in}|}{\selectlanguage{english}\color{black}
+Feasibility of constructing, testing, verifying and deploying the
+system and software.} &
+~
+ &
+~
+ &
+~
+\\\hline
+ &
+~
+ &
+~
+ &
+~
+\\\hhline{~---}
+ &
+~
+ &
+~
+ &
+~
+\\\hhline{~---}
+\multicolumn{1}{|m{1.2198598in}|}{\selectlanguage{english}\color{black}
+Risks of constructing, deploying, and using the system and software
+object of this SSDD.} &
+~
+ &
+~
+ &
+~
+\\\hline
+ &
+~
+ &
+~
+ &
+~
+\\\hhline{~---}
+ &
+~
+ &
+~
+ &
+~
+\\\hhline{~---}
+\multicolumn{1}{|m{1.2198598in}|}{\selectlanguage{english}\color{black}
+Concerns with respect to the deployability of the system and software.}
+&
+~
+ &
+~
+ &
+~
+\\\hline
+ &
+~
+ &
+~
+ &
+~
+\\\hhline{~---}
+ &
+~
+ &
+~
+ &
+~
+\\\hhline{~---}
+\multicolumn{1}{|m{1.2198598in}|}{\selectlanguage{english}\color{black}
+Concerns with respect to the maintainability and evolvability of the
+system and software.} &
+~
+ &
+~
+ &
+~
+\\\hline
+ &
+~
+ &
+~
+ &
+~
+\\\hhline{~---}
+\multicolumn{1}{|m{1.2198598in}|}{\selectlanguage{english}\color{black}
+Concerns with respect to the security of the data the system and
+software will handle.} &
+~
+ &
+~
+ &
+~
+\\\hline
+ &
+~
+ &
+~
+ &
+~
+\\\hhline{~---}
+ &
+~
+ &
+~
+ &
+~
+\\\hhline{~---}
+\multicolumn{1}{|m{1.2198598in}|}{\selectlanguage{english}\color{black}
+Concerns with respect to the safety of the people interacting with the
+system and software.} &
+~
+ &
+~
+ &
+~
+\\\hline
+ &
+~
+ &
+~
+ &
+~
+\\\hhline{~---}
+ &
+~
+ &
+~
+ &
+~
+\\\hhline{~---}
+\multicolumn{1}{|m{1.2198598in}|}{\selectlanguage{english}\color{black}
+Cost concerns.} &
+~
+ &
+~
+ &
+~
+\\\hline
+ &
+~
+ &
+~
+ &
+~
+\\\hhline{~---}
+ &
+~
+ &
+~
+ &
+~
+\\\hhline{~---}
+\multicolumn{1}{|m{1.2198598in}|}{\selectlanguage{english}\color{black}
+[ list concern ]} &
+~
+ &
+~
+ &
+~
+\\\hline
+ &
+~
+ &
+~
+ &
+~
+\\\hhline{~---}
+ &
+~
+ &
+~
+ &
+~
+\\\hhline{~---}
+\multicolumn{1}{|m{1.2198598in}|}{\selectlanguage{english}\color{black}
+[ list concern ]} &
+~
+ &
+~
+ &
+~
+\\\hline
+ &
+~
+ &
+~
+ &
+~
+\\\hhline{~---}
+ &
+~
+ &
+~
+ &
+~
+\\\hhline{~---}
+\end{supertabular}
+\end{flushleft}
+%\clearpage\setcounter{page}{1}\pagestyle{Convertvi}
+\section{System and Software Architecture}
+{\selectlanguage{english}\itshape\color{black}
+This section of the document shall describe with detail every detailed
+design entity or component of the system as well as the relationship
+and interface between them. These architectural entities, when
+integrated together as specified within this document, shall implement
+all functions performed by the system in response to an input or in
+support of an output as described by the System and Software
+Requirements Specification (SSRS). \ All architectural entities or
+components shall: be uniquely identi[FB01?]able, be well described,
+have clear responsibilities, have well specified interfaces, and have
+well described interactions with other architectural entities and any
+external systems. A system{\textquoteright}s architecture is usually
+described by using a set of different views, typically one for the
+developer and others for the customer, users, operators, etc. \ All
+necessary views at the architectural level (or high-level design) shall
+be clearly described in this section. \ In this section we assume that
+the reader is familiar with such architectural description languages.
+For compliance with ISO/ISEC 42010:2007 (S. 5.4) each view shall include
+at least the following details: identification, system representation
+using the corresponding viewpoint, configuration information, languages
+and modeling techniques, and references to detailed or further
+descriptions of the viewpoint. \ }
+
+\subsection{Developer's Architectural View}
+{\selectlanguage{english}\itshape\color{black}
+This subsection contains the descriptions of a system and all of its
+major components, using the methods, techniques, and languages from the
+developer{\textquoteright}s viewpoint. \ Each viewpoint description
+includes the viewpoint identification, description, and diagrammatic
+representation. }
+
+\subsection{User's Architectural View}
+{\selectlanguage{english}\itshape\color{black}
+This subsection contains the descriptions of a system and all of its
+major components, using the methods, techniques, and languages from the
+user{\textquoteright}s viewpoint. \ Each viewpoint description includes
+the viewpoint identification, description, and diagrammatic
+representation. }
+
+\subsubsection{User's View Identification}
+{\selectlanguage{english}\itshape\color{black}
+Identify the view, state the purpose of the view, and identify major
+components or processes of the architecture.}
+
+[Insert text here.]
+
+\subsubsection{User's View Representation and Description}
+{\selectlanguage{english}\itshape\color{black}
+Provide a diagram and description of the user{\textquoteright}s view of
+the architecture.}
+
+[Insert diagram here.]
+
+\subsection{Developer's View Identification}
+The major overlaying architecture for this project relies on a client-server relation. In the case of the user, the client will consist of a player using a graphical interface to request and interact with the server. The client may also come in the form of the described AI, which makes the same types and formats of requests to the server. In this implementation, the server operates as the 'rule book' and authority on game state. Discrepancies in the game state will thus always defer to the records of the server. A typical example of this interaction would involve a client, player or AI, issuing a request (attempted move or game state update) and the server responding in turn, which notifies the client if the request resulted in success or failure, and updates the game state.
+
+\subsubsection{Developer's View Representation and Description}
+{\selectlanguage{english}\itshape\color{black}
+Provide a diagram and description of the developer{\textquoteright}s
+view of the architecture.}
+
+[Insert diagram here.]
+
+\subsubsection{Developer's Architectural Rationale}
+{\selectlanguage{english}\itshape\color{black}
+For compliance with ISO/IEC 42010:2007 (S. 5.6) an Architectural
+Description (AD) shall provide the rationale that justified the
+architect{\textquoteright}s decisions and selected architectures. An AD
+shall also provide evidence of the consideration of other alternative
+architectures and the rationales for discarding them.}
+
+[Insert rationale here.]
+
+\subsection{[insert name of viewpoint] Architectural View}
+{\selectlanguage{english}\itshape\color{black}
+This subsection contains the descriptions of a system and all of its
+major components, using the methods, techniques, and languages from
+other than the developer{\textquoteright}s or user{\textquoteright}s
+viewpoint. \ Each viewpoint description includes the viewpoint
+identification, description, and diagrammatic representation. }
+
+{\selectlanguage{english}\itshape\color{black}
+Repeat this subsection for each viewpoint identified.}
+
+\subsubsection{[ insert name of viewpoint ]'s View Identification}
+{\selectlanguage{english}\itshape\color{black}
+Identify the view, state the purpose of the view, and identify major
+components or processes of the architecture.}
+
+[Insert text here.]
+
+\subsubsection{[ insert name of viewpoint ]'s View Representation and Description}
+{\selectlanguage{english}\itshape\color{black}
+Provide a diagram of the developer{\textquoteright}s view of the
+architecture.}
+
+[Insert diagram and descriptions here.]
+
+\subsection{Consistency of Architectural Views}
+{\selectlanguage{english}\itshape\color{black}
+For compliance with ISO/IEC 42010:2007 (S. 5.5) an Architectural
+Description (AD) shall include a list of all known inconsistencies
+between the architectural views and an analysis of consistency across
+all the architectural views.}
+
+\subsubsection{Detail of Inconsistencies between Architectural Views}
+{\selectlanguage{english}\color{black}
+[Insert text and graphics here.]}
+
+\subsubsection{Consistency Analysis and Inconsistency Mitigations}
+{\selectlanguage{english}\itshape\color{black}
+For each inconsistency identified above, provide solutions or
+mitigations that resolve potential conflicts between the stakeholder
+viewpoints.}
+
+{\selectlanguage{english}\color{black}
+[Insert text or table here.]}
+
+\section{Software Detailed Design}
+{\selectlanguage{english}\itshape\color{black}
+This section of the document should describe with detail the design of
+the software being described in this document. \ The level of detail of
+the design entities and their relationship and interfaces shall be
+sufficient to enable software implementers to implement an integrate
+each of the described components in order to achieve full
+implementation of the software being described in this SSDD. This
+section shall specify for each design entity the following information:
+purpose, processing, data, interfaces, dependencies and relationships,
+concept of execution, needed resources, design rationale, information
+for reuse, types of errors, and error handling. \ }
+
+
+\bigskip
+
+{\selectlanguage{english}\itshape\color{black}
+The detailed design must correspond to an existing architectural view,
+normally the developer{\textquoteright}s view, but unusual
+circumstances may call for other detailed design viewpoints. \ If so,
+repeat this subsection as needed for those other viewpoints.}
+
+\subsection{Developer's Viewpoint Detailed Software Design}
+{\selectlanguage{english}\itshape\color{black}
+Identify the viewpoint and make reference to the diagram or model
+defining the view.}
+
+[Insert text, diagram or model here.]
+
+\subsection{Component/Entity Dictionary}
+{\selectlanguage{english}\itshape\color{black}
+This subsection shall list and describe all the detailed design entities
+and their corresponding attributes. \ Processing and algorithms, data
+and data structures,and detailed descriptions need NOT be included
+here, as they will be specified in subsequent sections for each
+component or entity listed in the table below.}
+
+\begin{flushleft}
+\tablehead{}
+\begin{supertabular}{|m{1.0462599in}|m{0.9837598in}|m{1.6712599in}|m{1.2962599in}|m{1.2580599in}|}
+\hline
+\multicolumn{5}{|m{6.57056in}|}{\centering
+\selectlanguage{english}\bfseries\color{black} Component/Entity
+Dictionary}\\\hline
+\centering \selectlanguage{english}\bfseries\color{black} Name &
+\centering \selectlanguage{english}\bfseries\color{black} Type/Range &
+\centering \selectlanguage{english}\bfseries\color{black}
+Purpose/Function &
+\centering \selectlanguage{english}\bfseries\color{black} Dependencies &
+\centering\arraybslash \selectlanguage{english}\bfseries\color{black}
+Subordinates\\\hline
+~
+ &
+~
+ &
+~
+ &
+~
+ &
+~
+\\\hline
+~
+ &
+~
+ &
+~
+ &
+~
+ &
+~
+\\\hline
+~
+ &
+~
+ &
+~
+ &
+~
+ &
+~
+\\\hline
+~
+ &
+~
+ &
+~
+ &
+~
+ &
+~
+\\\hline
+~
+ &
+~
+ &
+~
+ &
+~
+ &
+~
+\\\hline
+\end{supertabular}
+\end{flushleft}
+\subsection{Component/Entity Detailed Design}
+\subsubsection{Detailed Design for Component/Entity: [ insert
+Component/Entity name here ]}
+\paragraph{Introduction/Purpose of this Component/Entity}
+{\selectlanguage{english}\color{black}
+[ insert your text here ]}
+
+\paragraph[Input for this Component/Entity]{Input for this
+Component/Entity}
+{\selectlanguage{english}\color{black}
+[ insert your text here ]}
+
+\paragraph{Output for this Component/Entity}
+{\selectlanguage{english}\color{black}
+[ insert your text here ]}
+
+\paragraph{Component/Entity Process to Convert Input to Output}
+{\selectlanguage{english}\color{black}
+[ insert your text here ]}
+
+\paragraph{Design constraints and performance requirements of this
+Component/Entity}
+{\selectlanguage{english}\color{black}
+[ insert your text here ]}
+
+\subsubsection{Detailed Design for Component/Entity: [ insert
+Component/Entity name here ]}
+\paragraph[\ Introduction/Purpose of this
+Component/Entity]{\ Introduction/Purpose of this Component/Entity}
+{\selectlanguage{english}\color{black}
+[ insert your text here ]}
+
+\paragraph{Input for this Component/Entity}
+{\selectlanguage{english}\color{black}
+[ insert your text here ]}
+
+\paragraph{Output for this Component/Entity}
+{\selectlanguage{english}\color{black}
+[ insert your text here ]}
+
+\paragraph{Component/Entity Process to Convert Input to Output}
+{\selectlanguage{english}\color{black}
+[ insert your text here ]}
+
+\paragraph{Design constraints and performance requirements of this
+Component/Entity}
+{\selectlanguage{english}\color{black}
+[ insert your text here ]}
+
+\subsubsection{Detailed Design for Component/Entity: [ insert
+Component/Entity name here ]}
+\paragraph[\ Introduction/Purpose of this
+Component/Entity]{\ Introduction/Purpose of this Component/Entity}
+{\selectlanguage{english}\color{black}
+[ insert your text here ]}
+
+\paragraph{Input for this Component/Entity}
+{\selectlanguage{english}\color{black}
+[ insert your text here ]}
+
+\paragraph{Output for this Component/Entity}
+{\selectlanguage{english}\color{black}
+[ insert your text here ]}
+
+\paragraph{Component/Entity Process to Convert Input to Output}
+{\selectlanguage{english}\color{black}
+[ insert your text here ]}
+
+\paragraph{Design constraints and performance requirements of this
+Component/Entity}
+{\selectlanguage{english}\color{black}
+[ insert your text here ]}
+
+\subparagraph[{\dots}]{{\dots}}
+\subsubsection{Detailed Design for Component/Entity: [ insert
+Component/Entity name here ]}
+\paragraph[\ Introduction/Purpose of this
+Component/Entity]{\ Introduction/Purpose of this Component/Entity}
+{\selectlanguage{english}\color{black}
+[ insert your text here ]}
+
+\paragraph{Input for this Component/Entity}
+{\selectlanguage{english}\color{black}
+[ insert your text here ]}
+
+\paragraph{Output for this Component/Entity}
+{\selectlanguage{english}\color{black}
+[ insert your text here ]}
+
+\paragraph{Component/Entity Process to Convert Input to Output}
+{\selectlanguage{english}\color{black}
+[ insert your text here ]}
+
+\paragraph{Design constraints and performance requirements of this
+Component/Entity}
+{\selectlanguage{english}\color{black}
+[ insert your text here ]}
+
+\subsection{DATA DICTIONARY}
+{\selectlanguage{english}\itshape\color{black}
+This subsection shall list and describe all the data and data structures
+defined and/or used by the components and entities specified above.
+\ For each data item or structure indicate where it is defined,
+referenced, and modified.}
+
+\begin{flushleft}
+\tablehead{}
+\begin{supertabular}{|m{0.9837598in}|m{0.9212598in}|m{1.8587599in}|m{1.2962599in}|m{1.1330599in}|}
+\hline
+\multicolumn{5}{|m{6.50806in}|}{\centering
+\selectlanguage{english}\bfseries\color{black} Data Dictionary}\\\hline
+\centering \selectlanguage{english}\bfseries\color{black} Name &
+\centering \selectlanguage{english}\bfseries\color{black} Type/Range &
+\centering \selectlanguage{english}\bfseries\color{black} Defined
+by{\dots} &
+\centering \selectlanguage{english}\bfseries\color{black} Referenced
+by{\dots} &
+\centering\arraybslash \selectlanguage{english}\bfseries\color{black}
+Modified by{\dots}\\\hline
+~
+ &
+~
+ &
+~
+ &
+~
+ &
+~
+\\\hline
+~
+ &
+~
+ &
+~
+ &
+~
+ &
+~
+\\\hline
+~
+ &
+~
+ &
+~
+ &
+~
+ &
+~
+\\\hline
+~
+ &
+~
+ &
+~
+ &
+~
+ &
+~
+\\\hline
+~
+ &
+~
+ &
+~
+ &
+~
+ &
+~
+\\\hline
+\end{supertabular}
+\end{flushleft}
+
+\bigskip
+
+
+\bigskip
+
+%\clearpage\setcounter{page}{1}\pagestyle{Convertvii}
+\section{Requirements Traceability}
+{\selectlanguage{english}\color{black}
+\foreignlanguage{english}{\textit{This section shall contain
+traceability information from each system requirement in this
+specification to the system (or subsystem, if applicable) requirements
+it addresses. \ A tabular form is preferred, but not mandatory.
+}}\foreignlanguage{english}{\textit{A detailed mapping between
+requirements and constraints in the SSRS and architectural components
+and detailed entities in this SSDD is required. For compliance with
+ISO/IEC 15288:2008
+}}\foreignlanguage{english}{\textit{(S. 6.4.3.3.c)}}\foreignlanguage{english}{\textit{
+an Architectural Description (AD) shall provide roundtrip traceability
+between the system and software requirements and the architectural
+design entities. All requirements and constraints within the SSRS shall
+map to a set of architectural entities. All entities in all the
+architectural views shall be associated with either a requirement or
+constraint in the SSRS or an architectural constraint within this
+SSDD.}}}
+
+
+\subsection{Alpha Release}
+\begin{minipage}{\linewidth}
+% Table
+\centering
+\captionof*{table}{\textbf{Alpha Release}}
+\begin{tabularx}{\textwidth}{*{2}{c}X*{4}{c}}\toprule[1.5pt] % Description column is multiline
+
+% Header
+\bf Feature Name & \bf Req. No. & \bf Req. \newline Description & \bf Priority & \bf SDD & \bf Test Case(s) & \bf Test Result(s) \\ \midrule[1.0pt]
+
+% Features
+Feature A & 1.1 & It does something over and over and over & M & 2.2 & 2 & 75\% \\
+
+% Footer
+\bottomrule[1.5pt]
+\end{tabularx}\par
+
+% Legend
+\bigskip
+\raggedleft
+\begin{tabular}{c l} %{.3\textwidth}{c L}
+\multicolumn{2}{c}{\textsc{Legend}} \\ \midrule[0.5pt]
+\textsc{\textbf{L}}   & Low Priority\\
+\textsc{\textbf{H}}   & High Priority\\
+\textsc{\textbf{M}}	  & Mandatory Priority\\
+\textsc{\textbf{P}}   & Passed Test Case\\
+\textsc{\textbf{F}}   & Failed Test Case\\
+\textsc{\textbf{SDD}} & \parbox{3cm}{\vspace{.25em}
+						Link is version\\
+						and page number\\
+						or function name}
+\end{tabular}
+\end{minipage}
+
+\begin{comment}
+\subsection{Beta Release}
+\begin{minipage}{\linewidth}
+% Table
+\centering
+\captionof*{table}{\textbf{Beta Release}}
+\begin{tabularx}{\textwidth}{*{2}{c}X*{4}{c}}\toprule[1.5pt] % Description column is multiline
+
+% Header
+\bf Feature Name & \bf Req. No. & \bf Req. \newline Description & \bf Priority & \bf SDD & \bf Test Case(s) & \bf Test Result(s) \\ \midrule[1.0pt]
+
+% Features
+Feature A & 1.1 & It does something over and over and over & M & 2.2 & 2 & 75\% \\
+
+% Footer
+\bottomrule[1.5pt]
+\end{tabularx}\par
+
+% Legend
+\bigskip
+\raggedleft
+\begin{tabular}{c l} %{.3\textwidth}{c L}
+\multicolumn{2}{c}{\textsc{Legend}} \\ \midrule[0.5pt]
+\textsc{\textbf{L}}   & Low Priority\\
+\textsc{\textbf{H}}   & High Priority\\
+\textsc{\textbf{M}}	  & Mandatory Priority\\
+\textsc{\textbf{P}}   & Passed Test Case\\
+\textsc{\textbf{F}}   & Failed Test Case\\
+\textsc{\textbf{SDD}} & \parbox{3cm}{\vspace{.25em}
+						Link is version\\
+						and page number\\
+						or function name}
+\end{tabular}
+\end{minipage}
+\end{comment}
+
+\begin{comment}
+\subsection{Accepted Release}
+\begin{minipage}{\linewidth}
+% Table
+\centering
+\captionof*{table}{\textbf{Accepted Release}}
+\begin{tabularx}{\textwidth}{*{2}{c}X*{4}{c}}\toprule[1.5pt] % Description column is multiline
+
+% Header
+\bf Feature Name & \bf Req. No. & \bf Req. \newline Description & \bf Priority & \bf SDD & \bf Test Case(s) & \bf Test Result(s) \\ \midrule[1.0pt]
+
+% Features
+Feature A & 1.1 & It does something over and over and over & M & 2.2 & 2 & 75\% \\
+
+% Footer
+\bottomrule[1.5pt]
+\end{tabularx}\par
+
+% Legend
+\bigskip
+\raggedleft
+\begin{tabular}{c l} %{.3\textwidth}{c L}
+\multicolumn{2}{c}{\textsc{Legend}} \\ \midrule[0.5pt]
+\textsc{\textbf{L}}   & Low Priority\\
+\textsc{\textbf{H}}   & High Priority\\
+\textsc{\textbf{M}}	  & Mandatory Priority\\
+\textsc{\textbf{P}}   & Passed Test Case\\
+\textsc{\textbf{F}}   & Failed Test Case\\
+\textsc{\textbf{SDD}} & \parbox{3cm}{\vspace{.25em}
+						Link is version\\
+						and page number\\
+						or function name}
+\end{tabular}
+\end{minipage}
+\end{comment}
+
+\begin{comment}
+\clearpage\setcounter{page}{1}\pagestyle{Convertviii}
+\section{Appendix A. [insert name here]}
+{\selectlanguage{english}\itshape\color{black}
+Include copies of specifications, mockups, prototypes, etc. supplied or
+derived from the customer. \ Appendices are labeled A, B, {\dots}n.
+\ \ Reference each appendix as appropriate in the text of the document.
+}
+
+{\selectlanguage{english}\color{black}
+\ [ insert appendix A here ]}
+
+\clearpage\setcounter{page}{1}\pagestyle{Convertix}
+\section{Appendix B. [insert name here]}
+
+\bigskip
+
+{\selectlanguage{english}\color{black}
+[ insert appendix B here ]}
+
+
+\bigskip
+\end{comment}
+\end{document}
