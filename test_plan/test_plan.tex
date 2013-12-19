@@ -64,6 +64,7 @@
     \\ \hline 6 & Dec 16 & Various & Reviewed Document & - & -
     \\ \hline 7 & Dec 17 & TCs & Merged Final Changes to TCs & - & -
     \\ \hline 8 & Dec 18 & Various & Changes for Review & - & -
+    \\ \hline 9 & Dec 19 & Various & Review Content, Added Metrics & - & -
 
 %    \\ \hline & & & & &  
 %    \\ \hline & & & & &  
@@ -91,7 +92,7 @@ The purpose of this test plan is to state the processes used by the Python Team 
 \item User Interface Functions
 \item Network Layer Functions
 \item API Level Functions
-\item GUI Fuctions
+\item GUI Functions
 \item Requirements stated in System Software Requirement Specification
 \item Requirements stated in System Software Design Documentation
 \end{itemize}
@@ -128,7 +129,7 @@ Network communication & High
 \\ \hline
 Play game with graphical interface & Med
 \\ \hline
-Play game with text interface? & Low
+Play game with text interface & Low
 \\ \hline
 User Experience & Med
 \\ \hline
@@ -160,12 +161,16 @@ User Experience & Med
 \subsection{Testing Tools}
 The testing tools for use in this project include the standard library modules doctests, unittest, and the third party tool Nose. Each tool has different levels of complexity and strengths, so each test will be written in one of these tools depending on the tester and condition.
 
-Training will be available from other members of the team for any questions. Tutorials are also available on the Python website for doctest and unittest. Training for Nose is unknown.
+Help will be available from other members of the team for any questions involving the testing tools in this project. Tutorials are also available on the Python website for doctest and unittest. There is no scheduled rraining for Nose.
 
 \subsection{Metrics}
 Products Metrics for this project will be the number of rules implemented. For each rule, a metric value is specified in the rules appendix of the SSDS. This metric value is a number between 1 and 10. This number is based on several criteria, such as difficulty of the rule, priority of the rule, and how close other rules are to the rule. In order to apply any metrics, the relevant TCS test must be implemented and passed. This implementation must be signed off by another member or the team and the results attached to the necessary places in the project documents. After these requirements have been completed, the metric value can be earned.
 
-****Other code metrics here.****
+\subsubsection{Simple Metrics}
+The following simple metrics have been computed: \\
+Lines of code: 5180 \\
+Number of files: 49
+
 
 \subsection{Configurations}
 The AI and UI will be tested using both the Rebel and Imperial player, and all User type tests for both player types will be executed.
@@ -174,7 +179,7 @@ The AI and UI will be tested using both the Rebel and Imperial player, and all U
 The software will be developed with Python 2.7.5 with doctest and unittest of the same version. The current version of Nose is 1.3.0, the current version of Pygame is 1.2.1.
 
 \subsection{Hardware}
-The hardware specifications used for testing will be at or higher than the minimum hardware specifications for Python 2.7.5.
+The hardware specifications used for testing will be at or higher than the minimum hardware specifications for Python 2.7.5 and Pygame.
 
 %\begin{itemize}
 %\item Microsoft Windows XP Professional SP3/Vista SP1/Windows 7 Professional
@@ -206,19 +211,16 @@ Unit testing will be used to validate individual classes objects. Some objects w
 Each team should develop TCSs as needed for their code. Each TCS should include tests for all classes as required and for each test, validate as many inputs as needed to test that the class operates as required by the rules covered in the SSRS, and also according to an requirements and design documents applicable to that class. Unit tests should focus on those test types mentioned in the lecture, such as coverage, edge cases, etc.
 
 \subsubsection{Required Class Unit Tests}
-\begin{itemize}
-\item What classes do we have? Each class should have tests?
-\end{itemize}
-Unit testing for each of these classes will consist of validating the class public interface. Public variables and methods are required to pass the following tests:
+Unit testing for each class in the final product will consist of validating the class public interface and all expected output for each class. Public variables and methods for every class are required to pass the following tests:
 \begin{itemize}
 \item validation using expected data input
 \item validation using erroneous data input, including None or empty values
 \item class instantiation
 \end{itemize}
 
-If the variable is not open to testing due to being private or otherwise not accessible to the user or other programs, such as testing, the unit instead will be tested at the smallest unit possible and practical.
+If the variable is not open to testing due to being private or otherwise not accessible to the user or other programs, such as testing, the unit instead will be considered to be the smallest practical testable unit possible.
 
-All functionality accessible by the user must be unit tested except where indicated in section \ref{risk}. This includes GUI capabilities. 
+All functionality accessible by the user must be unit tested or,if not possible tested by means of integration or systems testing, except where indicated in section \ref{risk}. This includes GUI capabilities. 
 
 \subsubsection{Integration Testing}
 Integration testing will validate the defined associations between classes. This will be an incremental process performed as new classes are created and after classes have successfully passed their unit testing phase or as necessary for deadlines. 
@@ -264,10 +266,10 @@ Expected Outcome \\
 Actual Behavior \\
 Steps to reproduce \\
 
-Each section should be brief and to the point, but yet convey enough information for the coder.
+Each section should be brief and to the point, but yet convey enough information for the coder to fix the problem.
 
 \subsection{Unit Testing Pass/Fail Criteria}
-Each of these tables might need to be expanded to cover priority and type of test (i.e. unittest, integration, system). Also, additions of conditionals might also be good.
+Each of these tables can be expanded to cover priority and type of test (i.e. unit, integration, system) if needed. The unit\_test\_template.tex file contains a template for all unit tests to be included in this document.
 
 % @todo any unittests here.
 % template unit_test_template.tex
@@ -276,8 +278,8 @@ Each of these tables might need to be expanded to cover priority and type of tes
 \newcommand{\third}{4.5cm}
 \newcommand{\fourth}{4.5cm}
 
-\input{unit_test_template}
-\newpage
+%\input{unit_test_template}
+%\newpage
 
 
 \subsection{Integration Testing Pass/Fail Criteria}
@@ -312,11 +314,11 @@ Each of these tables might need to be expanded to cover priority and type of tes
 
 
 \subsection{System Testing Pass/Fail Criteria}
-
+None
 %\input{}
 
 \subsection{User Interface Manual Testing Pass/Fail Criteria}
-
+None
 %\input{}
 
 \section[SUSPENSION CRITERIA]{SUSPENSION CRITERIA}
@@ -326,7 +328,7 @@ The automated testing procedure shall be completed in the following order:
 \item Integration Testing
 \item System Testing
 \end{enumerate}
-Each item to be tested is required to pass each unittest of a classification of 1 with 100\% success before it can be included in a higher level of testing. This complete success can be waived for the following reasons:
+Each item to be tested is required to pass each unit test of a classification of 1 with 100\% success before it can be passed to a higher level of testing. This complete success can be waived for the following reasons:
 \begin{itemize}
 \item Feature under test will not be included in the upcoming deliverable.
 \item Feature under test will not be included in the final product.
@@ -345,17 +347,17 @@ Decision to allow a feature to proceed to a higher level of testing shall be det
 
 \subsection{Test Cases}
 
-All unittests, integration tests, and system tests should be documented in TCSs. The name of a TCS should match the module name (e.g. Character Class TCS) or functions (e.g. Main Menu TCS). TCS should be developed from any requirements document and should tests every requirement of those documents.
+All unit tests, integration tests, and system tests should be documented in TCSs. The name of a TCS should match the module name (e.g. Character Class TCS) or functions (e.g. Main Menu TCS). TCS should be developed from requirements document and ideally should test every requirement of those documents.
 
 \section[REMAINING TEST TASKS]{REMAINING TEST TASKS}
 
 \begin{itemize}
-\item Divsion of Labor by each group leader.
+\item Division of Labor by each group leader.
 \item Implementation of testing.
 \item Complication of testing results.
 \end{itemize}
 
-\section[EVIRONMENTAL NEEDS]{ENVIRONMENTAL NEEDS}
+\section[ENVIRONMENTAL NEEDS]{ENVIRONMENTAL NEEDS}
 None
 
 \section[STAFFING AND TRAINING NEEDS]{STAFFING AND TRAINING NEEDS}
@@ -363,7 +365,7 @@ Training on portions of the project shall be carried out by the authors of the c
 
 
 \section[RESPONSIBILITIES]{RESPONSIBILITIES}
-This document is the responsibly of the all team members who's tasks fall under the requirements of this documents, such as those assigned to write tests, etc. Primary responsibility of this document is Robert Meine
+This document is the responsibly of the all team members who's tasks fall under the requirements of this documents, such as those assigned to write tests, etc. Robert Meine has primary responsibility of this document. Please contact Robert Meine if you have any concerns or issues with this document.
 
 
 \section[SCHEDULE]{SCHEDULE}
@@ -379,7 +381,7 @@ Completion of first draft of the complete Test Plan documentation. &
 11/12/2013
 \\ \hline
 
-Test Assigment &
+Test Assignment &
 Assign tests to team members &
 11/14/2013
 \\ \hline
@@ -406,6 +408,8 @@ Completion of assigned metrics &
 
 Delivery of All SSDS SSRS related testing requirements & &
 12/17/2013
+
+\\ \hline
 
 \end{tabularx}
 \end{center}
