@@ -107,6 +107,36 @@
 \title{SYSTEM AND SOFTWARE ARCHITECTURAL AND DETAILED DESIGN DESCRIPTION}
 \author{Python Team}
 \date{2013-12-19}
+
+% % % % % % % % % % % % % % %
+% Place my packages here    %
+% % % % % % % % % % % % % % %
+
+% New tables
+\usepackage[utf8]{inputenc}
+\usepackage{tabularx}
+\usepackage{ragged2e}
+\usepackage{booktabs}
+\usepackage{caption}
+\newcolumntype{C}[1]{>{\Centering}p{#1}}
+\renewcommand\tabularxcolumn[1]{C{#1}}
+%\usepackage{chngpage}
+
+% Appendices
+%\usepackage[titletoc,toc]{appendix}
+
+% Use verbatim to allow block comments.
+\usepackage{verbatim}
+\usepackage{usecases}
+%\usepackage{fullpage}
+\usepackage{listings}
+\usepackage{url}
+\usepackage[parfill]{parskip}
+
+% Automatically clearpage after every section
+\usepackage{titlesec}
+\newcommand\sectionbreak{\ifnum\value{section}>0\clearpage\fi}
+
 \begin{document}
 \clearpage\setcounter{page}{1}\pagestyle{Standard}
 \thispagestyle{FirstPage}
