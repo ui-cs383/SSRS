@@ -234,6 +234,8 @@ Moscow, ID 83844-1010
 6 & 12/17/13 & Section 3.2 & M & Overhauled Use Case style & --- & ---\\
 7 & 12/19/13 & Section 2 & A & Wrote most of Section 2 & --- & ---\\
 8 & 12/19/13 & Section 3 & A & Wrote remaining portions of Section 3 except for use case diagrams & --- & ---\\
+9 & 12/19/13 & Section 3 & A & Added old use case diagram & --- & ---\\
+10 & 12/19/13 & Section 4 & D & Removed Requirements Traceability & --- & ---\\
 
 % Footer
 \bottomrule[1.5pt]
@@ -282,16 +284,12 @@ Moscow, ID 83844-1010
 % % % % % % % % % % % % % %
 \section{Introduction}
 \subsection{Identification}
-
 The software system being considered for development is referred to as \textit{Freedom in the Star System}.  The customer providing specifications for the system is Dr. Clinton Jeffrey, University of Idaho.  The ultimate customer, or end-user, of the system will be the general public.  This is a new project effort, so the version under development is version 0.1.0.
-
 \subsection{Purpose}
 The purpose of the system under development is entertainment.  While the system will be used by the general public, this document is intended to be read and understood by UICS software
 designers and coders. The document will also be vetted or approved by members of this team not involved in the writing of a given portion.
-
 \subsection{Scope}
 \textit{Freedom in the Galaxy} is a board game designed and owned by SPI (now Avalon Hill) in 1978.  \textit{Freedom in the Star System} will be a digital representation of the board game for the purposes of practicing software engineering standards in a controlled, educational environment.
-
 \subsection{Definitions, Acronyms, and Abbreviations}
 
 \begin{minipage}{\linewidth}
@@ -631,7 +629,15 @@ Connect AI & AI/Backend & AI connects to server & --- & RPyC & TCP/IP\\
 %the system or software.}
 
 \subsubsection{Use Case Diagrams}
-[insert 1+ use case diagrams here]
+The following use case diagram is for a Galactic Game implementation of \textit{Freedom in the Galaxy}.
+
+\vspace{1em}
+\includegraphics[scale=0.67]{./images/usecases.png}
+%\begin{figure*}[h]
+
+%\caption*{Use Case Diagram for Galactic Game}
+%\end{figure*}
+
 
 \clearpage
 \subsubsection{System Feature 1: Setting up the Player(s)}
@@ -1051,7 +1057,7 @@ Connect AI & AI/Backend & AI connects to server & --- & RPyC & TCP/IP\\
 \end{usecase}
 
 
-
+\begin{comment}
 % % % % % % % % % % % % % %
 % Section 4               %
 % % % % % % % % % % % % % %
@@ -1095,6 +1101,8 @@ Feature A & 1.1 & It does something over and over and over & M & 2.2 & 2 & 75\% 
 						or function name}
 \end{tabular}
 \end{minipage}
+\end{comment}
+
 
 \begin{comment}
 \subsection{Beta Release}
