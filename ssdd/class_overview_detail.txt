@@ -1,0 +1,143 @@
+@startuml
+
+hide empty methods
+hide circle
+skinparam shadowing false
+skinparam classFontStyle Bold
+skinparam classFontSize 14
+title Class Diagram
+
+note as Title
+<b>Class Diagram
+Authors:
+Ben Cumber
+
+Reviewed By:
+Jeff Crocker
+
+end note
+
+class Game{
+player1: string
+player2: string
+scenario: string
+phasing_player: string
+segment: string
+
+advance_segment()
+}
+
+class Character{
+name: string
+img: string
+title: string
+race: string
+side: string
+combat: integer
+endurance: integer
+intelligence: integer
+leadership: integer
+diplomacy: integer
+navigation: integer
+homeworld: string
+bonuses: string
+wounds: integer
+detected: boolean
+active: boolean
+captive: boolean
+stack_id: integer
+}
+
+class Environ{
+id: integer
+location: integer
+type: string
+size: integer
+star_faring: intger
+resources: integer
+star_resources: integer
+monster: string
+coup: boolean
+planet_id: integer
+race_name: string
+}
+
+class Unit{
+id: integer
+side: string
+type: string
+environ_combat: integer
+space_combat: integer
+mobile: boolean
+stack_id: integer
+}
+
+class Mission{
+id: string
+side: string
+type: string
+draws: string
+stack_id: integer
+}
+
+class Planet{
+id: integer
+control: string
+pdb_level: integer
+pdb_state: integer
+location: integer
+name: string
+loyalty: integer
+environ_count: integer
+game_id: string
+in_rebellion: boolean
+was_rebellion: boolean
+
+pdb_change()
+}
+
+class Possession{
+id: integer
+type: string
+name: string
+img: string
+stat1: integer
+stat2: integer
+stat3: integer
+stat4: integer
+damaged: boolean
+owner_name: string
+
+}
+
+class Race{
+id: integer
+name: string
+combat: integer
+endurance: integer
+firefight: boolean
+}
+
+class Stack{
+id: integer
+environ_id: integer
+game_id: string
+
+size()
+side()
+spaceship()
+stack_detection()
+find_stack_leader()
+is_rebel_stack()
+}
+
+Game o-- "*" Stack
+Game o-- "*" Planet
+Character "*" --o Stack
+Character -- "*" Possession: owns
+Environ "2-5" --o Planet
+Environ -- Race: Inhabits
+Unit "*" --o Stack
+Stack "*" -- Mission: is assigned
+Stack -- Environ: is located
+@enduml

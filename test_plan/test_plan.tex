@@ -62,7 +62,8 @@
     \\ \hline 4 & Nov 26 & Sec 9.3;  & AI Test Cases & - & -
     \\ \hline 5 & Nov 27-Dec15 & Integration Tests & Added Integration Tests & - & -
     \\ \hline 6 & Dec 16 & Various & Reviewed Document & - & -
-    \\ \hline 7 & Dec 17 & TCs & Merged Last Changes to TCs & - & -
+    \\ \hline 7 & Dec 17 & TCs & Merged Final Changes to TCs & - & -
+    \\ \hline 8 & Dec 18 & Various & Changes for Review & - & -
 
 %    \\ \hline & & & & &  
 %    \\ \hline & & & & &  
@@ -143,7 +144,11 @@ User Experience & Med
 \\ \hline
  Python Standard Library. & Low
  \\ \hline
- Probably we can put third party modules here. & Med
+ RPyc & Low
+ \\ \hline
+ SQLAcademy & Low
+ \\ \hline
+ PyGame & Low
  \\ \hline
  Speed of software. & Low
 \\ \hline
@@ -158,9 +163,9 @@ The testing tools for use in this project include the standard library modules d
 Training will be available from other members of the team for any questions. Tutorials are also available on the Python website for doctest and unittest. Training for Nose is unknown.
 
 \subsection{Metrics}
-Products Metrics for this project will be the number of rules implemented. For each rule, a metric value is specified in the SSDS? This metric value is a number between 1 and 10. This number is based on several criteria, such as difficulty of the rule, priority of the rule, and how close other rules are to the rule. In order to apply any metrics, the relevant TCS test must be implemented and passed. This implementation must be signed off by another member or the team and the results attached to the necessary places in the project documents. After these requirements have been completed, the metric value can be earned.
+Products Metrics for this project will be the number of rules implemented. For each rule, a metric value is specified in the rules appendix of the SSDS. This metric value is a number between 1 and 10. This number is based on several criteria, such as difficulty of the rule, priority of the rule, and how close other rules are to the rule. In order to apply any metrics, the relevant TCS test must be implemented and passed. This implementation must be signed off by another member or the team and the results attached to the necessary places in the project documents. After these requirements have been completed, the metric value can be earned.
 
-Other code metrics here.
+****Other code metrics here.****
 
 \subsection{Configurations}
 The AI and UI will be tested using both the Rebel and Imperial player, and all User type tests for both player types will be executed.
@@ -171,26 +176,27 @@ The software will be developed with Python 2.7.5 with doctest and unittest of th
 \subsection{Hardware}
 The hardware specifications used for testing will be at or higher than the minimum hardware specifications for Python 2.7.5.
 
-\begin{itemize}
-\item Microsoft Windows XP Professional SP3/Vista SP1/Windows 7 Professional
-\begin{itemize}
-	\item Processor: 800MHz Intel Pentium III or equivalent
-	\item Memory: 512 MB
-	\item Disk space: 750 MB of free disk space
-\end{itemize}
-\item Ubuntu 9.10
-\begin{itemize}
-	\item Processor: 800MHz Intel Pentium III or equivalent
-	\item Memory: 512 MB
-	\item Disk space: 650 MB of free disk space
-\end{itemize}
-\item Macintosh OS X 10.6 Intel
-\begin{itemize}
-	\item Processor: Dual-Core Intel (32 or 64-bit)
-	\item Memory: 1 GB
-	\item Disk space: 650 MB of free disk space
-\end{itemize}
-\end{itemize}
+%\begin{itemize}
+%\item Microsoft Windows XP Professional SP3/Vista SP1/Windows 7 Professional
+%\begin{itemize}
+%	\item Processor: 800MHz Intel Pentium III or equivalent
+%	\item Memory: 512 MB
+%	\item Disk space: 750 MB of free disk space
+%\end{itemize}
+%\item Ubuntu 9.10
+%\begin{itemize}
+%	\item Processor: 800MHz Intel Pentium III or equivalent
+%	\item Memory: 512 MB
+%	\item Disk space: 650 MB of free disk space
+%\end{itemize}
+%\item Macintosh OS X 10.6 Intel
+%\begin{itemize}
+%	\item Processor: Dual-Core Intel (32 or 64-bit)
+%	\item Memory: 1 GB
+%	\item Disk space: 650 MB of free disk space
+%\end{itemize}
+%\end{itemize}
+
 \subsection{Automated Testing}
 The automated test process will be divided into three phases, Unit testing, Integration testing and System testing.
 
@@ -230,8 +236,6 @@ System testing will exercise the overall software product to verify conformance 
 
 \subsection{Manual Testing}
 Manual testing will be required for the portions of the program that can not undergo automated testing. This section applies to the testing of the user interface to simulate user orientated testing to verify conformance to the documented use cases.
-
-TODO how should manual tests be reported, what is the format?
 
 \section[ITEM PASS/FAIL CRITERIA]{ITEM PASS/FAIL CRITERIA}
 
@@ -411,7 +415,7 @@ Because the end of the semester is fixed, there are no contingencies if the prod
 
 \section[APPROVALS]{APPROVALS}
 
-Approval is everyones responsibility since all students will be evaluated by this document.
+Approval is everyones responsibility since all students will be evaluated on this document.
 
 \section[GLOSSARY]{GLOSSARY}
 SCR - Software Change Request
