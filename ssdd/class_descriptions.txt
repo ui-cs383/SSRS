@@ -1,0 +1,9 @@
+When crafting the objects used internal to the server, it was important to keep in mind that these objects would be stored in a database according to our product model. This considerationg meant that the objects could have inter-class relationships and references different than that of typical OOP style, and was functionality which was heavily relied upon. Also, the member variables of these objects would be destined to be stored in an SQL database, requiring the datatypes to stay simple and compatible. And, because the database would be holding multiple games simultaneously, the unique IDs used for database functionalities differed from that of the ID referred to in game by the client. With these clarifications, the class diagrams and descriptions will hopefully be more clear and easy to understand the reasoning behind the resulting implementation.
+
+To begin, the general class diagram below shows the major relationships existing between various game objects:
+
+\includegraphics[width=6in,height=10in]{class_overview.png}
+\newpage
+A more complete diagram is found below, which includes member variables and the major, high level functions integrated into each class:
+\includegraphics[width=6in,height=10in]{class_overview_detail.png}
+\newpage

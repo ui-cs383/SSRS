@@ -129,7 +129,7 @@
 
 % Use verbatim to allow block comments.
 \usepackage{verbatim}
-\usepackage{newusecases}
+\usepackage{usecases}
 %\usepackage{fullpage}
 \usepackage{listings}
 \usepackage{url}
@@ -232,6 +232,8 @@ Moscow, ID 83844-1010
 4 & 12/17/13 & Preamble & M & Converted to minitables & --- & ---\\
 5 & 12/17/13 & Table of Contents & M & Slight design changes (uniformity) & --- & ---\\
 6 & 12/17/13 & Section 3.2 & M & Overhauled Use Case style & --- & ---\\
+7 & 12/19/13 & Section 2 & A & Wrote most of Section 2 & --- & ---\\
+8 & 12/19/13 & Section 3 & A & Wrote remaining portions of Section 3 except for use case diagrams & --- & ---\\
 
 % Footer
 \bottomrule[1.5pt]
@@ -279,17 +281,7 @@ Moscow, ID 83844-1010
 % Section 1               %
 % % % % % % % % % % % % % %
 \section{Introduction}
-%\textit{This section the document should
-%introduce the project, customer, audience, etc., without delving into
-%too much detail, because those details are provided in subsequent
-%sections.}
-
 \subsection{Identification}
-%{\selectlanguage{english}\itshape\color{black}
-%This paragraph shall contain a full identification of the system and the
-%software to which this document applies, including, as applicable,
-%identification number(s), title(s), abbreviation(s), version number(s),
-%and release number(s).}
 
 The software system being considered for development is referred to as \textit{Freedom in the Star System}.  The customer providing specifications for the system is Dr. Clinton Jeffrey, University of Idaho.  The ultimate customer, or end-user, of the system will be the general public.  This is a new project effort, so the version under development is version 0.1.0.
 
@@ -321,7 +313,10 @@ SSRS & System and Software Requirements Specification; this document\\
 SSDD & System and Software Design Document\\
 FITG & Freedom in the Galaxy; board game developed by SPI/Avalon Hill\\
 FITSS & Freedom in the Star System; partial digital adaptation of FITG\\
-SPI & That's a good question! Bought out by Avalon Hill\\
+SPI & Simulations Publications Incorporated; original creators of FITG\\
+GUI & Graphical User Interface; a visual client that a user can use to interact with the system\\
+AI & Artificial Intelligence; a method of decision making that appears to make intelligent decisions to a given problem\\
+LAN & Local Area Network; --\\
 
 % Footer
 \bottomrule[1.5pt]
@@ -330,10 +325,11 @@ SPI & That's a good question! Bought out by Avalon Hill\\
 
 
 \subsection{References}
-CITE Freedom in the Galaxy \\
-CITE Updates to the rules of FITG \\
-CITE Dr. J? (This document)\\
-CITE Dr. Oman? (Original of this document)
+The following resources were used or referenced when creating this document:
+\begin{itemize}
+	\item SSRS \LaTeX\ document, Dr. Clinton Jeffey, \url{http://www2.cs.uidaho.edu/~jeffery/courses/383/templates/SSRS_Template_A2.tex}
+	\item Sample SRS document: Geagea et. al., \url{http://www.cse.chalmers.se/~feldt/courses/reqeng/examples/srs_example_2010_group2.pdf}
+\end{itemize}
 
 \subsection{Overview and Restrictions}
 This document is for limited release only to UI CS personnel working on
@@ -363,121 +359,56 @@ communications used to create this document.
 % % % % % % % % % % % % % %
 
 \section{Overall Description}
-%{\selectlanguage{english}\color{black}
-%\foreignlanguage{english}{\textit{This section of the document should
-%describe the general factors that affect the product and its
-%requirements. \ This section does not state specific requirements.
-%\ Instead, it provides the background for those requirements, which are
-%defined in detail in Section 3.}}\foreignlanguage{english}{ \ }}
 
 \subsection{Product Perspective}
-%{\selectlanguage{english}\color{black}
-%\foreignlanguage{english}{\textit{This subsection of the document should
-%put the product into perspective with other related products. \ If the
-%product \ is independent and totally self-contained, it should be so
-%stated here. If the document de[FB01?]nes a product that is a component
-%of a larger system, then this subsection should relate the requirements
-%of \ that larger system to functionality of the software and should
-%identify interfaces between that system and the software. \ A block
-%diagram showing the major components of the larger system,
-%interconnections, and external interfaces can be
-%helpful.}}\foreignlanguage{english}{\textbf{\textit{ }}}}
-
-%{\selectlanguage{english}\color{black}
-[ insert your text here ]
+\textit{Freedom in the Star System} will consist of three parts: a visual client that a human user will use to play an instance of a game, an AI that will serve as a non-human player and a server that will contain all of the game logic and state.  The server is further broken down into three subsystems: a system that handles game logic and rules, a database that will hold the current status of all games being played and a network interface that the visual client and AI will connect to in order to communicate with the backend.
 
 \subsection{Product Functions}
-%{\selectlanguage{english}\itshape\color{black}
-%This subsection of the document should provide a summary of the major
-%functions that the software will perform. \ For the sake of clarity The
-%functions should be organized in a way that makes the list of functions
-%understandable to the \ customer or to anyone else reading the document
-%for the first time. \ Textual or graphical methods can be used to show
-%the different functions and their relationships. \ Such a diagram is
-%not intended to show a design of a product, but simply shows the
-%logical relationships among variables.}
-
-%{\selectlanguage{english}\color{black}
-[ insert your text here ]
+Using the visual client (herein referred to as the GUI or the client), a user will be able to view a list of games and their options that are waiting for a second player to join in order to start.  A user will also be able to join one of these listed games in order to play a game against an opponent.  A user will be able to create a new game by selecting from a short list of preferences and joining the matchmaking queue.  Finally, a user will be able to create a new game against an AI (computer) opponent.  The server (also referred to as the backend) will be able to accept requests from either a human or non-human (AI) player and determine whether the received request is a valid request or not.  The server will then respond to the requesting user the results of their request and update any changes to the game state that a request may have affected.  The AI will act as a non-human player (or client in the network sense) that will attempt to send requests to the server, based on a specific strategy in order to attempt to win the game or prevent the opposing player from winning.
 
 \subsection{User Characteristics}
-%{\selectlanguage{english}\itshape\color{black}
-%This subsection of the document should describe those general
-%characteristics of the intended users of the product including
-%educational level, experience, and technical expertise. \ It should not
-%be used to state speci[FB01?]c requirements, but rather should provide
-%the reasons why certain speci[FB01?]c requirements are later
-%speci[FB01?]ed in Section 3 of this document.}
-
-%{\selectlanguage{english}\color{black}
-[ insert your text here ] %}
+There are primarily two different types of users that will use this system.  One user, the general player, is only interested in playing a game (also referred to as a match) with another player.  This type of user will try to avoid anything that relates to operating the server; the one exception to this being the user starting the server application in order to start the game logic engine.  The second, and less common user, is the user interested in running an instance of the server application for other users to connect to, essentially as a central host for other players to connect to.
 
 \subsection{Constraints}
-%{\selectlanguage{english}\itshape\color{black}
-%This subsection of the document should provide a general description of
-%any other items that will limit the developer{\textquoteright}s
-%options. \ These include: a) Regulatory policies; b) Hardware
-%limitations (e.g., signal timing requirements); c) Interfaces to other
-%applications; d) Parallel operation; e) Audit functions; f) Control
-%functions; g) Higher-order language requirements; h) Signal handshake
-%protocols; i) Reliability requirements; j) Criticality of the
-%application; k) Safety and security considerations.}
-
-%{\selectlanguage{english}\color{black}
-[ insert your text here ]%}
+\textit{Freedom in the Star System} has very few constraints.  In order for two users to play a game together, the two computers must be connected to a common network.  This network can be a LAN, however most commonly this will be the Internet.  If a loss of the network connection occurs, the user will be able to restart their client and reconnect to their game.  If a loss of network connection happens where the server application resides, the server application will need to be re-executed - it will then retrieve its game state from the database and wait for new requests to be sent from the clients.  A user may use their computer's internal network to play a game against an AI opponent in which case a network connection loss won't create any issues (as long as the server application is being executed locally).  The only other constraints the \textit{Freedom in the Star System} application imposes is that it meets certain minimum system specifications as required by the 3rd party tools in use.
 
 \subsection{Assumptions and Dependencies}
-%{\selectlanguage{english}\itshape\color{black}
-%This subsection of the document should list each of the factors that
-%affect the requirements stated in the document. \ These factors are not
-%design constraints on the system and/or software but are, rather, any
-%changes to them that can affect the requirements in the document. For
-%example, an assumption may be that a speci[FB01?]c operating system
-%will be available on the hardware designated for the software product.
-%\ If, in fact, the operating system is not available, the document
-%would then have to change accordingly.}
+\textit{Freedom in the Star System} will operate under Linux, Mac OSX and Microsoft Windows.  All of the third party resources that are in use have support for these three operation systems as well.  \textit{Freedom in the Star System} depends on the following third party tools:
+	\begin{itemize}
+		\item Python 2.7.5 or higher
+		\item The following Python Libraries
+		\begin{itemize}
+			\item PyGame
+			\item RPyC
+			\item SQLAlchemy
+		\end{itemize}
+	\end{itemize}
 
-%{\selectlanguage{english}\color{black}
-[ insert your text here ]
+Earlier or later versions of the Python programming language may in fact work, but there is no guarantee that this is the case and Python 2.7.5 is the only officially supported version of Python.  All of the libraries that \textit{Freedom in the Star System} requires are supported by Python 2.7.5 at a minimum.
 
 \subsection{System Level (Non-Functional) Requirements}
-%{\selectlanguage{english}\itshape\color{black}
-%This subsection of the document should identify system level (whole, not
-%functional) requirements that impact the construction, operation,
-%packaging and delivery of the system and software.}
+This subsection identifies system-level requirements that may impact the construction, operation, packaging and delivery of the system and software.
 
 \subsubsection{Site Dependencies}
-%{\selectlanguage{english}\color{black}
-%\foreignlanguage{english}{\textit{This paragraph shall specify
-%site-dependent operational parameters and needs (such as parameters
-%indicating operation-dependent targeting constants or data
-%recording).}}\foreignlanguage{english}{
-%}\foreignlanguage{english}{\textit{. \ The requirements shall include,
-%as applicable, number of each type of equipment, type, size, capacity,
-%and other required characteristics of processors, memory, input/output
-%devices, auxiliary storage, communications/ network equipment, and
-%other required equipment or software that must be used by, or
-%incorporated into, the system. \ Examples include operating systems,
-%database management systems, communications/ network software, utility
-%software, input and equipment simulators, test software, and
-%manufacturing software. \ The correct nomenclature, version, and
-%documentation references of each such device or software item shall be
-%provided.}}}
-
-%{\selectlanguage{english}\color{black}
-[ insert your text here ]
+\textit{Freedom in the Star System} requires the following in order to run:
+\begin{enumerate}
+	\item Operating Systems
+	\begin{enumerate}
+		\item Linux 2.6 and above
+		\item Mac OSX 10.7 and above
+		\item Microsoft Windows XP and above
+	\end{enumerate}
+	\item Python 2.7.5
+	\begin{enumerate}
+		\item PyGame
+		\item RPyC
+		\item SQLAlchemy
+	\end{enumerate}
+	\item Broadband connection for Internet games
+\end{enumerate}
 
 \subsubsection{Safety, Security and Privacy Requirements}
-%{\selectlanguage{english}\itshape\color{black}
-%This paragraph shall specify the system requirements, if any, concerned
-%with maintaining safety, security and privacy. \ These requirements
-%shall include, as applicable, the safety, security and privacy
-%environment in which the system must operate, the type and degree of
-%security or privacy to be provided, and the criteria that must be met
-%for safety/security/privacy certification and/or accreditation.}
-
-%{\selectlanguage{english}\color{black}
-[ insert your text here ]%}
+There are no inherent safety, security or privacy requirements of this application.  As a precaution however, all users of the system should keep private those things that they would not want revealed in public; the user may be playing against another player and there is no way to control what that opponent may say and/or do given any private information.
 
 \subsubsection{Performance Requirements}
 %{\selectlanguage{english}\itshape\color{black}
@@ -494,27 +425,27 @@ communications used to create this document.
 %transactions shall be processed in less than
 %1msec.{\textquotedblright}}
 
-%{\selectlanguage{english}\color{black}
-[ insert your text here ] %}
+The AI must be able to make decisions in under 90 seconds for any given hardware platform; after 90 seconds, if the best decision hasn't been found, then the best decision that has been found thus far should be selected in order to move on.
+
+The Backend must be able to make most logic computations in under one second and not exceed three seconds in handling an entire request, from calculating the result to preparing and submitting the response.  The Backend has no control over network transfer speeds, so the actual time for a client to receive a response may be higher.
+
+The Backend has no overall memory or hard disk space requirements because a single instance of the server could be hosting a large number of simultaneous games.  It is the responsibility of the server administrator to occasionally purge, backup or otherwise maintain the database created by the server.
 
 \subsubsection{System and Software Quality}
-%{\selectlanguage{english}\itshape\color{black}
-%This paragraph shall specify the requirements, if any, concerned with
-%hardware and software quality factors identified in the contract.
-%\ Examples include quantitative requirements regarding the
-%system{\textquoteright}s functionality (the ability to perform all
-%required functions), reliability (the ability to perform with correct,
-%consistent results), maintainability (the ability to be easily
-%corrected), availability (the ability to be accessed and operated when
-%needed), flexibility (the ability to be easily adapted to changing
-%requirements), portability (the ability to be easily modified for a new
-%environment), reusability (the ability to be used in multiple
-%applications), testability (the ability to be easily and thoroughly
-%tested), usability (the ability to be easily learned and used), and
-%other attributes.}
 
-%{\selectlanguage{english}\color{black}
-[ insert your text here ] %}
+\textit{Freedom in the Star System} should be:
+\begin{itemize}
+	\item Reliable
+		\subitem The game should always produce the same outcomes given the same input and environment.
+	\item Maintainable
+		\subitem The source code should be easy to make changes to when needed.
+	\item Portable
+		\subitem The game should strive to remain available on Linux, Mac OSX and Windows.  This should include making sure that third party tools being used are also portable.
+	\item Testable
+		\subitem The game logic should be easily testable using unit tests.
+		\subitem The GUI should be easily testable using a manual test battery.
+		\subitem The AI logic should be easily testable using either unit tests, or barring that, a manual test battery.
+\end{itemize}
 
 \subsubsection{Packaging and Delivery Requirements}
 %{\selectlanguage{english}\itshape\color{black}
@@ -522,15 +453,7 @@ communications used to create this document.
 %labeling, handling and delivery of the system being developed to the
 %customer.}
 
-%{\selectlanguage{english}\color{black}
-%The executable system and all associated documentation (i.e., SSRS, SDD,
-%code listing, test plan (data and results), and user manual) will be
-%delivered to the customer on CD{\textquoteright}s and/or via email, as
-%specified by the customer at time of delivery. \ Although document
-%{\textquotedblleft}drops{\textquotedblright} will occur throughout the
-%system development process, the final, edited version of the above
-%documents will accompany the final, accepted version of the executable
-%system.}
+The executable system and all associated documentation (i.e., SSRS, SSDD, Test Plan and Metrics Document and source code listing) will be available for the customer to acquire from the \textit{Freedom in the Star System} repository online at \url{https://github.com/ui-cs383/Freedom-Galaxy}.  Some associated documentation (i.e., SSRS, SSDD and Test Plan and Metrics Document) will also be delivered to the customer in hard copy.  Both of these deliverables will delivered, as specified by the customer, at the time of delivery.  Although document drops may occur throughout the system development process, the final, edited version of the above documents will accompany the final, accepted version of the executable system.
 
 \subsubsection{Personnel-Related Requirements}
 The system under development has no special personnel-related
@@ -543,24 +466,25 @@ than the limited help screens built into the software and the
 accompanying user manual.
 
 \subsubsection{Logistics-Related Requirements}
-%{\selectlanguage{english}\itshape\color{black}
-%This paragraph shall specify the system requirements, if any, concerned
-%with logistics considerations. \ These considerations may include:
-%system maintenance, software support, system transportation modes,
-%supply-system requirements, impact on existing facilities, and impact
-%on existing equipment. \ }
-
-%{\selectlanguage{english}\color{black}
-[ Insert a description of the minimum hardware requirements and OS and
-application software dependencies here ] %}
+\textit{Freedom in the Star System} is supported under the following environments:
+\begin{enumerate}
+	\item Operating Systems
+	\begin{enumerate}
+		\item Linux 2.6 and above
+		\item Mac OSX 10.7 and above
+		\item Microsoft Windows XP and above
+	\end{enumerate}
+	\item Python 2.7.5
+	\begin{enumerate}
+		\item PyGame
+		\item RPyC
+		\item SQLAlchemy
+	\end{enumerate}
+	\item Broadband connection for Internet games
+\end{enumerate}
 
 \subsubsection{Other Requirements}
-%{\selectlanguage{english}\itshape\color{black}
-%This paragraph shall specify additional system level requirements, if
-%any, not covered in the previous paragraphs.}
-
-%{\selectlanguage{english}\color{black}
-[ insert your text here ] %}
+There are no additional requirements for the \textit{Freedom in the Star System} application that have not been explicitly stated in this document.
 
 \subsubsection{Precedence and Criticality of Requirements}
 %{\selectlanguage{english}\itshape\color{black}
@@ -571,14 +495,14 @@ application software dependencies here ] %}
 %privacy for purposes of singling them out for special treatment. \ If
 %all requirements have equal weight, this paragraph shall so state. }
 
-%{\selectlanguage{english}\color{black}
-[ insert your text here ] %}
+The only requirements that carry any greater weight as compared to the other requirements are the system and logistic requirements.  It is critical to the successful execution of \textit{Freedom in the Star System} to run \textit{Freedom in the Star System} on a supported operating system and for the requisite dependent libraries to be correctly installed.
 
 %\clearpage
 % % % % % % % % % % % % % %
 % Section 3               %
 % % % % % % % % % % % % % %
 \section{Specific Requirements}
+This section of the document will contain all of the software requirements in a sufficient level of detail to enable designers to design a system to satisfy those requirements and testers to test that the system satisfies those requirements.
 %{\selectlanguage{english}\itshape\color{black}
 %This section of the document should contain all of the software
 %requirements to a level of detail sufficient to enable designers to
@@ -604,29 +528,23 @@ application software dependencies here ] %}
 %combination of both.}
 
 \subsubsection{Hardware Interfaces}
-[ insert your
-text here ]
+No subsystem of \textit{Freedom in the Star System} relies on a hardware interface in order to operate.  The underlying operating systems controls any hardware that \textit{Freedom in the Star System} may depend on.
 
 \subsubsection{Software Interfaces}
-[ insert your
-text here ]
+Some of the Python libraries that \textit{Freedom in the Star System} relies on will use different software (i.e., some of the Python Libraries will communicate with the operating system), \textit{Freedom in the Star System} itself has no software interfaces except to Python itself.
 
 \subsubsection{User Interfaces}
-[ insert your
-text here ]
+The user interfaces can be separated by each subsystem.  The AI subsystem is the simplest - it has no user interface because it is executed by the Backend whenever it is needed.  The AI subsystem may produce a log file of actions occurred, but nothing else.  The Backend subsystem has a console based interface but the user cannot interact with it except to read the current status of the server and to terminate a currently running instance of the server.  The Client (GUI) subsystem however has a myriad of different user interfaces because that is what it has been designed for.  
+
+The GUI will present two primary screens: an introduction screen, where the user will be able to create or join a match and the in-game screen which will contain all of the currently known information - information that the user is allowed to have knowledge of.  This information may include the status and quantity of one or both player's assets, the static objects of the game and information received about the current game state from the Backend.
+
+The GUI will allow the user to send requests to change the game state to the Backend; the user may do this by using the ``drag and drop'' technique or by using keyboard and mouse hotkeys.  There are no plans currently to allow the GUI to function using only a keyboard, but using only a mouse will certainly be possible.
 
 \subsubsection{Other Communication Interfaces}
-[ insert your
-text here ]
+The GUI and AI subsystems do not ever communicate with each other, but do in fact have to both communicate bi-directionally with the Backend subsystem.  In order to facilitate this, a network connection between the Backend and any client (human or AI) must be established.  \textit{Freedom in the Star System} uses RPyC in order to allow this.  The Backend and the Client may be on separate computers connected over the Internet, separate computers connected to an internal network or even running on the same computer using the loopback interface (commonly referred to as ``localhost'').  The AI subsystem, which is executed at the server's command still requires a network connection to be active and open for the duration of the game (it will likely run on the same machine as the server is running and will connect through localhost).
 
 
-\bigskip
-
-
-\bigskip
-
-\bigskip
-\clearpage
+%\clearpage
 %\setcounter{page}{1}\pagestyle{Convertiv}
 
 \begin{minipage}{\linewidth}
@@ -634,8 +552,7 @@ text here ]
 \textbf{External Interface Requirements}
 \end{minipage}
 
-\bigskip
-
+\begin{comment}
 \begin{minipage}{\linewidth}
 \centering
 \captionof*{table}{\textbf{Hardware Interfaces}}
@@ -647,25 +564,31 @@ text here ]
 \end{minipage}
 
 \bigskip
+\end{comment}
 
+\begin{comment}
 \begin{minipage}{\linewidth}
 \centering
 \captionof*{table}{\textbf{Software Interfaces}}
 \begin{tabular}{c c c c c c } \toprule[1.5pt]
 \bf Name & \bf Source/Destination & \bf Description & \bf Type/Range & \bf Dependencies & \bf Formats\\ \toprule[1.0pt]
- text & text & text & text & text & text \\
+--- & --- & --- & --- & --- & ---\\
+--- & --- & --- & --- & --- & ---\\
+--- & --- & --- & --- & --- & ---\\
 \bottomrule[1.5pt]
 \end {tabular} %\par
 \end{minipage}
 
 \bigskip
+\end{comment}
 
 \begin{minipage}{\linewidth}
 \centering
 \captionof*{table}{\textbf{User Interfaces}}
 \begin{tabular}{c c c c c c } \toprule[1.5pt]
 \bf Name & \bf Source/Destination & \bf Description & \bf Type/Range & \bf Dependencies & \bf Formats\\ \toprule[1.0pt]
- text & text & text & text & text & text \\
+Intro Screen & ---/Game Screen & Introduction screen for the game & --- & PyGame & --- \\
+Game Screen & Intro Screen/--- & Main game screen for all activity & --- & PyGame & --- \\
 \bottomrule[1.5pt]
 \end {tabular} %\par
 \end{minipage}
@@ -677,7 +600,8 @@ text here ]
 \captionof*{table}{\textbf{Other Communication Interfaces}}
 \begin{tabular}{c c c c c c } \toprule[1.5pt]
 \bf Name & \bf Source/Destination & \bf Description & \bf Type/Range & \bf Dependencies & \bf Formats\\ \toprule[1.0pt]
- text & text & text & text & text & text \\
+Connect Client & Client/Backend & Client connects to server & --- & RPyC & TCP/IP\\
+Connect AI & AI/Backend & AI connects to server & --- & RPyC & TCP/IP\\
 \bottomrule[1.5pt]
 \end {tabular}\par
 \end{minipage}
@@ -1243,15 +1167,5 @@ Feature A & 1.1 & It does something over and over and over & M & 2.2 & 2 & 75\% 
 \end{tabular}
 \end{minipage}
 \end{comment}
-
-
-\section{Appendix A. [insert name here]}
-%{\selectlanguage{english}\itshape\color{black}
-%Include copies of specifications, mockups, prototypes, etc. supplied or
-%derived from the customer. \ Appendices are labeled A, B, {\dots}n.
-%\ \ Reference each appendix as appropriate in the text of the document.
-%}
-[ insert appendix A here ]
-
 
 \end{document}
