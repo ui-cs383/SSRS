@@ -5,5 +5,5 @@ To begin, the general class diagram below shows the major relationships existing
 \includegraphics[width=6in,height=10in]{class_overview.png}
 \newpage
 A more complete diagram is found below, which includes member variables and the major, high level functions integrated into each class:
-\includegraphics[width=6in,height=10in]{class_overview.png}
+\includegraphics[width=6in,height=10in]{class_overview_detail.png}
 \newpage
