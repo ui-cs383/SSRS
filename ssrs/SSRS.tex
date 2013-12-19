@@ -313,7 +313,7 @@ SSRS & System and Software Requirements Specification; this document\\
 SSDD & System and Software Design Document\\
 FITG & Freedom in the Galaxy; board game developed by SPI/Avalon Hill\\
 FITSS & Freedom in the Star System; partial digital adaptation of FITG\\
-SPI & That's a good question! Bought out by Avalon Hill\\
+SPI & Simulations Publications Incorporated; original creators of FITG\\
 GUI & Graphical User Interface; a visual client that a user can use to interact with the system\\
 AI & Artificial Intelligence; a method of decision making that appears to make intelligent decisions to a given problem\\
 LAN & Local Area Network; --\\
@@ -325,11 +325,11 @@ LAN & Local Area Network; --\\
 
 
 \subsection{References}
-CITE Freedom in the Galaxy \\
-CITE Updates to the rules of FITG \\
-CITE Dr. J? (This document)\\
-CITE Dr. Oman? (Original of this document)\\
-CITE SRS Example doc %http://www.cse.chalmers.se/~feldt/courses/reqeng/examples/srs_example_2010_group2.pdf
+The following resources were used or referenced when creating this document:
+\begin{itemize}
+	\item SSRS \LaTeX\ document, Dr. Clinton Jeffey, \url{http://www2.cs.uidaho.edu/~jeffery/courses/383/templates/SSRS_Template_A2.tex}
+	\item Sample SRS document: Geagea et. al., \url{http://www.cse.chalmers.se/~feldt/courses/reqeng/examples/srs_example_2010_group2.pdf}
+\end{itemize}
 
 \subsection{Overview and Restrictions}
 This document is for limited release only to UI CS personnel working on
@@ -359,12 +359,6 @@ communications used to create this document.
 % % % % % % % % % % % % % %
 
 \section{Overall Description}
-%{\selectlanguage{english}\color{black}
-%\foreignlanguage{english}{\textit{This section of the document should
-%describe the general factors that affect the product and its
-%requirements. \ This section does not state specific requirements.
-%\ Instead, it provides the background for those requirements, which are
-%defined in detail in Section 3.}}\foreignlanguage{english}{ \ }}
 
 \subsection{Product Perspective}
 \textit{Freedom in the Star System} will consist of three parts: a visual client that a human user will use to play an instance of a game, an AI that will serve as a non-human player and a server that will contain all of the game logic and state.  The server is further broken down into three subsystems: a system that handles game logic and rules, a database that will hold the current status of all games being played and a network interface that the visual client and AI will connect to in order to communicate with the backend.
@@ -393,29 +387,25 @@ There are primarily two different types of users that will use this system.  One
 Earlier or later versions of the Python programming language may in fact work, but there is no guarantee that this is the case and Python 2.7.5 is the only officially supported version of Python.  All of the libraries that \textit{Freedom in the Star System} requires are supported by Python 2.7.5 at a minimum.
 
 \subsection{System Level (Non-Functional) Requirements}
-%{\selectlanguage{english}\itshape\color{black}
-%This subsection of the document should identify system level (whole, not
-%functional) requirements that impact the construction, operation,
-%packaging and delivery of the system and software.}
+This subsection identifies system-level requirements that may impact the construction, operation, packaging and delivery of the system and software.
 
 \subsubsection{Site Dependencies}
-%{\selectlanguage{english}\color{black}
-%\foreignlanguage{english}{\textit{This paragraph shall specify
-%site-dependent operational parameters and needs (such as parameters
-%indicating operation-dependent targeting constants or data
-%recording).}}\foreignlanguage{english}{
-%}\foreignlanguage{english}{\textit{. \ The requirements shall include,
-%as applicable, number of each type of equipment, type, size, capacity,
-%and other required characteristics of processors, memory, input/output
-%devices, auxiliary storage, communications/ network equipment, and
-%other required equipment or software that must be used by, or
-%incorporated into, the system. \ Examples include operating systems,
-%database management systems, communications/ network software, utility
-%software, input and equipment simulators, test software, and
-%manufacturing software. \ The correct nomenclature, version, and
-%documentation references of each such device or software item shall be
-%provided.}}}
-[ insert your text here ]
+\textit{Freedom in the Star System} requires the following in order to run:
+\begin{enumerate}
+	\item Operating Systems
+	\begin{enumerate}
+		\item Linux 2.6 and above
+		\item Mac OSX 10.7 and above
+		\item Microsoft Windows XP and above
+	\end{enumerate}
+	\item Python 2.7.5
+	\begin{enumerate}
+		\item PyGame
+		\item RPyC
+		\item SQLAlchemy
+	\end{enumerate}
+	\item Broadband connection for Internet games
+\end{enumerate}
 
 \subsubsection{Safety, Security and Privacy Requirements}
 There are no inherent safety, security or privacy requirements of this application.  As a precaution however, all users of the system should keep private those things that they would not want revealed in public; the user may be playing against another player and there is no way to control what that opponent may say and/or do given any private information.
@@ -435,29 +425,27 @@ There are no inherent safety, security or privacy requirements of this applicati
 %transactions shall be processed in less than
 %1msec.{\textquotedblright}}
 
+The AI must be able to make decisions in under 90 seconds for any given hardware platform; after 90 seconds, if the best decision hasn't been found, then the best decision that has been found thus far should be selected in order to move on.
 
+The Backend must be able to make most logic computations in under one second and not exceed three seconds in handling an entire request, from calculating the result to preparing and submitting the response.  The Backend has no control over network transfer speeds, so the actual time for a client to receive a response may be higher.
 
-%{\selectlanguage{english}\color{black}
-[ insert your text here ] %}
+The Backend has no overall memory or hard disk space requirements because a single instance of the server could be hosting a large number of simultaneous games.  It is the responsibility of the server administrator to occasionally purge, backup or otherwise maintain the database created by the server.
 
 \subsubsection{System and Software Quality}
-%{\selectlanguage{english}\itshape\color{black}
-%This paragraph shall specify the requirements, if any, concerned with
-%hardware and software quality factors identified in the contract.
-%\ Examples include quantitative requirements regarding the
-%system{\textquoteright}s functionality (the ability to perform all
-%required functions), reliability (the ability to perform with correct,
-%consistent results), maintainability (the ability to be easily
-%corrected), availability (the ability to be accessed and operated when
-%needed), flexibility (the ability to be easily adapted to changing
-%requirements), portability (the ability to be easily modified for a new
-%environment), reusability (the ability to be used in multiple
-%applications), testability (the ability to be easily and thoroughly
-%tested), usability (the ability to be easily learned and used), and
-%other attributes.}
 
-%{\selectlanguage{english}\color{black}
-[ insert your text here ] %}
+\textit{Freedom in the Star System} should be:
+\begin{itemize}
+	\item Reliable
+		\subitem The game should always produce the same outcomes given the same input and environment.
+	\item Maintainable
+		\subitem The source code should be easy to make changes to when needed.
+	\item Portable
+		\subitem The game should strive to remain available on Linux, Mac OSX and Windows.  This should include making sure that third party tools being used are also portable.
+	\item Testable
+		\subitem The game logic should be easily testable using unit tests.
+		\subitem The GUI should be easily testable using a manual test battery.
+		\subitem The AI logic should be easily testable using either unit tests, or barring that, a manual test battery.
+\end{itemize}
 
 \subsubsection{Packaging and Delivery Requirements}
 %{\selectlanguage{english}\itshape\color{black}
@@ -1179,15 +1167,5 @@ Feature A & 1.1 & It does something over and over and over & M & 2.2 & 2 & 75\% 
 \end{tabular}
 \end{minipage}
 \end{comment}
-
-
-\section{Appendix A. [insert name here]}
-%{\selectlanguage{english}\itshape\color{black}
-%Include copies of specifications, mockups, prototypes, etc. supplied or
-%derived from the customer. \ Appendices are labeled A, B, {\dots}n.
-%\ \ Reference each appendix as appropriate in the text of the document.
-%}
-[ insert appendix A here ]
-
 
 \end{document}
